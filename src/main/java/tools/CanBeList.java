@@ -1,0 +1,10 @@
+package tools;
+
+import java.util.List;
+
+/**
+ * @author Braulio Lopez (brauliop.3@gmail.com)
+ */
+public interface CanBeList<T> {
+    List<T> asList();
+}
