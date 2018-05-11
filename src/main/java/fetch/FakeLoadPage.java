@@ -15,7 +15,7 @@ public final class FakeLoadPage implements LoadPage {
         return Jsoup.parse(
                 new File(
                         "src/test/java/resources/users"
-                                + index + ".html"
+                                + index + ".txt"
                 ), "UTF-8"
         );
     }
