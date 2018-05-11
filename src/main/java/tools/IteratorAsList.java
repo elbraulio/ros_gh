@@ -10,14 +10,14 @@ import java.util.List;
 public final class IteratorAsList<T> implements CanBeList<T> {
     private final Iterator<T> iterator;
 
-    public IteratorAsList(Iterator<T> iterator) {
+    public IteratorAsList(final Iterator<T> iterator) {
 
         this.iterator = iterator;
     }
 
     @Override
     public List<T> asList() {
-        List<T> list = new LinkedList<>();
+        final List<T> list = new LinkedList<>();
         this.iterator.forEachRemaining(t -> list.add(t));
         return list;
     }

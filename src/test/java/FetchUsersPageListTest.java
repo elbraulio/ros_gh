@@ -1,4 +1,4 @@
-import fetch.FakeLoadPage;
+import resources.FakeLoadPage;
 import fetch.UserLinks;
 import fetch.UserListPages;
 import org.junit.Test;

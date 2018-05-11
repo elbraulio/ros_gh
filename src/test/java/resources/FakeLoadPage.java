@@ -1,5 +1,6 @@
-package fetch;
+package resources;
 
+import fetch.LoadPage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -11,11 +12,11 @@ import java.io.IOException;
  */
 public final class FakeLoadPage implements LoadPage {
     @Override
-    public Document page(int index) throws IOException {
+    public Document page(final int index) throws IOException {
         return Jsoup.parse(
                 new File(
                         "src/test/java/resources/users"
-                                + index + ".html"
+                                + index + ".txt"
                 ), "UTF-8"
         );
     }
