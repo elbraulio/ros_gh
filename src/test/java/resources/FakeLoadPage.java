@@ -1,5 +1,6 @@
-package fetch;
+package resources;
 
+import fetch.LoadPage;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
