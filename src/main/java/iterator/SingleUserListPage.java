@@ -1,4 +1,4 @@
-package fetch;
+package iterator;
 
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;

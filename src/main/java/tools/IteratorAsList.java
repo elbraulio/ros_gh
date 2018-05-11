@@ -21,4 +21,16 @@ public final class IteratorAsList<T> implements CanBeList<T> {
         this.iterator.forEachRemaining(t -> list.add(t));
         return list;
     }
+
+    @Override
+    public List<T> take(final int length) {
+        final List<T> list = new LinkedList<>();
+        while(this.iterator.hasNext()){
+            if(list.size() == length){
+                break;
+            }
+            list.add(iterator.next());
+        }
+        return list;
+    }
 }
