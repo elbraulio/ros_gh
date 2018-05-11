@@ -28,7 +28,9 @@ public final class UserListPages implements Iterator<SingleUserListPage> {
         try {
             return new SingleUserListPage(this.loadPage.page(currentPage++));
         } catch (IOException e) {
-            throw new NoSuchElementException("page: " + this.currentPage);
+            throw new NoSuchElementException(
+                    "page: " + this.currentPage + " | " + e.getMessage()
+            );
         }
     }
 }
