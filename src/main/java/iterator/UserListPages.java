@@ -1,5 +1,7 @@
-package fetch;
+package iterator;
 
+import fetch.LoadPage;
+import iterator.SingleUserListPage;
 import tools.StackWithInitialValues;
 
 import java.io.IOException;

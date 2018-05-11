@@ -1,5 +1,6 @@
-package fetch;
+package iterator;
 
+import iterator.SingleUserListPage;
 import tools.IteratorAsList;
 import tools.StackWithInitialValues;
 
