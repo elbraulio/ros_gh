@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public final class FakeLoadPage implements LoadPage {
     @Override
-    public Document page(int index) throws IOException {
+    public Document page(final int index) throws IOException {
         return Jsoup.parse(
                 new File(
                         "src/test/java/resources/users"

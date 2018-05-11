@@ -1,11 +1,9 @@
 package fetch;
 
 import tools.IteratorAsList;
+import tools.StackWithInitialValues;
 
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -13,17 +11,30 @@ import java.util.NoSuchElementException;
 public final class UserLinks implements Iterator<String> {
     private final Iterator<SingleUserListPage> userListPages;
     private final List<String> links;
-    private int nextIndex;
+    private final Stack<Integer> nextIndex;
 
-    public UserLinks(Iterator<SingleUserListPage> userListPages) {
+    public UserLinks(final Iterator<SingleUserListPage> userListPages) {
+        this(
+                userListPages,
+                new LinkedList<>(),
+                new StackWithInitialValues<>(0).stack()
+        );
+    }
+
+    public UserLinks(
+            final Iterator<SingleUserListPage> userListPages,
+            final List<String> links,
+            final Stack<Integer> nextIndex
+    ){
+
         this.userListPages = userListPages;
-        this.links = new LinkedList<>();
-        nextIndex = 0;
+        this.links = links;
+        this.nextIndex = nextIndex;
     }
 
     @Override
     public boolean hasNext() {
-        if (this.nextIndex < this.links.size()) {
+        if (this.nextIndex.peek() < this.links.size()) {
             return true;
         } else {
             return this.userListPages.hasNext();
@@ -32,8 +43,10 @@ public final class UserLinks implements Iterator<String> {
 
     @Override
     public String next() {
-        if (this.nextIndex < this.links.size()) {
-            return this.links.get(nextIndex++);
+        final int currentIndex = this.nextIndex.peek();
+        if (currentIndex < this.links.size()) {
+            this.nextIndex.push(currentIndex + 1);
+            return this.links.get(currentIndex);
         } else {
             if (this.userListPages.hasNext()) {
                 this.links.addAll(
