@@ -1,0 +1,296 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <title>user profile overview - ROS Answers: Open Source Q&amp;A Forum</title> <meta name="description" content="Open source question and answer forum written in Python and Django" /> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=EDGE" /> <meta name="keywords" content=",ROS,forum,community" /> <meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" /> <meta name="referrer" content="always" /> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <link rel="shortcut icon" href="/m/ros/media/images/ros_favicon.gif?v=27" /> <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="http://answers.ros.org/feeds/rss/"
+        /> <link rel="stylesheet" href="/m/CACHE/css/1fc1ec510607.css" type="text/css" /> <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=latin-ext" rel="stylesheet" type="text/css" /> <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=cyrillic-ext" rel="stylesheet" type="text/css" /> <style type="text/css">
+    .history-table td { padding: 5px; }
+</style> <link rel="stylesheet" type="text/css" href="/m/default/media/wmd/wmd.css?v=27" /> <script type="text/javascript" src="/m/default/media/jslib/modernizr.custom.js?v=27"></script> <script type="text/javascript">
+    var askbot = {};
+    askbot['data'] = {};
+    askbot['data']['userIsAuthenticated'] = true;
+    askbot['data']['languageCode'] = 'en';
+
+        askbot['data']['userId'] = 34668;
+        askbot['data']['userName'] = 'elbraulio';
+        askbot['data']['userEmail'] = 'brauliop.3@gmail.com';
+        askbot['data']['userProfileUrl'] = '/users/34668/elbraulio/';
+        askbot['data']['userIsAdminOrMod'] = false;
+        askbot['data']['userIsAdmin'] = false;
+        askbot['data']['userReputation'] = 1;
+        askbot['data']['userIsReadOnly'] = false;
+
+    askbot['urls'] = {};
+    askbot['settings'] = {};
+    askbot['messages'] = {};
+
+</script> <script type="text/javascript" src="/s/jsi18n/"></script> </head> <body class="one-col user-profile-page lang-en"> <div class="notify" style="display:none"> <div class="content-wrapper"> <a id="closeNotify" onclick="notify.close(true)"></a> </div> </div> <div id="custom-header"> <div align="center"> <br> <table id="topnav-table"> <tr> <td valign="middle">
+              ROS Resources:
+            <a href="http://wiki.ros.org/">Documentation</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&A answers.ros.org</a> </td> </tr> </table> <!-- topnav-table --> </div> </div> <!-- template header.html --> <div
+    id="header"
+    class="with-logo"
+> <div class="content-wrapper"> <div id="userToolsNav"> <a href="/users/34668/elbraulio/">elbraulio</a> <span class="user-info">
+
+    (<a
+      class="user-micro-info reputation"
+      href="/users/34668/elbraulio/?sort=reputation"
+      data-fetch-data-url="/s/get-perms-data/"
+    >karma: 1</a>)</span> <a href="/account/signout/?next=/account/logout/">sign out</a> <a class="help" href="/help/" title="help">help</a> </div> <a
+    id="logo"
+    href="/questions/"
+><img
+    src="/m/ros/media/images/logoros.png?v=27"
+    alt="ROS Answers logo"/> </a> <div id="metaNav"> <a
+  id="navTags"
+  href="/tags/"
+
+>tags</a> <a
+  id="navUsers"
+  href="/users/"
+  class="on"
+>users</a> <a
+  id="navBadges"
+  href="/badges/"
+
+>badges</a> </div> <div class="clean"></div> </div> </div> <!-- end template header.html --> <!-- template secondary_header.html --> <div id="secondaryHeader"> <div class="content-wrapper"> <form
+
+                action="/questions/" id="searchForm"
+
+            class="scopes-True-True-True"
+            method="get"> <table width="100%"> <tr> <td width="1"><a id="homeButton" href="/questions/"><i class="fa fa-home"></i></a></td> <td width="1"><div id="scopeNav"> <a class="scope-selector "
+            href="/questions/scope:all/sort:activity-desc/page:1/"
+        >ALL</a> <a class="scope-selector "
+            href="/questions/scope:unanswered/sort:answers-asc/page:1/"
+        >UNANSWERED</a> <a class="scope-selector "
+            href="/questions/scope:followed/sort:activity-desc/page:1/"
+        >FOLLOWED</a> </div></td> <td width="*" class="search-bar"> <div
+    id="searchBar"
+    class="search-bar"
+><input type="hidden" name="t" value="user"/><input
+        class="searchInput"
+        type="text"
+        autocomplete="off"
+        value=""
+        name="query"
+        placeholder="Search or ask your question"
+        id="keywords"
+    /><input type="submit" value="" name="search" class="searchBtn" /><input type="button"
+        value="X"
+        name="reset_query"
+        class="cancelSearchBtn"
+
+            style="display: none;"
+
+    /></div> </td> <td width="1"> <a
+        id="askButton"
+        class="button"
+        href="/questions/ask/"
+        >
+            Ask Your Question
+        </a> </td> </tr> </table> </form> </div> </div> <div class="content-wrapper"> <div id="ContentFull"> <h1 class="section-title">
+        elbraulio's profile -
+    overview
+    </h1> <!-- user_tabs.html --> <div class="tabBar tabBar-profile"> <div class="tabsC"> <a id="stats" class="on first"
+            href="/users/34668/elbraulio/?sort=stats"
+        ><span>overview</span></a> <a id="inbox"
+                href="/users/34668/elbraulio/?sort=inbox"
+            ><span>notifications</span></a> <a id="email_subscriptions"
+                href="/users/34668/elbraulio/?sort=email_subscriptions"
+            ><span>email alerts</span></a> <a id="network"
+            href="/users/34668/elbraulio/?sort=network"
+        ><span>network</span></a> <a id="reputation"
+            href="/users/34668/elbraulio/?sort=reputation"
+        ><span>karma</span></a> <a id="favorites"
+            href="/users/34668/elbraulio/?sort=favorites"
+        ><span>followed questions</span></a> <a id="recent"
+            href="/users/34668/elbraulio/?sort=recent"
+        ><span>activity</span></a> <a id="votes"
+            href="/users/34668/elbraulio/?sort=votes"
+        ><span>votes</span></a> </div> </div> <div class="clean"></div> <!-- end user_tabs.html --> <div> <!-- user_info.html --> <div class="user-info-table"> <div class="col1"> <div class='avatar'> <a class="js-avatar-box"
+    href="/users/34668/elbraulio/"
+><img class="js-avatar gravatar"
+    width="128" height="128"
+    src="//www.gravatar.com/avatar/977aea2b1931661bb877be29d8a28ef3?s=128&amp;d=identicon&amp;r=PG"
+    title="elbraulio"
+    alt="elbraulio gravatar image"
+/></a> <p><a
+
+                        href="/s/avatar/list/34668/"
+
+                >change picture</a></p> </div> <div class="scoreNumber">1</div> <p><b style="color:#777;">karma</b></p> </div> <div class="col2"> <table class="user-details"> <tr> <td class="user-profile-tool-links" align="left" colspan="2"> <a href="/users/34668/edit/">
+                        update profile
+                    </a>
+
+                        | <a href="/account/signin/?next=/account/signin/">
+                            manage login methods
+                        </a> </td> </tr> <tr> <th colspan="2" align="left"> <h3>New User</h3> </th> </tr> <tr> <td>email</td> <td>brauliop.3@gmail.com</td> </tr> <tr> <td>member since</td> <td><strong> <abbr class="timeago" title="2018-04-16 10:44:55 -0500">2018-04-16 10:44:55 -0500</abbr> </strong></td> </tr> <tr> <td>last seen</td> <td><strong title="2018-05-12 16:39:04.844458"> <abbr class="timeago" title="2018-05-12 16:39:04 -0500">2018-05-12 16:39:04 -0500</abbr> </strong></td> </tr> <tr> <td>todays unused votes</td> <td><strong class="darkred">50</strong> votes left</td> </tr> </table> </div> <div class="col3 user-about"> <div class="js-editable"
+                id="js-user-about-34668"
+
+                data-get-text-url="/s/users/get-description?user_id=34668"
+                data-save-text-url="/s/users/set-description?user_id=34668"
+                data-save-text-param-name="description"
+                data-validated-text-param-name="description_html"
+                data-editor-type="markdown"
+                data-previewer-enabled="false"
+            > <div class="js-editable-content"><p></p> </div> <div class="js-editable-controls"> <button id="js-edit-btn-user-about-34668">edit</button> </div> </div> </div> </div> <!-- end user_info.html --> <a name="questions"></a> <h2><span class="count">0</span> Questions
+        </h2> <!-- users_questions.html --> <div class="user-stats-table"> <div class="users-questions"> </div> </div> <!-- end users_questions.html --> <a name="answers"></a> <h2 style="clear:both;"><span class="count">0</span> Answers
+        </h2> <div class="user-stats-table"> <div class="users-answers"> </div> </div> <a name="votes"></a> <h2><span class="count">0</span> Votes </h2> <div class="user-stats-table"> <div class="up-votes">0</div> <div class="down-votes">0</div> </div> <a name="tags"></a> <h2><span class="count">0</span> Tags</h2> <div class="user-stats-table"> <ul id="ab-user-tags" class="tags"> </ul> <div class="clearfix"></div> </div> <a name="badges"></a> <h2><span class="count">0</span> Badges</h2> <div class="user-stats-table badges"> </div> </div> </div> </div> <!-- template footer.html --> <div id="ground"> <div class="content-wrapper"> <div class="copyright"> <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode"> <img
+                            class="license-logo"
+                            src="/m/default/media/images/cc-by-sa.png?v=27"
+                            title="cc-by-sa"
+                            alt="cc-by-sa"
+                        /> </a>
+
+                ROS Answers is licensed under Creative Commons Attribution 3.0 Content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">Creative Commons Attribution Share Alike 3.0</a> license.
+
+            </div> <div class="footer-links" > <a href="/about/">about</a><span class="link-separator"> |</span> <a href="/faq/">faq</a><span class="link-separator"> |</span> <a href="/help/" title="help">help</a> <span class="link-separator"> |</span> <a href="/privacy/">privacy policy</a><span class="link-separator"> |</span> <a href="/terms/">terms of service</a> <span class="link-separator"> |</span> <a
+
+                    href="/feedback/?next=/users/34668/elbraulio/"
+
+            >
+                give feedback
+            </a> </div> <div class="powered-link"> <a href="http://askbot.com" target="_blank">
+                Powered by Askbot version 0.7.58
+            </a> </div> <div class="clean"></div> </div> </div> <!-- end template footer.html --> <div id="no-javascript"> <noscript class="noscript">
+        Please note: ROS Answers requires javascript to work properly, please enable javascript in your browser, <a href="https://www.google.com/support/bin/answer.py?answer=23852">here is how</a> </noscript> <script type="text/javascript">
+        //IE fix to hide the red margin
+        var noscript = document.getElementsByTagName('noscript')[0];
+        noscript.style.padding = '0px';
+        noscript.style.backgroundColor = 'transparent';
+    </script> </div> <script type="text/javascript">
+    askbot['urls']['mark_read_message'] = '/s/messages/markread/';
+    askbot['urls']['get_tags_by_wildcard'] = '/s/get-tags-by-wildcard/';
+    askbot['urls']['get_tag_list'] = '/s/get-tag-list/';
+    askbot['urls']['follow_user'] = '/followit/follow/user/{{userId}}/';
+    askbot['urls']['unfollow_user'] = '/followit/unfollow/user/{{userId}}/';
+    askbot['urls']['user_signin'] = '/account/signin/';
+    askbot['urls']['getEditor'] = '/s/get-editor/';
+
+    askbot['urls']['apiGetQuestions'] = '/s/api/get_questions/';
+    askbot['urls']['ask'] = '/questions/ask/';
+	askbot['urls']['questions'] = '/questions/';
+    askbot['settings']['groupsEnabled'] = false;
+    askbot['settings']['static_url'] = '/m/';
+    askbot['settings']['minSearchWordLength'] = 3;
+    askbot['settings']['mathjaxEnabled'] = false;
+    askbot['settings']['sharingSuffixText'] = '';
+    askbot['settings']['errorPlacement'] = 'after-label';
+    askbot['data']['maxCommentLength'] = 300;
+    askbot['settings']['editorType'] = 'markdown';
+
+    askbot['settings']['commentsEditorType'] = 'rich\u002Dtext';
+    askbot['messages']['askYourQuestion'] = 'Ask Your Question';
+    askbot['messages']['acceptOwnAnswer'] = 'accept or unaccept your own answer';
+    askbot['messages']['followQuestions'] = 'follow questions';
+
+        askbot['settings']['allowedUploadFileTypes'] = [
+            "jpg", "jpeg", "gif", "bmp", "png", "tiff"
+        ];
+
+    askbot['data']['haveFlashNotifications'] = false;
+    askbot['data']['activeTab'] = 'users';
+    askbot['settings']['csrfCookieName'] = '_csrf';
+
+        askbot['data']['searchUrl'] = 'scope:all/sort:activity\u002Ddesc/page:1/';
+
+</script> <script type="text/javascript" src="/m/CACHE/js/8227174696ea.js"></script> <script type="text/javascript">
+    /*<![CDATA[*/
+    $('.mceStatusbar').remove();//a hack to remove the tinyMCE status bar
+    $(document).ready(function(){
+        // focus input on the search bar endcomment
+        var activeTab = askbot['data']['activeTab'];
+        if (inArray(activeTab, ['users', 'questions', 'tags', 'badges'])) {
+            var searchInput = $('#keywords');
+        } else if (activeTab === 'ask') {
+            var searchInput = $('#id_title');
+        } else {
+            var searchInput = undefined;
+            animateHashes();
+        }
+
+        if (searchInput) {
+            searchInput.focus();
+            putCursorAtEnd(searchInput);
+        }
+
+        var haveFullTextSearchTab = inArray(activeTab, ['questions', 'badges', 'ask']);
+        var haveUserProfilePage = $('body').hasClass('user-profile-page');
+        if ((haveUserProfilePage || haveFullTextSearchTab) && searchInput && searchInput.length) {
+            var search = new FullTextSearch();
+            askbot['controllers'] = askbot['controllers'] || {};
+            askbot['controllers']['fullTextSearch'] = search;
+            search.setSearchUrl(askbot['data']['searchUrl']);
+            if (activeTab === 'ask') {
+                search.setAskButtonEnabled(false);
+            }
+            search.decorate(searchInput);
+        } else if (activeTab === 'tags') {
+            var search = new TagSearch();
+            search.decorate(searchInput);
+        }
+
+        if (askbot['data']['userIsAdminOrMod']) {
+            $('body').addClass('admin');
+        }
+        if (askbot['settings']['groupsEnabled']) {
+            askbot['urls']['add_group'] = "/s/add-group/";
+            var group_dropdown = new GroupDropdown();
+            $('.groups-dropdown').append(group_dropdown.getElement());
+        }
+        var userRep = $('#userToolsNav .reputation');
+        if (userRep.length) {
+            var showPermsTrigger = new ShowPermsTrigger();
+            showPermsTrigger.decorate(userRep);
+        }
+    });
+    if (askbot['data']['haveFlashNotifications']) {
+        $('#validate_email_alert').click(function(){notify.close(true)})
+        notify.show();
+    }
+
+    var langNav = $('.lang-nav');
+    if (langNav.length) {
+        var nav = new LangNav();
+        nav.decorate(langNav);
+    }
+    /*]]>*/
+</script> <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker('UA-17821189-3');
+    pageTracker._trackPageview();
+    } catch(err) {}
+</script> <div class="js-templates" style="display: none;"></div> <script type="text/javascript">
+        askbot['data']['viewUserName'] = 'elbraulio';
+        askbot['data']['viewUserId'] = 34668;
+        askbot['urls']['edit_group_membership'] = '/s/edit-group-membership/';
+        askbot['urls']['getGroupsList'] = '/s/get-groups-list/';
+        askbot['urls']['getTopAnswers'] = '/s/get-top-answers/';
+        askbot['urls']['upload'] = '/s/upload/';
+
+            askbot['data']['userPostsPageSize'] = 10;
+
+    </script> <script type="text/javascript" src="/m/CACHE/js/bacc91f8263a.js"></script> <script type="text/javascript">
+        askbot['urls']['join_or_leave_group'] = '/s/join-or-leave-group/';
+        $(document).ready(function(){
+            setup_badge_details_toggle();
+            $.each($('.group-join-btn'), function(idx, elem){
+                var group_join_btn = new GroupJoinButton();
+                group_join_btn.decorate($(elem));
+            });
+        });
+    </script> <script type="text/javascript" src="/m/CACHE/js/be6c47730254.js"></script> <script type="text/javascript">
+            for (url_name in askbot['urls']){
+                askbot['urls'][url_name] = cleanUrl(askbot['urls'][url_name]);
+            }
+        </script> </body> </html>

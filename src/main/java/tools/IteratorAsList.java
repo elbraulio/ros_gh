@@ -29,7 +29,7 @@ public final class IteratorAsList<T> implements CanBeList<T> {
             if(list.size() == length){
                 break;
             }
-            list.add(iterator.next());
+            list.add(this.iterator.next());
         }
         return list;
     }

@@ -1,6 +1,5 @@
 package iterator;
 
-import iterator.SingleUserListPage;
 import tools.IteratorAsList;
 import tools.StackWithInitialValues;
 
@@ -9,50 +8,50 @@ import java.util.*;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class UserLinks implements Iterator<String> {
-    private final Iterator<SingleUserListPage> userListPages;
+public final class IteratePagedUsersLinks implements Iterator<String> {
+    private final Iterator<IterateUserLinks> pagedUserList;
     private final List<String> links;
-    private final Stack<Integer> nextIndex;
+    private final Stack<Integer> nextLinkIndex;
 
-    public UserLinks(final Iterator<SingleUserListPage> userListPages) {
+    public IteratePagedUsersLinks(final Iterator<IterateUserLinks> pagedUserList) {
         this(
-                userListPages,
+                pagedUserList,
                 new LinkedList<>(),
                 new StackWithInitialValues<>(0).stack()
         );
     }
 
-    public UserLinks(
-            final Iterator<SingleUserListPage> userListPages,
+    private IteratePagedUsersLinks(
+            final Iterator<IterateUserLinks> pagedUserList,
             final List<String> links,
-            final Stack<Integer> nextIndex
+            final Stack<Integer> nextLinkIndex
     ){
 
-        this.userListPages = userListPages;
+        this.pagedUserList = pagedUserList;
         this.links = links;
-        this.nextIndex = nextIndex;
+        this.nextLinkIndex = nextLinkIndex;
     }
 
     @Override
     public boolean hasNext() {
-        if (this.nextIndex.peek() < this.links.size()) {
+        if (this.nextLinkIndex.peek() < this.links.size()) {
             return true;
         } else {
-            return this.userListPages.hasNext();
+            return this.pagedUserList.hasNext();
         }
     }
 
     @Override
     public String next() {
-        final int currentIndex = this.nextIndex.peek();
+        final int currentIndex = this.nextLinkIndex.peek();
         if (currentIndex < this.links.size()) {
-            this.nextIndex.push(currentIndex + 1);
+            this.nextLinkIndex.push(currentIndex + 1);
             return this.links.get(currentIndex);
         } else {
-            if (this.userListPages.hasNext()) {
+            if (this.pagedUserList.hasNext()) {
                 this.links.addAll(
                         new IteratorAsList<>(
-                                this.userListPages.next()
+                                this.pagedUserList.next()
                         ).asList()
                 );
                 return next();

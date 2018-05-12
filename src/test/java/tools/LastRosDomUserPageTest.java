@@ -1,7 +1,7 @@
 package tools;
 
 import org.junit.Test;
-import resources.FakeLoadPage;
+import resources.FakePagedDom;
 
 import java.io.IOException;
 
@@ -11,14 +11,14 @@ import static org.hamcrest.core.Is.is;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class TotalRosUserPagesTest {
+public final class LastRosDomUserPageTest {
 
     @Test
     public void findTheLastPageFromTheFirstPage() throws IOException {
         assertThat(
-                new TotalRosUserPages(
-                        new FakeLoadPage().page(1)
-                ).totalPages(),
+                new LastRosUserPage(
+                        new FakePagedDom().page(1)
+                ).number(),
                 is(693)
         );
     }

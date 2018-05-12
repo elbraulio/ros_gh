@@ -1,4 +1,4 @@
-package fetch;
+package dom;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class RosLoadPage implements LoadPage {
+public final class RosPagedDom implements PagedDom {
     private final String webUrl =
             "https://answers.ros.org/users/?sort=reputation&page=";
 
