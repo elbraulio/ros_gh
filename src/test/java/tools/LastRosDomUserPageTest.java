@@ -18,7 +18,7 @@ public final class LastRosDomUserPageTest {
         assertThat(
                 new LastRosUserPage(
                         new FakePagedDom().page(1)
-                ).number(),
+                ).value(),
                 is(693)
         );
     }
