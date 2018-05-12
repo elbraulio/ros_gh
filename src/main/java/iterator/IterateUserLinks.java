@@ -7,6 +7,7 @@ import tools.StackWithInitialValues;
 import java.util.*;
 
 /**
+ * TODO this should be a list
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class IterateUserLinks implements Iterator<String> {
