@@ -50,4 +50,14 @@ public final class RosDomUser implements RosUser {
     public List<TagWithCount> tags() {
         return new TagWithCountList(this.document, new NormalTags()).asList();
     }
+
+    @Override
+    public String toString(){
+        return "name: " + this.name() + "\n" +
+                "upVotes: " + this.upVotes() + "\n" +
+                "downVotes: " + this.downVotes() + "\n" +
+                "tags: " + this.tags() + "\n" +
+                "interestingTag: " + this.interestingTags() + "\n" +
+                "ignoredtag: " + this.ignoredTags() + "\n";
+    }
 }
