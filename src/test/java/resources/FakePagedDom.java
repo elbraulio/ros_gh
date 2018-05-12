@@ -1,6 +1,6 @@
 package resources;
 
-import fetch.PagedDom;
+import dom.PagedDom;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -15,7 +15,7 @@ public final class FakePagedDom implements PagedDom {
     public Document page(final int index) throws IOException {
         return Jsoup.parse(
                 new File(
-                        "src/test/java/resources/usersPage"
+                        "src/test/java/resources/usersListPage"
                                 + index + ".txt"
                 ), "UTF-8"
         );

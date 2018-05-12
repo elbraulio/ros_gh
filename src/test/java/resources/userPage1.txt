@@ -1,0 +1,993 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> <html xmlns="http://www.w3.org/1999/xhtml"> <head> <title>user profile overview - ROS Answers: Open Source Q&amp;A Forum</title> <meta name="description" content="Open source question and answer forum written in Python and Django" /> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <meta http-equiv="X-UA-Compatible" content="IE=EDGE" /> <meta name="keywords" content=",ROS,forum,community" /> <meta name="google-site-verification" content="CjkdY6BqKWAVmQ78_iSq6J7ZZ9AoL7-CjFVBYGg9FU4" /> <meta name="referrer" content="always" /> <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" /> <link rel="shortcut icon" href="/m/ros/media/images/ros_favicon.gif?v=27" /> <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="http://answers.ros.org/feeds/rss/"
+        /> <link rel="stylesheet" href="/m/CACHE/css/1fc1ec510607.css" type="text/css" /> <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=latin-ext" rel="stylesheet" type="text/css" /> <link href="//fonts.googleapis.com/css?family=Open+Sans+Condensed:700&amp;subset=cyrillic-ext" rel="stylesheet" type="text/css" /> <style type="text/css">
+    .history-table td { padding: 5px; }
+</style> <link rel="stylesheet" type="text/css" href="/m/default/media/wmd/wmd.css?v=27" /> <script type="text/javascript" src="/m/default/media/jslib/modernizr.custom.js?v=27"></script> <script type="text/javascript">
+    var askbot = {};
+    askbot['data'] = {};
+    askbot['data']['userIsAuthenticated'] = true;
+    askbot['data']['languageCode'] = 'en';
+
+        askbot['data']['userId'] = 34668;
+        askbot['data']['userName'] = 'elbraulio';
+        askbot['data']['userEmail'] = 'brauliop.3@gmail.com';
+        askbot['data']['userProfileUrl'] = '/users/34668/elbraulio/';
+        askbot['data']['userIsAdminOrMod'] = false;
+        askbot['data']['userIsAdmin'] = false;
+        askbot['data']['userReputation'] = 1;
+        askbot['data']['userIsReadOnly'] = false;
+
+    askbot['urls'] = {};
+    askbot['settings'] = {};
+    askbot['messages'] = {};
+
+</script> <script type="text/javascript" src="/s/jsi18n/"></script> </head> <body class="one-col user-profile-page lang-en"> <div class="notify" style="display:none"> <div class="content-wrapper"> <a id="closeNotify" onclick="notify.close(true)"></a> </div> </div> <div id="custom-header"> <div align="center"> <br> <table id="topnav-table"> <tr> <td valign="middle">
+              ROS Resources:
+            <a href="http://wiki.ros.org/">Documentation</a>
+            |
+            <a href="http://wiki.ros.org/Support">Support</a>
+            |
+            <a href="http://discourse.ros.org/">Discussion Forum</a>
+            |
+            <a href="http://status.ros.org/">Service Status</a>
+            |
+            <a href="http://answers.ros.org/">Q&A answers.ros.org</a> </td> </tr> </table> <!-- topnav-table --> </div> </div> <!-- template header.html --> <div
+    id="header"
+    class="with-logo"
+> <div class="content-wrapper"> <div id="userToolsNav"> <a href="/users/34668/elbraulio/">elbraulio</a> <span class="user-info">
+
+    (<a
+      class="user-micro-info reputation"
+      href="/users/34668/elbraulio/?sort=reputation"
+      data-dom-data-url="/s/get-perms-data/"
+    >karma: 1</a>)</span> <a href="/account/signout/?next=/account/logout/">sign out</a> <a class="help" href="/help/" title="help">help</a> </div> <a
+    id="logo"
+    href="/questions/"
+><img
+    src="/m/ros/media/images/logoros.png?v=27"
+    alt="ROS Answers logo"/> </a> <div id="metaNav"> <a
+  id="navTags"
+  href="/tags/"
+
+>tags</a> <a
+  id="navUsers"
+  href="/users/"
+  class="on"
+>users</a> <a
+  id="navBadges"
+  href="/badges/"
+
+>badges</a> </div> <div class="clean"></div> </div> </div> <!-- end template header.html --> <!-- template secondary_header.html --> <div id="secondaryHeader"> <div class="content-wrapper"> <form
+
+                action="/questions/" id="searchForm"
+
+            class="scopes-True-True-True"
+            method="get"> <table width="100%"> <tr> <td width="1"><a id="homeButton" href="/questions/"><i class="fa fa-home"></i></a></td> <td width="1"><div id="scopeNav"> <a class="scope-selector "
+            href="/questions/scope:all/sort:activity-desc/page:1/"
+        >ALL</a> <a class="scope-selector "
+            href="/questions/scope:unanswered/sort:answers-asc/page:1/"
+        >UNANSWERED</a> <a class="scope-selector "
+            href="/questions/scope:followed/sort:activity-desc/page:1/"
+        >FOLLOWED</a> </div></td> <td width="*" class="search-bar"> <div
+    id="searchBar"
+    class="search-bar"
+><input type="hidden" name="t" value="user"/><input
+        class="searchInput"
+        type="text"
+        autocomplete="off"
+        value=""
+        name="query"
+        placeholder="Search or ask your question"
+        id="keywords"
+    /><input type="submit" value="" name="search" class="searchBtn" /><input type="button"
+        value="X"
+        name="reset_query"
+        class="cancelSearchBtn"
+
+            style="display: none;"
+
+    /></div> </td> <td width="1"> <a
+        id="askButton"
+        class="button"
+        href="/questions/ask/"
+        >
+            Ask Your Question
+        </a> </td> </tr> </table> </form> </div> </div> <div class="content-wrapper"> <div id="ContentFull"> <h1 class="section-title">
+        Humpelstilzchen's profile -
+    overview
+    </h1> <!-- user_tabs.html --> <div class="tabBar tabBar-profile"> <div class="tabsC"> <a id="stats" class="on first"
+            href="/users/21851/humpelstilzchen/?sort=stats"
+        ><span>overview</span></a> <a id="network"
+            href="/users/21851/humpelstilzchen/?sort=network"
+        ><span>network</span></a> <a id="reputation"
+            href="/users/21851/humpelstilzchen/?sort=reputation"
+        ><span>karma</span></a> <a id="favorites"
+            href="/users/21851/humpelstilzchen/?sort=favorites"
+        ><span>followed questions</span></a> <a id="recent"
+            href="/users/21851/humpelstilzchen/?sort=recent"
+        ><span>activity</span></a> </div> </div> <div class="clean"></div> <!-- end user_tabs.html --> <div> <!-- user_info.html --> <div class="user-info-table"> <div class="col1"> <div class='avatar'> <a class="js-avatar-box"
+    href="/users/21851/humpelstilzchen/"
+><img class="js-avatar gravatar"
+    width="128" height="128"
+    src="/upfiles/avatars/Humpelstilzchen/resized/128/wild_thumper_overview_icon_e9pvU7g.jpg"
+    title="Humpelstilzchen"
+    alt="Humpelstilzchen gravatar image"
+/></a> </div> <div class="scoreNumber">1,127</div> <p><b style="color:#777;">karma</b></p> <button class="js-follow-user button large"
+                data-is-on="false"
+                data-off-prompt-text="unfollow"
+                data-on-prompt-text="follow"
+                data-min-lines="10"
+                data-on-state-text="following"
+                data-off-state-text="follow"
+                data-toggle-url="/followit/toggle-follow/user/21851/"
+            >
+
+                    follow
+
+            </button> </div> <div class="col2"> <table class="user-details"> <tr> <th colspan="2" align="left"> <h3>Registered User</h3> </th> </tr> <tr> <td>member since</td> <td><strong> <abbr class="timeago" title="2015-03-13 02:11:54 -0500">2015-03-13 02:11:54 -0500</abbr> </strong></td> </tr> <tr> <td>last seen</td> <td><strong title="2018-04-27 02:37:27.694493"> <abbr class="timeago" title="2018-04-27 02:37:27 -0500">2018-04-27 02:37:27 -0500</abbr> </strong></td> </tr> <tr> <td>location</td> <td>
+        Hamburg,
+
+
+        Germany
+
+        <img class="flag"
+
+            src="/m/default/media/images/flags/de.gif?v=27"
+            alt="flag of Germany"
+            title="Humpelstilzchen is from Germany"
+        /> </td> </tr> <tr> <td>todays unused votes</td> <td><strong class="darkred">50</strong> votes left</td> </tr> </table> </div> <div class="col3 user-about"> <p>Hobbyist</p> </div> </div> <!-- end user_info.html --> <a name="questions"></a> <h2><span class="count">1</span> Question
+        </h2> <!-- users_questions.html --> <div class="user-stats-table"> <div class="users-questions"> <div class="short-summary" id="question-219218"> <div class="counts"> <div class="views
+             some-views"> <span class="item-count">347</span> <div>
+            views
+            </div> </div> <div class="answers
+
+                        accepted"> <span
+                class="item-count"
+            >1</span> <div>
+                answer
+            </div> </div> <div class="votes
+                    no-votes
+                    "> <span class="item-count">no</span> <div>
+            votes
+            </div> </div> <div class="clearfix"></div> <div class="userinfo"> <abbr class="timeago" title="2016-12-27 04:19:04 -0500">2016-12-27 04:19:04 -0500</abbr> <a href="/users/21851/humpelstilzchen/">Humpelstilzchen</a> <img class="flag"
+
+            src="/m/default/media/images/flags/de.gif?v=27"
+            alt="flag of Germany"
+            title="Humpelstilzchen is from Germany"
+        /> </div> </div> <h2><a href="/question/219218/value-of-sensor_msgsrange-field-of-view-for-ultrasound-sensors/">Value of sensor_msgs/Range field of view for ultrasound sensors.</a></h2> <ul
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:ultrasound/page:1/"
+
+            data-tag-name="ultrasound"
+        >ultrasound</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:field_of_view/page:1/"
+
+            data-tag-name="field_of_view"
+        >field_of_view</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:sensor_msgs/page:1/"
+
+            data-tag-name="sensor_msgs"
+        >sensor_msgs</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:range/page:1/"
+
+            data-tag-name="range"
+        >range</a></div> </li> </ul> </div> </div> </div> <!-- end users_questions.html --> <a name="answers"></a> <h2 style="clear:both;"><span class="count">58</span> Answers
+        </h2> <div class="user-stats-table"> <div class="users-answers"> <div class="answer-summary"> <a href="/question/205091/pocketsphinx-recognizerpy-does-not-work-in-ros-indigo-and-ubuntu1404/?answer=205199#post-id-205199"> <span class="answer-votes ">
+            13
+        </span> </a> <div class="answer-link"> <a href="/question/205091/pocketsphinx-recognizerpy-does-not-work-in-ros-indigo-and-ubuntu1404#205199">pocketsphinx recognizer.py does not work in ROS indigo and Ubuntu14.04</a> </div> </div> <div class="answer-summary"> <a href="/question/206805/adding-range_sensor_layer-to-layered-costmap-for-global-planning/?answer=207108#post-id-207108"> <span class="answer-votes answered-accepted">
+            4
+        </span> </a> <div class="answer-link"> <a href="/question/206805/adding-range_sensor_layer-to-layered-costmap-for-global-planning#207108">Adding range_sensor_layer to layered costmap for global planning</a> </div> </div> <div class="answer-summary"> <a href="/question/218659/what-camera-topic-should-be-given-to-the-navigation-stack/?answer=218687#post-id-218687"> <span class="answer-votes ">
+            3
+        </span> </a> <div class="answer-link"> <a href="/question/218659/what-camera-topic-should-be-given-to-the-navigation-stack#218687">What camera topic should be given to the navigation stack?</a> </div> </div> <div class="answer-summary"> <a href="/question/209963/cmd_veltwist-transform-twist-message-into-left-and-right-motor-commands/?answer=209966#post-id-209966"> <span class="answer-votes answered-accepted">
+            3
+        </span> </a> <div class="answer-link"> <a href="/question/209963/cmd_veltwist-transform-twist-message-into-left-and-right-motor-commands#209966">cmd_vel/Twist Transform Twist Message into Left and Right motor commands</a> </div> </div> <div class="answer-summary"> <a href="/question/206445/merge-the-output-of-ultrasound-sensor-with-hokuyo-laser-output-for-navigation/?answer=206479#post-id-206479"> <span class="answer-votes answered-accepted">
+            3
+        </span> </a> <div class="answer-link"> <a href="/question/206445/merge-the-output-of-ultrasound-sensor-with-hokuyo-laser-output-for-navigation#206479">Merge the output of Ultrasound sensor with hokuyo laser output for navigation</a> </div> </div> <div class="answer-summary"> <a href="/question/277406/indoor-mapping-and-localization-for-drones/?answer=277418#post-id-277418"> <span class="answer-votes answered-accepted">
+            2
+        </span> </a> <div class="answer-link"> <a href="/question/277406/indoor-mapping-and-localization-for-drones#277418">Indoor Mapping and Localization for Drones</a> </div> </div> <div class="answer-summary"> <a href="/question/264574/differential-drive-ros_control-to-move-a-2-wheeled-base-of-a-robot/?answer=264731#post-id-264731"> <span class="answer-votes ">
+            2
+        </span> </a> <div class="answer-link"> <a href="/question/264574/differential-drive-ros_control-to-move-a-2-wheeled-base-of-a-robot#264731">differential drive + ros_control to move a 2 wheeled base of a robot?</a> </div> </div> <div class="answer-summary"> <a href="/question/228679/how-to-calculate-velocity-for-a-tracked-robot/?answer=228787#post-id-228787"> <span class="answer-votes answered-accepted">
+            2
+        </span> </a> <div class="answer-link"> <a href="/question/228679/how-to-calculate-velocity-for-a-tracked-robot#228787">How to calculate velocity for a tracked robot</a> </div> </div> <div class="answer-summary"> <a href="/question/223552/model-not-moving-in-rviz-but-is-moving-in-gazebo/?answer=223558#post-id-223558"> <span class="answer-votes answered-accepted">
+            2
+        </span> </a> <div class="answer-link"> <a href="/question/223552/model-not-moving-in-rviz-but-is-moving-in-gazebo#223558">model not moving in Rviz but is moving in Gazebo</a> </div> </div> <div class="answer-summary"> <a href="/question/223149/custom-robotic-arm/?answer=223150#post-id-223150"> <span class="answer-votes answered-accepted">
+            2
+        </span> </a> <div class="answer-link"> <a href="/question/223149/custom-robotic-arm#223150">custom robotic arm</a> </div> </div> </div> <div id="pager" class="pager user-answers-pager"> <div
+            class="paginator"
+            style="float:left"
+            data-num-pages="6"
+        ><span class="prev"
+            style="display: none"
+        ><a href="?page=None"
+            title="previous"
+        >&laquo; previous</a></span><span class="first-page-nav"
+            style="display: none"
+        ><span class="page first-page"
+                data-page="1"
+            ><a href="?page=1" >1</a></span><span class="leading-sep">...</span></span><span class="main-pages-nav"><span class="curr page"
+                    data-page="1"
+                    title="current page"
+                ><a>1</a></span><span class="page"
+                    data-page="2"
+                ><a href="?page=2"
+                    title="page 2"
+                >2</a></span><span class="page"
+                    data-page="3"
+                ><a href="?page=3"
+                    title="page 3"
+                >3</a></span><span class="page"
+                    data-page="4"
+                ><a href="?page=4"
+                    title="page 4"
+                >4</a></span><span class="page"
+                    data-page="5"
+                ><a href="?page=5"
+                    title="page 5"
+                >5</a></span></span><span class="last-page-nav"
+
+        ><span class="trailing-sep">...</span><span class="page last-page" data-page="6"><a href="?page=6"
+                    title="page 6"
+                >6</a></span></span><span class="next"
+
+        ><a href="?page=2"
+                title="next page"
+        >next &raquo;</a></span></div> <div class="clearfix"></div> </div> </div> <a name="votes"></a> <h2><span class="count">41</span> Votes </h2> <div class="user-stats-table"> <div class="up-votes">39</div> <div class="down-votes">2</div> </div> <a name="tags"></a> <h2><span class="count">50</span> Tags</h2> <div class="user-stats-table"> <ul id="ab-user-tags" class="tags"> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:navigation/page:1/"
+
+            data-tag-name="navigation"
+        >navigation</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 44</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:kinetic/page:1/"
+
+            data-tag-name="kinetic"
+        >kinetic</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 41</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:move_base/page:1/"
+
+            data-tag-name="move_base"
+        >move_base</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 40</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:ROS/page:1/"
+
+            data-tag-name="ROS"
+        >ROS</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 40</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:amcl/page:1/"
+
+            data-tag-name="amcl"
+        >amcl</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 24</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:odometry/page:1/"
+
+            data-tag-name="odometry"
+        >odometry</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 20</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:2d_navigation/page:1/"
+
+            data-tag-name="2d_navigation"
+        >2d_navigation</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 20</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:imu/page:1/"
+
+            data-tag-name="imu"
+        >imu</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 20</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:costmap/page:1/"
+
+            data-tag-name="costmap"
+        >costmap</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 20</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:tf/page:1/"
+
+            data-tag-name="tf"
+        >tf</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 19</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:gmapping/page:1/"
+
+            data-tag-name="gmapping"
+        >gmapping</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 19</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:slam_gmapping/page:1/"
+
+            data-tag-name="slam_gmapping"
+        >slam_gmapping</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 18</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:depthimage_to_laserscan/page:1/"
+
+            data-tag-name="depthimage_to_laserscan"
+        >depthimage_to_...</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 18</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:rviz/page:1/"
+
+            data-tag-name="rviz"
+        >rviz</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 17</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:camera/page:1/"
+
+            data-tag-name="camera"
+        >camera</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 17</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:moveit/page:1/"
+
+            data-tag-name="moveit"
+        >moveit</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 17</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:Zed/page:1/"
+
+            data-tag-name="Zed"
+        >Zed</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 15</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:indigo/page:1/"
+
+            data-tag-name="indigo"
+        >indigo</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 14</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:razor_imu_9dof/page:1/"
+
+            data-tag-name="razor_imu_9dof"
+        >razor_imu_9dof</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 13</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:robot_localization/page:1/"
+
+            data-tag-name="robot_localization"
+        >robot_localiza...</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 13</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:gazebo/page:1/"
+
+            data-tag-name="gazebo"
+        >gazebo</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 12</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:costmap_2d/page:1/"
+
+            data-tag-name="costmap_2d"
+        >costmap_2d</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 12</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:pocketsphinx/page:1/"
+
+            data-tag-name="pocketsphinx"
+        >pocketsphinx</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 12</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:SLAM/page:1/"
+
+            data-tag-name="SLAM"
+        >SLAM</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 12</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:1.navigation/page:1/"
+
+            data-tag-name="1.navigation"
+        >1.navigation</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 12</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:robot_pose_ekf/page:1/"
+
+            data-tag-name="robot_pose_ekf"
+        >robot_pose_ekf</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 11</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:local_costmap/page:1/"
+
+            data-tag-name="local_costmap"
+        >local_costmap</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 11</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:imu_9drazor/page:1/"
+
+            data-tag-name="imu_9drazor"
+        >imu_9drazor</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 10</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:global_costmap/page:1/"
+
+            data-tag-name="global_costmap"
+        >global_costmap</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 10</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:ros_control/page:1/"
+
+            data-tag-name="ros_control"
+        >ros_control</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 10</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:Sensor/page:1/"
+
+            data-tag-name="Sensor"
+        >Sensor</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 10</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:Razor/page:1/"
+
+            data-tag-name="Razor"
+        >Razor</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 10</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:cmd_vel/page:1/"
+
+            data-tag-name="cmd_vel"
+        >cmd_vel</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 9</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:twist/page:1/"
+
+            data-tag-name="twist"
+        >twist</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 9</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:rosserial/page:1/"
+
+            data-tag-name="rosserial"
+        >rosserial</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 9</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:speech/page:1/"
+
+            data-tag-name="speech"
+        >speech</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 9</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:Kinect/page:1/"
+
+            data-tag-name="Kinect"
+        >Kinect</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 9</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:gps/page:1/"
+
+            data-tag-name="gps"
+        >gps</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:navigation_stack/page:1/"
+
+            data-tag-name="navigation_stack"
+        >navigation_stack</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:odom/page:1/"
+
+            data-tag-name="odom"
+        >odom</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:nav_stack/page:1/"
+
+            data-tag-name="nav_stack"
+        >nav_stack</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:range_sensor_layer/page:1/"
+
+            data-tag-name="range_sensor_layer"
+        >range_sensor_l...</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:2DCostmap/page:1/"
+
+            data-tag-name="2DCostmap"
+        >2DCostmap</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:3.amcl/page:1/"
+
+            data-tag-name="3.amcl"
+        >3.amcl</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 8</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:arduino/page:1/"
+
+            data-tag-name="arduino"
+        >arduino</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 7</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:simulation/page:1/"
+
+            data-tag-name="simulation"
+        >simulation</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 7</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:geometry_msgs/page:1/"
+
+            data-tag-name="geometry_msgs"
+        >geometry_msgs</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 7</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:velodyne/page:1/"
+
+            data-tag-name="velodyne"
+        >velodyne</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 7</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:lidar/page:1/"
+
+            data-tag-name="lidar"
+        >lidar</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 7</span></span></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:openni2/page:1/"
+
+            data-tag-name="openni2"
+        >openni2</a><span class="js-tag-extra-content"><span class="tag-number">&#215; 7</span></span></div> </li> </ul> <div class="clearfix"></div> </div> <a name="interesting-tags"></a> <h2><span class="count">10</span> Interesting Tags
+    </h2> <div class="user-stats-table"> <ul
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:Kinect/page:1/"
+
+            data-tag-name="Kinect"
+        >Kinect</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:gmapping/page:1/"
+
+            data-tag-name="gmapping"
+        >gmapping</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:openni/page:1/"
+
+            data-tag-name="openni"
+        >openni</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:xtion/page:1/"
+
+            data-tag-name="xtion"
+        >xtion</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:wifi/page:1/"
+
+            data-tag-name="wifi"
+        >wifi</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:Asus_Xtion/page:1/"
+
+            data-tag-name="Asus_Xtion"
+        >Asus_Xtion</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:pocketsphinx/page:1/"
+
+            data-tag-name="pocketsphinx"
+        >pocketsphinx</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:2d_naviagation/page:1/"
+
+            data-tag-name="2d_naviagation"
+        >2d_naviagation</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:accelerometer/page:1/"
+
+            data-tag-name="accelerometer"
+        >accelerometer</a></div> </li> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:AHRS/page:1/"
+
+            data-tag-name="AHRS"
+        >AHRS</a></div> </li> </ul> <div class="clearfix"></div> </div> <a name="ignored-tags"></a> <h2><span class="count">1</span> Ignored Tag
+    </h2> <div class="user-stats-table"> <ul
+    class="tags"
+> <li> <div class="js-tag "><a
+            class="js-tag-name"
+            rel="tag"
+
+            href="/questions/scope:all/sort:activity-desc/tags:bfl/page:1/"
+
+            data-tag-name="bfl"
+        >bfl</a></div> </li> </ul> <div class="clearfix"></div> </div> <a name="badges"></a> <h2><span class="count">15</span> Badges</h2> <div class="user-stats-table badges"> <a
+                href="/badges/15/teacher/"
+                title="Gave an Answer voted up at least 1 times for the first time"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Teacher
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-15" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/206120/xtion-doesnt-work-on-ros-indigo/?answer=206148#post-id-206148"
+                        > Xtion doesn&#39;t work on ROS indigo</a> </li> </ul> <a
+                href="/badges/38/commentator/"
+                title="Posted 10 comments"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Commentator
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-38" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/210728/razor_imu_9dof-callibration-edit-arduino-code-or-config-file/?comment=210947#post-id-210947"
+                        > Razor_imu_9dof callibration: edit arduino code or config file?</a> </li> </ul> <a
+                href="/badges/10/editor/"
+                title="First edit"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Editor
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-10" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/206805/adding-range_sensor_layer-to-layered-costmap-for-global-planning/?answer=207108#post-id-207108"
+                        > Adding range_sensor_layer to layered costmap for global planning</a> </li> </ul> <br/> <a
+                href="/badges/37/enthusiast/"
+                title="Visited site every day for 5 days in a row"
+                class="medal"
+            ><span class="badge2">&#9679;</span>&nbsp;Enthusiast
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-37" class="badge-context-list" style="display:none"> </ul> <a
+                href="/badges/32/enlightened/"
+                title="Gave accepted answer upvoted 3 or more times"
+                class="medal"
+            ><span class="badge2">&#9679;</span>&nbsp;Enlightened
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-32" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/206805/adding-range_sensor_layer-to-layered-costmap-for-global-planning/?answer=207108#post-id-207108"
+                        > Adding range_sensor_layer to layered costmap for global planning</a> </li> </ul> <a
+                href="/badges/36/taxonomist/"
+                title="Created a tag used 5 times"
+                class="medal"
+            ><span class="badge2">&#9679;</span>&nbsp;Taxonomist
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-36" class="badge-context-list" style="display:none"> </ul> <br/> <a
+                href="/badges/23/good-answer/"
+                title="Answer voted up 3 times"
+                class="medal"
+            ><span class="badge2">&#9679;</span>&nbsp;Good Answer
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">5</span> </span> <ul id="badge-context-23" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/206445/merge-the-output-of-ultrasound-sensor-with-hokuyo-laser-output-for-navigation/?answer=206479#post-id-206479"
+                        > Merge the output of Ultrasound sensor with hokuyo laser output for navigation</a> </li> <li> <a
+                            href="/question/209963/cmd_veltwist-transform-twist-message-into-left-and-right-motor-commands/?answer=209966#post-id-209966"
+                        > cmd_vel/Twist Transform Twist Message into Left and Right motor commands</a> </li> <li> <a
+                            href="/question/205091/pocketsphinx-recognizerpy-does-not-work-in-ros-indigo-and-ubuntu1404/?answer=205199#post-id-205199"
+                        > pocketsphinx recognizer.py does not work in ROS indigo and Ubuntu14.04</a> </li> <li> <a
+                            href="/question/218659/what-camera-topic-should-be-given-to-the-navigation-stack/?answer=218687#post-id-218687"
+                        > What camera topic should be given to the navigation stack?</a> </li> <li> <a
+                            href="/question/206805/adding-range_sensor_layer-to-layered-costmap-for-global-planning/?answer=207108#post-id-207108"
+                        > Adding range_sensor_layer to layered costmap for global planning</a> </li> </ul> <a
+                href="/badges/3/nice-answer/"
+                title="Answer voted up 2 times"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Nice Answer
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">11</span> </span> <ul id="badge-context-3" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/277406/indoor-mapping-and-localization-for-drones/?answer=277418#post-id-277418"
+                        > Indoor Mapping and Localization for Drones</a> </li> <li> <a
+                            href="/question/206445/merge-the-output-of-ultrasound-sensor-with-hokuyo-laser-output-for-navigation/?answer=206479#post-id-206479"
+                        > Merge the output of Ultrasound sensor with hokuyo laser output for navigation</a> </li> <li> <a
+                            href="/question/206805/adding-range_sensor_layer-to-layered-costmap-for-global-planning/?answer=207108#post-id-207108"
+                        > Adding range_sensor_layer to layered costmap for global planning</a> </li> <li> <a
+                            href="/question/211912/cmake-error-from-openni2_camera/?answer=211921#post-id-211921"
+                        > Cmake Error from openni2_camera</a> </li> <li> <a
+                            href="/question/205091/pocketsphinx-recognizerpy-does-not-work-in-ros-indigo-and-ubuntu1404/?answer=205199#post-id-205199"
+                        > pocketsphinx recognizer.py does not work in ROS indigo and Ubuntu14.04</a> </li> <li> <a
+                            href="/question/218659/what-camera-topic-should-be-given-to-the-navigation-stack/?answer=218687#post-id-218687"
+                        > What camera topic should be given to the navigation stack?</a> </li> <li> <a
+                            href="/question/223149/custom-robotic-arm/?answer=223150#post-id-223150"
+                        > custom robotic arm</a> </li> <li> <a
+                            href="/question/223552/model-not-moving-in-rviz-but-is-moving-in-gazebo/?answer=223558#post-id-223558"
+                        > model not moving in Rviz but is moving in Gazebo</a> </li> <li> <a
+                            href="/question/228679/how-to-calculate-velocity-for-a-tracked-robot/?answer=228787#post-id-228787"
+                        > How to calculate velocity for a tracked robot</a> </li> <li> <a
+                            href="/question/264574/differential-drive-ros_control-to-move-a-2-wheeled-base-of-a-robot/?answer=264731#post-id-264731"
+                        > differential drive + ros_control to move a 2 wheeled base of a robot?</a> </li> <li> <a
+                            href="/question/209963/cmd_veltwist-transform-twist-message-into-left-and-right-motor-commands/?answer=209966#post-id-209966"
+                        > cmd_vel/Twist Transform Twist Message into Left and Right motor commands</a> </li> </ul> <a
+                href="/badges/9/critic/"
+                title="First downvote"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Critic
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-9" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/222838/why-cant-ros_pcl-detect-my-pcl-headers-when-building/?answer=223184#post-id-223184"
+                        > Why can&#39;t ros_pcl detect my pcl headers when building?</a> </li> </ul> <br/> <a
+                href="/badges/18/great-answer/"
+                title="Answer voted up 5 times"
+                class="medal"
+            ><span class="badge1">&#9679;</span>&nbsp;Great Answer
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-18" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/205091/pocketsphinx-recognizerpy-does-not-work-in-ros-indigo-and-ubuntu1404/?answer=205199#post-id-205199"
+                        > pocketsphinx recognizer.py does not work in ROS indigo and Ubuntu14.04</a> </li> </ul> <a
+                href="/badges/14/supporter/"
+                title="First upvote"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Supporter
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-14" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/221837/robot_localization-ekf-internal-motion-model/?answer=221944#post-id-221944"
+                        > robot_localization EKF internal motion model</a> </li> </ul> <a
+                href="/badges/6/popular-question/"
+                title="Asked a question with 15 views"
+                class="medal"
+            ><span class="badge3">&#9679;</span>&nbsp;Popular Question
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-6" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/219218/value-of-sensor_msgsrange-field-of-view-for-ultrasound-sensors/"
+                        > Value of sensor_msgs/Range field of view for ultrasound sensors.</a> </li> </ul> <br/> <a
+                href="/badges/31/notable-question/"
+                title="Asked a question with 25 views"
+                class="medal"
+            ><span class="badge2">&#9679;</span>&nbsp;Notable Question
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-31" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/219218/value-of-sensor_msgsrange-field-of-view-for-ultrasound-sensors/"
+                        > Value of sensor_msgs/Range field of view for ultrasound sensors.</a> </li> </ul> <a
+                href="/badges/21/famous-question/"
+                title="Asked a question with 50 views"
+                class="medal"
+            ><span class="badge1">&#9679;</span>&nbsp;Famous Question
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-21" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/219218/value-of-sensor_msgsrange-field-of-view-for-ultrasound-sensors/"
+                        > Value of sensor_msgs/Range field of view for ultrasound sensors.</a> </li> </ul> <a
+                href="/badges/40/associate-editor/"
+                title="Edited 20 entries"
+                class="medal"
+            ><span class="badge2">&#9679;</span>&nbsp;Associate Editor
+            </a>&nbsp;
+            <span class="tag-number">&#215;
+                <span class="badge-context-toggle">1</span> </span> <ul id="badge-context-40" class="badge-context-list" style="display:none"> <li> <a
+                            href="/question/251730/microsd-readwrite-speed-factor-in-ros-rpi-performance/?answer=251791#post-id-251791"
+                        > MicroSD Read/Write Speed Factor in ROS / RPi Performance?</a> </li> </ul> <br/> </div> </div> </div> </div> <!-- template footer.html --> <div id="ground"> <div class="content-wrapper"> <div class="copyright"> <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode"> <img
+                            class="license-logo"
+                            src="/m/default/media/images/cc-by-sa.png?v=27"
+                            title="cc-by-sa"
+                            alt="cc-by-sa"
+                        /> </a>
+
+                ROS Answers is licensed under Creative Commons Attribution 3.0 Content on this site is licensed under a <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">Creative Commons Attribution Share Alike 3.0</a> license.
+
+            </div> <div class="footer-links" > <a href="/about/">about</a><span class="link-separator"> |</span> <a href="/faq/">faq</a><span class="link-separator"> |</span> <a href="/help/" title="help">help</a> <span class="link-separator"> |</span> <a href="/privacy/">privacy policy</a><span class="link-separator"> |</span> <a href="/terms/">terms of service</a> <span class="link-separator"> |</span> <a
+
+                    href="/feedback/?next=/users/21851/humpelstilzchen/"
+
+            >
+                give feedback
+            </a> </div> <div class="powered-link"> <a href="http://askbot.com" target="_blank">
+                Powered by Askbot version 0.7.58
+            </a> </div> <div class="clean"></div> </div> </div> <!-- end template footer.html --> <div id="no-javascript"> <noscript class="noscript">
+        Please note: ROS Answers requires javascript to work properly, please enable javascript in your browser, <a href="https://www.google.com/support/bin/answer.py?answer=23852">here is how</a> </noscript> <script type="text/javascript">
+        //IE fix to hide the red margin
+        var noscript = document.getElementsByTagName('noscript')[0];
+        noscript.style.padding = '0px';
+        noscript.style.backgroundColor = 'transparent';
+    </script> </div> <script type="text/javascript">
+    askbot['urls']['mark_read_message'] = '/s/messages/markread/';
+    askbot['urls']['get_tags_by_wildcard'] = '/s/get-tags-by-wildcard/';
+    askbot['urls']['get_tag_list'] = '/s/get-tag-list/';
+    askbot['urls']['follow_user'] = '/followit/follow/user/{{userId}}/';
+    askbot['urls']['unfollow_user'] = '/followit/unfollow/user/{{userId}}/';
+    askbot['urls']['user_signin'] = '/account/signin/';
+    askbot['urls']['getEditor'] = '/s/get-editor/';
+
+    askbot['urls']['apiGetQuestions'] = '/s/api/get_questions/';
+    askbot['urls']['ask'] = '/questions/ask/';
+	askbot['urls']['questions'] = '/questions/';
+    askbot['settings']['groupsEnabled'] = false;
+    askbot['settings']['static_url'] = '/m/';
+    askbot['settings']['minSearchWordLength'] = 3;
+    askbot['settings']['mathjaxEnabled'] = false;
+    askbot['settings']['sharingSuffixText'] = '';
+    askbot['settings']['errorPlacement'] = 'after-label';
+    askbot['data']['maxCommentLength'] = 300;
+    askbot['settings']['editorType'] = 'markdown';
+
+    askbot['settings']['commentsEditorType'] = 'rich\u002Dtext';
+    askbot['messages']['askYourQuestion'] = 'Ask Your Question';
+    askbot['messages']['acceptOwnAnswer'] = 'accept or unaccept your own answer';
+    askbot['messages']['followQuestions'] = 'follow questions';
+
+        askbot['settings']['allowedUploadFileTypes'] = [
+            "jpg", "jpeg", "gif", "bmp", "png", "tiff"
+        ];
+
+    askbot['data']['haveFlashNotifications'] = false;
+    askbot['data']['activeTab'] = 'users';
+    askbot['settings']['csrfCookieName'] = '_csrf';
+
+        askbot['data']['searchUrl'] = 'scope:all/sort:activity\u002Ddesc/page:1/';
+
+</script> <script type="text/javascript" src="/m/CACHE/js/8227174696ea.js"></script> <script type="text/javascript">
+    /*<![CDATA[*/
+    $('.mceStatusbar').remove();//a hack to remove the tinyMCE status bar
+    $(document).ready(function(){
+        // focus input on the search bar endcomment
+        var activeTab = askbot['data']['activeTab'];
+        if (inArray(activeTab, ['users', 'questions', 'tags', 'badges'])) {
+            var searchInput = $('#keywords');
+        } else if (activeTab === 'ask') {
+            var searchInput = $('#id_title');
+        } else {
+            var searchInput = undefined;
+            animateHashes();
+        }
+
+        if (searchInput) {
+            searchInput.focus();
+            putCursorAtEnd(searchInput);
+        }
+
+        var haveFullTextSearchTab = inArray(activeTab, ['questions', 'badges', 'ask']);
+        var haveUserProfilePage = $('body').hasClass('user-profile-page');
+        if ((haveUserProfilePage || haveFullTextSearchTab) && searchInput && searchInput.length) {
+            var search = new FullTextSearch();
+            askbot['controllers'] = askbot['controllers'] || {};
+            askbot['controllers']['fullTextSearch'] = search;
+            search.setSearchUrl(askbot['data']['searchUrl']);
+            if (activeTab === 'ask') {
+                search.setAskButtonEnabled(false);
+            }
+            search.decorate(searchInput);
+        } else if (activeTab === 'tags') {
+            var search = new TagSearch();
+            search.decorate(searchInput);
+        }
+
+        if (askbot['data']['userIsAdminOrMod']) {
+            $('body').addClass('admin');
+        }
+        if (askbot['settings']['groupsEnabled']) {
+            askbot['urls']['add_group'] = "/s/add-group/";
+            var group_dropdown = new GroupDropdown();
+            $('.groups-dropdown').append(group_dropdown.getElement());
+        }
+        var userRep = $('#userToolsNav .reputation');
+        if (userRep.length) {
+            var showPermsTrigger = new ShowPermsTrigger();
+            showPermsTrigger.decorate(userRep);
+        }
+    });
+    if (askbot['data']['haveFlashNotifications']) {
+        $('#validate_email_alert').click(function(){notify.close(true)})
+        notify.show();
+    }
+
+    var langNav = $('.lang-nav');
+    if (langNav.length) {
+        var nav = new LangNav();
+        nav.decorate(langNav);
+    }
+    /*]]>*/
+</script> <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> <script type="text/javascript">
+    try {
+    var pageTracker = _gat._getTracker('UA-17821189-3');
+    pageTracker._trackPageview();
+    } catch(err) {}
+</script> <div class="js-templates" style="display: none;"></div> <script type="text/javascript">
+        askbot['data']['viewUserName'] = 'Humpelstilzchen';
+        askbot['data']['viewUserId'] = 21851;
+        askbot['urls']['edit_group_membership'] = '/s/edit-group-membership/';
+        askbot['urls']['getGroupsList'] = '/s/get-groups-list/';
+        askbot['urls']['getTopAnswers'] = '/s/get-top-answers/';
+        askbot['urls']['upload'] = '/s/upload/';
+
+            askbot['data']['userPostsPageSize'] = 10;
+
+    </script> <script type="text/javascript" src="/m/CACHE/js/bacc91f8263a.js"></script> <script type="text/javascript">
+        askbot['urls']['join_or_leave_group'] = '/s/join-or-leave-group/';
+        $(document).ready(function(){
+            setup_badge_details_toggle();
+            $.each($('.group-join-btn'), function(idx, elem){
+                var group_join_btn = new GroupJoinButton();
+                group_join_btn.decorate($(elem));
+            });
+        });
+    </script> <script type="text/javascript" src="/m/CACHE/js/be6c47730254.js"></script> <script type="text/javascript">
+            for (url_name in askbot['urls']){
+                askbot['urls'][url_name] = cleanUrl(askbot['urls'][url_name]);
+            }
+        </script> </body> </html>

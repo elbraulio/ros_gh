@@ -1,5 +1,5 @@
-import fetch.PagedDom;
-import fetch.RosPagedDom;
+import dom.PagedDom;
+import dom.RosPagedDom;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import resources.FakePagedDom;

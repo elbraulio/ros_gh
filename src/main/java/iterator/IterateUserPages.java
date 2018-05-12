@@ -1,6 +1,6 @@
 package iterator;
 
-import fetch.PagedDom;
+import dom.PagedDom;
 import tools.StackWithInitialValues;
 
 import java.io.IOException;

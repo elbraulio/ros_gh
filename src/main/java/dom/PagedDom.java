@@ -1,4 +1,4 @@
-package fetch;
+package dom;
 
 import org.jsoup.nodes.Document;
 
