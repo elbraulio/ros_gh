@@ -7,6 +7,6 @@ import java.io.IOException;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public interface LoadPage {
+public interface PagedDom {
     Document page(final int index) throws IOException;
 }

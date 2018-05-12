@@ -11,12 +11,12 @@ import static org.hamcrest.core.Is.is;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class RosLoadPageTest {
+public final class RosPagedDomTest {
     @Test
     @Ignore
     public void fetchWebDom() throws IOException {
         assertThat(
-                new RosLoadPage()
+                new RosPagedDom()
                         .page(1)
                         .select("title").text(),
                 is("Users - ROS Answers: Open Source Q&A Forum")

@@ -9,34 +9,34 @@ import java.util.*;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class SingleUserListPage implements Iterator<String> {
+public final class IterateUserLinks implements Iterator<String> {
     private final Elements elements;
-    private final Stack<Integer> userDiv;
+    private final Stack<Integer> nextDivIndex;
 
-    public SingleUserListPage(final Document document) {
+    public IterateUserLinks(final Document document) {
         this(
                 document.select("div.user-info"),
                 new StackWithInitialValues<>(0).stack()
         );
     }
 
-    public SingleUserListPage(
-            final Elements elements, final Stack<Integer> withInitialUserDiv
+    private IterateUserLinks(
+            final Elements elements, final Stack<Integer> withInitialIndexDiv
     ) {
         this.elements = elements;
-        this.userDiv = withInitialUserDiv;
+        this.nextDivIndex = withInitialIndexDiv;
     }
 
     @Override
     public boolean hasNext() {
-        return this.userDiv.peek() < this.elements.size();
+        return this.nextDivIndex.peek() < this.elements.size();
     }
 
     @Override
     public String next() {
-        final int currentDiv = this.userDiv.peek();
+        final int currentDiv = this.nextDivIndex.peek();
         if (currentDiv < this.elements.size()) {
-            this.userDiv.push(currentDiv + 1);
+            this.nextDivIndex.push(currentDiv + 1);
             return this.elements.get(currentDiv)
                     .select("a[href]")
                     .attr("href");
