@@ -11,7 +11,7 @@ import static org.hamcrest.core.Is.is;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class LastRosUserPageTest {
+public final class LastRosDomUserPageTest {
 
     @Test
     public void findTheLastPageFromTheFirstPage() throws IOException {
