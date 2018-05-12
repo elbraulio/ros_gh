@@ -15,7 +15,7 @@ public final class LastRosUserPage {
         this.document = document;
     }
 
-    public int number(){
+    public int value(){
         final Elements elements = this.document.select(".last-page");
         return Integer.parseInt(elements.get(0).attr("data-page"));
     }

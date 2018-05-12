@@ -1,10 +1,17 @@
 package user;
 
+import dom.RosPagedDom;
+import iterator.IteratePagedUsersLinks;
+import iterator.IterateUserPages;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.junit.Ignore;
 import org.junit.Test;
+import tools.LastRosUserPage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;

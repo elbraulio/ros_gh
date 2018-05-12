@@ -11,6 +11,9 @@ public final class ParseRosTagCount {
     }
 
     public int count() {
-        return Integer.parseInt(this.text.split(" ")[1]);
+        return Integer.parseInt(
+                this.text.split(" ")[1]
+                        .replace(",", "")
+        );
     }
 }

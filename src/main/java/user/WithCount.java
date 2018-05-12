@@ -39,4 +39,9 @@ public final class WithCount implements TagWithCount {
             return false;
         }
     }
+
+    @Override
+    public String toString(){
+        return this.name() + " x " + this.count();
+    }
 }

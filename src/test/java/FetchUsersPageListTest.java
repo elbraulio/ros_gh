@@ -1,5 +1,6 @@
 import dom.PagedDom;
 import dom.RosPagedDom;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import resources.FakePagedDom;
@@ -8,8 +9,10 @@ import iterator.IterateUserPages;
 import org.junit.Test;
 import tools.IteratorAsList;
 import tools.LastRosUserPage;
+import user.RosDomUser;
 
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -61,7 +64,7 @@ public final class FetchUsersPageListTest {
                                 initialPage,
                                 new LastRosUserPage(
                                         firstPage
-                                ).number()
+                                ).value()
                         )
                 )
         ).take(100);
@@ -72,5 +75,28 @@ public final class FetchUsersPageListTest {
                 links.size(),
                 is(100)
         );
+    }
+
+    @Test
+    @Ignore
+    public void fetchAndPrintAllUsers() throws IOException {
+        final int initialPage = 1;
+        final String root = "https://answers.ros.org";
+        final Document usersPage = Jsoup.connect(root + "/users/").get();
+        final Iterator<String> usersLinks =
+                new IteratePagedUsersLinks(
+                        new IterateUserPages(
+                                new RosPagedDom(),
+                                initialPage,
+                                new LastRosUserPage(usersPage).value()
+                        )
+                );
+
+        while (usersLinks.hasNext()) {
+            final String next = usersLinks.next();
+            System.out.println(
+                    new RosDomUser(Jsoup.connect(root + next).get())
+            );
+        }
     }
 }
