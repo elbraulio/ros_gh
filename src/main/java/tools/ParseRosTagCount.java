@@ -3,10 +3,10 @@ package tools;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class ParseRosTagCount {
+public final class ParseRosTagCount {
     private final String text;
 
-    public ParseRosTagCount(String text) {
+    public ParseRosTagCount(final String text) {
         this.text = text;
     }
 

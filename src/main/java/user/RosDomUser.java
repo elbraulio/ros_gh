@@ -38,16 +38,16 @@ public final class RosDomUser implements RosUser {
 
     @Override
     public List<Tag> interestingTags() {
-        return new TagList(this.document, new InterestingTags()).list();
+        return new TagList(this.document, new InterestingTags()).asList();
     }
 
     @Override
     public List<Tag> ignoredTags() {
-        return new TagList(this.document, new IgnoredTags()).list();
+        return new TagList(this.document, new IgnoredTags()).asList();
     }
 
     @Override
     public List<TagWithCount> tags() {
-        return new TagWithCountList(this.document, new NormalTags()).list();
+        return new TagWithCountList(this.document, new NormalTags()).asList();
     }
 }

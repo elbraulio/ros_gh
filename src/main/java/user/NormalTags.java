@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
  */
 public class NormalTags implements FilterTag {
     @Override
-    public Elements elements(Document document) {
+    public Elements elements(final Document document) {
         return document.select("#ab-user-tags > li");
     }
 }

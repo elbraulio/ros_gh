@@ -1,6 +1,7 @@
 package user;
 
 import org.jsoup.nodes.Document;
+import tools.CanBeList;
 import tools.ParseRosTagCount;
 
 import java.util.LinkedList;
@@ -9,7 +10,7 @@ import java.util.List;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class TagList {
+public class TagList implements CanBeList<Tag> {
     private final Document document;
     private final FilterTag filterBy;
 
@@ -20,13 +21,19 @@ public class TagList {
         this.filterBy = filterBy;
     }
 
-    public List<Tag> list() {
+    @Override
+    public List<Tag> asList() {
         final List<Tag> list = new LinkedList<>();
-        this.filterBy.elements(document).forEach(
+        this.filterBy.elements(this.document).forEach(
                 element -> {
                     list.add(new RosTag(element.select("a").text()));
                 }
         );
         return list;
+    }
+
+    @Override
+    public List<Tag> take(int length) {
+        return asList().subList(0, length);
     }
 }

@@ -8,7 +8,7 @@ import org.jsoup.select.Elements;
  */
 public final class IgnoredTags implements FilterTag {
     @Override
-    public Elements elements(Document document) {
+    public Elements elements(final Document document) {
         return document.select("h2:contains(Ignored Tag)")
                 .next()
                 .select("li");
