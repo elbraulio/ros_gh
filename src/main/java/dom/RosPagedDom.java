@@ -14,7 +14,7 @@ import java.io.IOException;
 public final class RosPagedDom implements PagedDom {
 
     /**
-     * ROS useres list page sorted by user's creation date.
+     * ROS users list page sorted by user's creation date.
      */
     private final String webUrl =
             "https://answers.ros.org/users/?sort=last&page=";
