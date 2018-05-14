@@ -9,7 +9,8 @@ import java.util.NoSuchElementException;
 import java.util.Stack;
 
 /**
- * Iterates pages from {@link PagedDom} and retrieves user links from each page.
+ * Iterates pages from {@link PagedDom} and retrieves a list of user links from
+ * each page.
  *
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
@@ -51,9 +52,10 @@ public final class IterateUserPages implements Iterator<IterateUserLinks> {
     /**
      * Ctor.
      * This Ctor. hides the {@link Stack} from the user.
-     * @param withInitialPage
-     * @param pagedDom
-     * @param lastPage
+     *
+     * @param withInitialPage stack with the initial page.
+     * @param pagedDom        The paged dom that will be iterated.
+     * @param lastPage        Page where the iteration ends.
      */
     private IterateUserPages(
             final Stack<Integer> withInitialPage,

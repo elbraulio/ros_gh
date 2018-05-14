@@ -6,13 +6,34 @@ import tools.StackWithInitialValues;
 import java.util.*;
 
 /**
+ * Iterates a {@link IterateUserPages}. Retrieving each user link from each
+ * page.
+ *
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class IteratePagedUsersLinks implements Iterator<String> {
+    /**
+     * Users list page iterator.
+     */
     private final Iterator<IterateUserLinks> pagedUserList;
+
+    /**
+     * Each link retrieved from the iterator.
+     */
     private final List<String> links;
+
+    /**
+     * The first value from the stack represent the current iterated link index.
+     * Just for keep the immutability of this class, by using this instead of
+     * a mutable int that stores the current index on the iteration.
+     */
     private final Stack<Integer> nextLinkIndex;
 
+    /**
+     * Ctor.
+     *
+     * @param pagedUserList users list page iterator.
+     */
     public IteratePagedUsersLinks(final Iterator<IterateUserLinks> pagedUserList) {
         this(
                 pagedUserList,
@@ -21,11 +42,19 @@ public final class IteratePagedUsersLinks implements Iterator<String> {
         );
     }
 
+    /**
+     * Ctor.
+     * This Ctor. hides the {@link Stack} from the user.
+     *
+     * @param pagedUserList users list page iterator.
+     * @param links         initial set of links retrieved from the iterator.
+     * @param nextLinkIndex current iterated link index.
+     */
     private IteratePagedUsersLinks(
             final Iterator<IterateUserLinks> pagedUserList,
             final List<String> links,
             final Stack<Integer> nextLinkIndex
-    ){
+    ) {
 
         this.pagedUserList = pagedUserList;
         this.links = links;
