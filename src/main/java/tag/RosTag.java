@@ -1,4 +1,4 @@
-package user;
+package tag;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)

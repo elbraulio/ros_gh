@@ -1,6 +1,8 @@
-package user;
+package tag;
 
-import java.util.List;
+import tag.RosTag;
+import tag.Tag;
+import tag.TagWithCount;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
