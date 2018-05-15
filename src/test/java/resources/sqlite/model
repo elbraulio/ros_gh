@@ -1,0 +1,39 @@
+CREATE TABLE ros_user (
+    id integer PRIMARY KEY,
+    name text NOT NULL,
+    up_votes integer NOT NULL,
+    down_votes integer NOT NULL
+);
+
+CREATE TABLE ros_tag (
+    id integer PRIMARY KEY,
+    name text NOT NULL
+);
+
+CREATE TABLE ros_user_tag (
+    ros_user_id integer NOT NULL,
+    ros_tag_id integer NOT NULL,
+    count integer NOT NULL,
+    FOREIGN KEY (ros_user_id) REFERENCES ros_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION,
+    FOREIGN KEY (ros_tag_id) REFERENCES ros_tag (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE ros_user_interesting_tag (
+    ros_user_id integer NOT NULL,
+    ros_tag_id integer NOT NULL,
+    FOREIGN KEY (ros_user_id) REFERENCES ros_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION,
+    FOREIGN KEY (ros_tag_id) REFERENCES ros_tag (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE ros_user_ignored_tag (
+    ros_user_id integer NOT NULL,
+    ros_tag_id integer NOT NULL,
+    FOREIGN KEY (ros_user_id) REFERENCES ros_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION,
+    FOREIGN KEY (ros_tag_id) REFERENCES ros_tag (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
