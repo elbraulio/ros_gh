@@ -112,28 +112,14 @@ public final class FetchUsersPageListTest {
     @Test
     public void saveAllData()
             throws IOException, SQLException, ClassNotFoundException {
-        //final Iterator<String> usersLinks = makeIteratorForTest();
-        IteratePagedUsersLinks usersLinks =
-                new IteratePagedUsersLinks(
-                        new IterateUserPages(
-                                new RosPagedDom(),
-                                507,
-                                696
-                        )
-                );
         // to create the db, follow instructions on resources/sqlite/README.md
+        final Iterator<String> usersLinks = makeIteratorForTest();
         try (
                 final Connection connection = new SqliteConnection(
                         "src/test/java/resources/sqlite/test.db"
                 ).connection()
         ) {
-            int count = 15192;
-            while(usersLinks.hasNext()){
-                final String next = usersLinks.next();
-                if(next.equals("/users/28573/peermer/")){
-                    break;
-                }
-            }
+            int count = 1;
             while (usersLinks.hasNext()) {
                 final String next = usersLinks.next();
                 System.out.println(
