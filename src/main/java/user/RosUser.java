@@ -1,6 +1,8 @@
 package user;
 
-import java.util.Collection;
+import tag.Tag;
+import tag.TagWithCount;
+
 import java.util.List;
 
 /**

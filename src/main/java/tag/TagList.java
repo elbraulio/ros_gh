@@ -1,8 +1,10 @@
-package user;
+package tag;
 
 import org.jsoup.nodes.Document;
+import tag.FilterTag;
+import tag.RosTag;
+import tag.Tag;
 import tools.CanBeList;
-import tools.ParseRosTagCount;
 
 import java.util.LinkedList;
 import java.util.List;
