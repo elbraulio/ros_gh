@@ -2,4 +2,4 @@
 *.iml
 target/
 *.db
-.DS_STORE
+.DS_Store
