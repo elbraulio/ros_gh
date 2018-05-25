@@ -1,18 +1,12 @@
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
-import com.jcabi.http.Request;
 import com.jcabi.http.response.JsonResponse;
 import org.junit.Test;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
-import javax.json.Json;
-import javax.json.JsonArray;
-import javax.json.JsonObject;
-import javax.json.JsonReader;
+import javax.json.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -42,7 +36,7 @@ public class GithubInfoTest {
                 }
             }
 
-            if (count >= 30) {
+            if (count >= 60) {
                 long sleep = 60000 + 5000 - (
                         currentTime - time.get(first)
                 );
@@ -61,7 +55,7 @@ public class GithubInfoTest {
 
     @Test
     public void test1() throws IOException {
-        final String token = "5b015cacfd843a3df2552133ea612f096fdccff2";
+        final String token = "62d4bef9321253abf1a4525f97eb6744bd3b1b24";
         final String path = "src/test/java/resources/github/distribution.json";
 
         // repositorios
@@ -118,24 +112,15 @@ public class GithubInfoTest {
                             description = repoInfo.getString("description");
 
                         System.out.println(
-                                "name" + " : " + repoName + "\n" +
+                                "name" + " : " + repoUrl + "\n" +
                                         "description : " + description +
                                         "\ncontributors : "
                         );
 
-                        /* TODO: 20-05-18 evitar object en array
-                        try, si es un objecto, intento otra vez y cada
-                        intento llama a canRequest.
-                         */
-                        
                         // contribuidores con login
-                        JsonArray contributors = github.entry()
-                                .uri().path("/repos/" + repoUrl
-                                        + "/stats/contributors")
-                                .back()
-                                .fetch()
-                                .as(JsonResponse.class).json().readArray();
-                        canRequest.waitForRate();
+                        JsonArray contributors = tryJsonArray(
+                                3, github, repoUrl, canRequest
+                        );
 
                         for (int i = 0; i < contributors.size(); i++) {
                             JsonObject cntrbtor = contributors.getJsonObject(i);
@@ -146,13 +131,10 @@ public class GithubInfoTest {
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
-                        System.out.println(canRequest.total());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
-                        System.out.println(canRequest.total());
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println(canRequest.total());
                     }
                 }
         );
@@ -175,5 +157,28 @@ public class GithubInfoTest {
         );
 
 */
+    }
+
+    private JsonArray tryJsonArray(
+            int tries, Github github, String repoUrl, CanRequest canRequest
+    ) throws IOException, InterruptedException {
+        try {
+            JsonArray array = github.entry()
+                    .uri().path("/repos/" + repoUrl
+                            + "/stats/contributors")
+                    .back()
+                    .fetch()
+                    .as(JsonResponse.class).json().readArray();
+            canRequest.waitForRate();
+            return array;
+        } catch (JsonException je) {
+            if (tries > 0) {
+                return tryJsonArray(
+                        tries - 1, github, repoUrl, canRequest
+                );
+            } else {
+                throw je;
+            }
+        }
     }
 }
