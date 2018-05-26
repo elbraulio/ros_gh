@@ -1,58 +1,20 @@
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
+import com.jcabi.http.Request;
 import com.jcabi.http.response.JsonResponse;
+import org.junit.Ignore;
 import org.junit.Test;
+import tools.CanRequest;
 
 import javax.json.*;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public class GithubInfoTest {
 
-    public class CanRequest {
-
-        private List<Long> time;
-
-        public CanRequest() {
-            this.time = new ArrayList<>();
-        }
-
-        public void waitForRate() throws InterruptedException {
-            int count = 0;
-            long currentTime = System.currentTimeMillis();
-            time.add(currentTime);
-            int first = 0;
-            for (int i = time.size() - 1; i >= 0; i--) {
-                long lapsed = currentTime - time.get(i);
-                if (lapsed < 60000L) {
-                    count++;
-                    first = i;
-                } else {
-                    break;
-                }
-            }
-
-            if (count >= 60) {
-                long sleep = 60000 + 5000 - (
-                        currentTime - time.get(first)
-                );
-                System.out.println(
-                        "waiting " + sleep + " milliseconds for rate"
-                );
-                Thread.sleep(sleep);
-            }
-
-        }
-
-        public int total() {
-            return this.time.size();
-        }
-    }
-
+    @Ignore
     @Test
     public void test1() throws IOException {
         final String token = "62d4bef9321253abf1a4525f97eb6744bd3b1b24";
@@ -65,7 +27,7 @@ public class GithubInfoTest {
         JsonObject empObj = reader.readObject();
         reader.close();
         JsonObject repositories = empObj.getJsonObject("repositories");
-        final CanRequest canRequest = new CanRequest();
+        final CanRequest canRequest = new CanRequest(60);
         repositories.forEach(
                 (k, v) -> {
                     JsonObject repo = repositories.getJsonObject(k);
@@ -106,7 +68,7 @@ public class GithubInfoTest {
                                 .as(JsonResponse.class).json().readObject();
                         canRequest.waitForRate();
 
-                        String fullName = repoInfo.getString("full_name");
+                        String repoFullName = repoInfo.getString("full_name");
                         String description = "";
                         if (!repoInfo.isNull("description"))
                             description = repoInfo.getString("description");
@@ -128,6 +90,17 @@ public class GithubInfoTest {
                             String author = cntrbtor.getJsonObject("author")
                                     .getString("login");
                             System.out.println("- " + author + " x " + commits);
+
+                            github.entry()
+                                    .uri().path("/users/" + author)
+                                    .back()
+                                    .method(Request.GET)
+                                    .fetch()
+                                    .as(JsonResponse.class).json()
+                                    .readObject().forEach(
+                                    (k3, v3) ->
+                                            System.out.println(k3 + ":" + v3)
+                            );
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -138,25 +111,6 @@ public class GithubInfoTest {
                     }
                 }
         );
-
-
-
-
-/*
-
-
-        // user info
-        Map<String, String> s = new HashMap<>();
-        github.entry()
-                .uri().path("/users/elbraulio")
-                .back()
-                .method(Request.GET)
-                .fetch()
-                .as(JsonResponse.class).json().readObject().forEach(
-                (k, v) -> System.out.println(k + ":" + v)
-        );
-
-*/
     }
 
     private JsonArray tryJsonArray(
