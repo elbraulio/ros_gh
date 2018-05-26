@@ -12,7 +12,7 @@ import java.io.*;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class GithubInfoTest {
+public final class GithubInfoTest {
 
     @Ignore
     @Test
