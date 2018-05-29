@@ -4,7 +4,9 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import tools.StackWithInitialValues;
 
-import java.util.*;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import java.util.Stack;
 
 /**
  * TODO this should be a list

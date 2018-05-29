@@ -12,7 +12,7 @@ public final class CanRequest {
     private final long intervalMillis;
 
     public CanRequest(int requestPerMinute) {
-        this(requestPerMinute, 60);
+        this(requestPerMinute, 1);
     }
 
     public CanRequest(int requestPerMinute, double intervalMinutes) {
