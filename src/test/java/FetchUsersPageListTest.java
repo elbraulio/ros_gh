@@ -1,12 +1,12 @@
 import dom.PagedDom;
 import dom.RosPagedDom;
+import iterator.IteratePagedUsersLinks;
+import iterator.IterateUserPages;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
-import resources.FakePagedDom;
-import iterator.IteratePagedUsersLinks;
-import iterator.IterateUserPages;
 import org.junit.Test;
+import resources.FakePagedDom;
 import resources.SaveIntoSqliteDb;
 import resources.SqliteConnection;
 import tools.IteratorAsList;

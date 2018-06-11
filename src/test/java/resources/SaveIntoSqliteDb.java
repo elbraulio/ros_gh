@@ -2,7 +2,6 @@ package resources;
 
 import tag.Tag;
 import tag.TagWithCount;
-import user.RosDomUser;
 import user.RosUser;
 
 import java.sql.*;

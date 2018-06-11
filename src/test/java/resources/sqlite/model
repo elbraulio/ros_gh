@@ -1,16 +1,16 @@
-CREATE TABLE ros_user (
+CREATE TABLE IF NOT EXISTS ros_user (
     id integer PRIMARY KEY,
     name text NOT NULL,
     up_votes integer NOT NULL,
     down_votes integer NOT NULL
 );
 
-CREATE TABLE ros_tag (
+CREATE TABLE IF NOT EXISTS ros_tag (
     id integer PRIMARY KEY,
     name text NOT NULL
 );
 
-CREATE TABLE ros_user_tag (
+CREATE TABLE IF NOT EXISTS ros_user_tag (
     ros_user_id integer NOT NULL,
     ros_tag_id integer NOT NULL,
     count integer NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE ros_user_tag (
     ON DELETE CASCADE ON UPDATE NO ACTION
 );
 
-CREATE TABLE ros_user_interesting_tag (
+CREATE TABLE IF NOT EXISTS ros_user_interesting_tag (
     ros_user_id integer NOT NULL,
     ros_tag_id integer NOT NULL,
     FOREIGN KEY (ros_user_id) REFERENCES ros_user (id)
@@ -29,11 +29,42 @@ CREATE TABLE ros_user_interesting_tag (
     ON DELETE CASCADE ON UPDATE NO ACTION
 );
 
-CREATE TABLE ros_user_ignored_tag (
+CREATE TABLE IF NOT EXISTS ros_user_ignored_tag (
     ros_user_id integer NOT NULL,
     ros_tag_id integer NOT NULL,
     FOREIGN KEY (ros_user_id) REFERENCES ros_user (id)
     ON DELETE CASCADE ON UPDATE NO ACTION,
     FOREIGN KEY (ros_tag_id) REFERENCES ros_tag (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS gh_user (
+    id integer PRIMARY KEY,
+    login text NOT NULL,
+    followers integer NOT NULL,
+    url text NOT NULL,
+    name text NOT NULL,
+    company text NOT NULL,
+    email text NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS gh_repo (
+    id integer PRIMARY KEY,
+    name text NOT NULL,
+    full_name text NOT NULL,
+    owner_id integer NOT NULL,
+    description text NOT NULL,
+    source text NOT NULL,
+    FOREIGN KEY (owner_id) REFERENCES gh_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS gh_commits (
+    gh_user_id integer NOT NULL,
+    gh_repo_id integer NOT NULL,
+    commits integer NOT NULL,
+    FOREIGN KEY (gh_user_id) REFERENCES gh_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+    FOREIGN KEY (gh_repo_id) REFERENCES gh_repo (id)
     ON DELETE CASCADE ON UPDATE NO ACTION
 );

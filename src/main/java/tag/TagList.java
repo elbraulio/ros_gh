@@ -1,9 +1,6 @@
 package tag;
 
 import org.jsoup.nodes.Document;
-import tag.FilterTag;
-import tag.RosTag;
-import tag.Tag;
 import tools.CanBeList;
 
 import java.util.LinkedList;
