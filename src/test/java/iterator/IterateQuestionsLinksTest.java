@@ -1,10 +1,8 @@
 package iterator;
 
-import dom.RosQuestionsPagedDom;
 import org.jsoup.Jsoup;
 import org.junit.Ignore;
 import org.junit.Test;
-import tools.LastRosAnswersPage;
 
 import java.io.IOException;
 

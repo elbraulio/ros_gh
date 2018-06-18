@@ -1,18 +1,14 @@
 import dom.RosQuestionsPagedDom;
-import iterator.IteratePagedContent;
-import iterator.IterateDomPages;
 import iterator.IterateByQuestionLinks;
+import iterator.IterateDomPages;
+import iterator.IteratePagedContent;
 import org.jsoup.Jsoup;
 import org.junit.Ignore;
 import org.junit.Test;
-import resources.SaveIntoSqliteDb;
-import resources.SqliteConnection;
+import question.RosDomQuestion;
 import tools.LastRosAnswersPage;
-import user.RosDomUser;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Iterator;
 
 /**
@@ -39,26 +35,15 @@ public class FetchAnswersTest {
 
     @Ignore
     @Test
-    public void fetchAnswers()
-            throws IOException, SQLException, ClassNotFoundException {
+    public void fetchAnswers() throws IOException {
         // to create the db, follow instructions on resources/sqlite/README.md
-        final Iterator<String> usersLinks = makeIteratorForTest();
-        try (
-                final Connection connection = new SqliteConnection(
-                        "src/test/java/resources/sqlite/test.db"
-                ).connection()
-        ) {
-            int count = 1;
-            while (usersLinks.hasNext()) {
-                final String next = usersLinks.next();
-                System.out.println(
-                        "Processing user " + count++ + " ->" + next
-                );
-                new SaveIntoSqliteDb(
-                        new RosDomUser(Jsoup.connect(root + next).get()),
-                        connection
-                ).execute();
-            }
+        final Iterator<String> contentLinks = makeIteratorForTest();
+        while (contentLinks.hasNext()) {
+            System.out.println(
+                    new RosDomQuestion(
+                            Jsoup.connect(root + contentLinks.next()).get()
+                    )
+            );
         }
     }
 }

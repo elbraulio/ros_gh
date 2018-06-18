@@ -1,7 +1,5 @@
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
-import com.jcabi.http.Request;
-import com.jcabi.http.response.JsonResponse;
 import github.*;
 import iterator.Colaborators;
 import org.junit.Ignore;
@@ -10,8 +8,7 @@ import resources.SqliteConnection;
 import tools.CanRequest;
 import tools.FromJsonFile;
 
-import javax.json.*;
-import java.io.*;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 

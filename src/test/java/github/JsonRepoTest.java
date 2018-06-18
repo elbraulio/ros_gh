@@ -6,7 +6,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)

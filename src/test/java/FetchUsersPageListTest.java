@@ -1,8 +1,8 @@
 import dom.PagedDom;
 import dom.RosUserPagedDom;
 import iterator.IterateByUserLinks;
-import iterator.IteratePagedContent;
 import iterator.IterateDomPages;
+import iterator.IteratePagedContent;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
