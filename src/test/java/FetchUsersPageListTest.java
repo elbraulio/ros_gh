@@ -1,5 +1,5 @@
 import dom.PagedDom;
-import dom.RosPagedDom;
+import dom.RosUserPagedDom;
 import iterator.IteratePagedUsersLinks;
 import iterator.IterateUserPages;
 import org.jsoup.Jsoup;
@@ -60,7 +60,7 @@ public final class FetchUsersPageListTest {
     @Test
     @Ignore
     public void fetchFirstNUsersLinks() throws IOException {
-        final PagedDom pagedDom = new RosPagedDom();
+        final PagedDom pagedDom = new RosUserPagedDom();
         final int initialPage = 1;
         final Document firstPage = pagedDom.page(1);
         final List<String> links = new IteratorAsList<>(
@@ -101,7 +101,7 @@ public final class FetchUsersPageListTest {
         final Document usersPage = Jsoup.connect(root + "/users/").get();
         return new IteratePagedUsersLinks(
                 new IterateUserPages(
-                        new RosPagedDom(),
+                        new RosUserPagedDom(),
                         initialPage,
                         new LastRosUserPage(usersPage).value()
                 )

@@ -11,7 +11,7 @@ import java.io.IOException;
  * @author Braulio Lopez (brauliop.3@gmail.com)
  * @see <a href="https://answers.ros.org/users/">ROS users</a>
  */
-public final class RosPagedDom implements PagedDom {
+public final class RosUserPagedDom implements PagedDom {
 
     /**
      * ROS users list page sorted by user's creation date.
