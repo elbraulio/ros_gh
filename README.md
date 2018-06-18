@@ -3,3 +3,17 @@
 
 **ros_gh** is a tool that matches identities between [ROS Answers](https://answers.ros.org/users/) and Github accounts. 
 
+
+
+#### Log
+
+18/06
+
+- Created a DB model for ROS Answers
+- Discovered that RA has a (limited) [API](https://askbot.org/doc/api.html)
+  - Question: https://answers.ros.org/api/v1/questions/294052/
+  - User: https://answers.ros.org/api/v1/users/28038/
+- Tasks:
+  - Adapt scrapper to accelerate scrapping using the API
+  - Populate the DB schema
+  - Experiment with [Gitana](http://gitanadocs.getforge.io/)
