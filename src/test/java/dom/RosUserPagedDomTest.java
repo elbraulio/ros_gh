@@ -13,7 +13,6 @@ import static org.hamcrest.core.Is.is;
  */
 public final class RosUserPagedDomTest {
     @Test
-    @Ignore
     public void fetchWebDom() throws IOException {
         assertThat(
                 new RosUserPagedDom()

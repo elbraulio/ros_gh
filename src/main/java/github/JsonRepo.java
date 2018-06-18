@@ -1,7 +1,6 @@
 package github;
 
 
-import com.jcabi.github.Github;
 import tools.NullableJsonString;
 
 import javax.json.JsonObject;

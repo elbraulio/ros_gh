@@ -1,7 +1,8 @@
 import dom.PagedDom;
 import dom.RosUserPagedDom;
-import iterator.IteratePagedUsersLinks;
-import iterator.IterateUserPages;
+import iterator.IterateByUserLinks;
+import iterator.IteratePagedContent;
+import iterator.IterateDomPages;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
@@ -36,11 +37,12 @@ public final class FetchUsersPageListTest {
         final int finalPage = 2;
         assertThat(
                 new IteratorAsList<>(
-                        new IteratePagedUsersLinks(
-                                new IterateUserPages(
+                        new IteratePagedContent(
+                                new IterateDomPages(
                                         new FakePagedDom(),
                                         initialPage,
-                                        finalPage
+                                        finalPage,
+                                        new IterateByUserLinks()
                                 )
                         )
                 ).asList().toArray(new String[6]),
@@ -64,13 +66,14 @@ public final class FetchUsersPageListTest {
         final int initialPage = 1;
         final Document firstPage = pagedDom.page(1);
         final List<String> links = new IteratorAsList<>(
-                new IteratePagedUsersLinks(
-                        new IterateUserPages(
+                new IteratePagedContent(
+                        new IterateDomPages(
                                 pagedDom,
                                 initialPage,
                                 new LastRosUserPage(
                                         firstPage
-                                ).value()
+                                ).value(),
+                                new IterateByUserLinks()
                         )
                 )
         ).take(100);
@@ -99,11 +102,12 @@ public final class FetchUsersPageListTest {
     private Iterator<String> makeIteratorForTest() throws IOException {
         final int initialPage = 1;
         final Document usersPage = Jsoup.connect(root + "/users/").get();
-        return new IteratePagedUsersLinks(
-                new IterateUserPages(
+        return new IteratePagedContent(
+                new IterateDomPages(
                         new RosUserPagedDom(),
                         initialPage,
-                        new LastRosUserPage(usersPage).value()
+                        new LastRosUserPage(usersPage).value(),
+                        new IterateByUserLinks()
                 )
         );
     }

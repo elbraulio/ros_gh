@@ -2,7 +2,10 @@ package github;
 
 import tools.SqlQuery;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)

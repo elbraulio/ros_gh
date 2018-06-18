@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class RosAnswersPagedDom implements PagedDom {
+public class RosQuestionsPagedDom implements PagedDom {
 
     final String webUrl =
             "https://answers.ros.org/questions/scope:all/sort:age-desc/page:";

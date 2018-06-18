@@ -1,7 +1,5 @@
 package github;
 
-import com.jcabi.github.Github;
-import tools.CanRequest;
 import tools.SqlCommand;
 
 import java.io.IOException;

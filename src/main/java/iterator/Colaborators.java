@@ -1,21 +1,16 @@
 package iterator;
 
 import com.jcabi.github.Github;
-import com.jcabi.http.Request;
 import com.jcabi.http.response.JsonResponse;
 import github.GhColaborator;
-import github.GhUser;
-import github.JsonRepo;
 import tools.CanRequest;
 
 import javax.json.JsonArray;
 import javax.json.JsonException;
 import javax.json.JsonObject;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Spliterator;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)

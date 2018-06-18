@@ -1,15 +1,13 @@
-import dom.RosAnswersPagedDom;
-import dom.RosUserPagedDom;
-import iterator.IteratePagedUsersLinks;
-import iterator.IterateUserPages;
+import dom.RosQuestionsPagedDom;
+import iterator.IteratePagedContent;
+import iterator.IterateDomPages;
+import iterator.IterateByQuestionLinks;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import org.junit.Test;
 import resources.SaveIntoSqliteDb;
 import resources.SqliteConnection;
 import tools.LastRosAnswersPage;
-import tools.LastRosUserPage;
 import user.RosDomUser;
 
 import java.io.IOException;
@@ -27,13 +25,14 @@ public class FetchAnswersTest {
     private Iterator<String> makeIteratorForTest() throws IOException {
         final int initialPage = 1;
         final String rootDom = root + "/questions/scope:all/sort:age-desc/";
-        return new IteratePagedUsersLinks(
-                new IterateUserPages(
-                        new RosAnswersPagedDom(),
+        return new IteratePagedContent(
+                new IterateDomPages(
+                        new RosQuestionsPagedDom(),
                         initialPage,
                         new LastRosAnswersPage(
                                 Jsoup.connect(rootDom).get()
-                        ).value()
+                        ).value(),
+                        new IterateByQuestionLinks()
                 )
         );
     }
