@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <left-data-source class="cdc.impl.datasource.text.CSVDataSource" name="GitHub">
+        <params>
+            <param name="column-separator" value=","/>
+            <param name="source-name" value="GitHub"/>
+            <param name="input-file" value="/Users/pestefo/Sync/projects/ros_gh/linking-identities/gh_authors.csv#ENC=UTF-8#"/>
+        </params>
+        <row-model>
+            <column column="email"
+                converter="cdc.datamodel.converters.DummyConverter" name="email">
+                <empty-values/>
+                <params/>
+            </column>
+        </row-model>
+    </left-data-source>
+    <right-data-source class="cdc.impl.datasource.text.CSVDataSource" name="ROS Answers">
+        <params>
+            <param name="column-separator" value=","/>
+            <param name="source-name" value="ROS Answers"/>
+            <param name="input-file" value="/Users/pestefo/Sync/projects/ros_gh/linking-identities/ra_authors.csv#ENC=UTF-8#"/>
+        </params>
+        <row-model>
+            <column column="username"
+                converter="cdc.datamodel.converters.DummyConverter" name="username">
+                <empty-values/>
+                <params/>
+            </column>
+        </row-model>
+    </right-data-source>
+</configuration>
