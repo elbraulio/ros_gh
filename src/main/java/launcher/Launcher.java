@@ -1,12 +1,12 @@
+package launcher;
+
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
 import github.*;
 import iterator.Colaborators;
-import org.junit.Ignore;
-import org.junit.Test;
-import tools.SqliteConnection;
 import tools.CanRequest;
 import tools.FromJsonFile;
+import tools.SqliteConnection;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -15,19 +15,24 @@ import java.sql.SQLException;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class GithubInfoTest {
+public class Launcher {
 
-    @Ignore
-    @Test
-    public void fetchGithubData()
+    public static void main(String[] args) throws ClassNotFoundException,
+            SQLException, InterruptedException, IOException {
+        final String token = "381a360d9fe7a2ed6d45e2a593375132d91e6717";
+        final String file = args[0];
+        final String dbPath = args[1];
+        fetchGithubData(file, token, dbPath);
+    }
+
+
+    private static void fetchGithubData(String path, String token, String dbPath)
             throws IOException, SQLException, ClassNotFoundException,
             InterruptedException {
-        final String token = "381a360d9fe7a2ed6d45e2a593375132d91e6717";
-        final String path = "src/test/java/resources/github/indigo.json";
         final Github github = new RtGithub(token);
         final CanRequest canRequest = new CanRequest(60);
         try (final Connection connection = new SqliteConnection(
-                "src/test/java/resources/sqlite/test.db"
+                dbPath
         ).connection()
         ) {
             for (RosPackage rosPackage : new FromJsonFile(path).repoList()) {
@@ -67,14 +72,14 @@ public final class GithubInfoTest {
         }
     }
 
-    private void printProcessState(RosPackage rosPackage) {
+    private static void printProcessState(RosPackage rosPackage) {
         System.out.println(
                 "Processing " + rosPackage.name() + " from " +
                         rosPackage.source()
         );
     }
 
-    private void printSourceNotFound(RosPackage rosPackage) {
+    private static void printSourceNotFound(RosPackage rosPackage) {
         System.out.println("SOURCE NOT FOUND: " + rosPackage.name());
     }
 }

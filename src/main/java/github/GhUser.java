@@ -19,7 +19,7 @@ public class GhUser {
     public GhUser(JsonObject jsonObject) {
         this(
                 0,
-                jsonObject.getString("login"),
+                new NullableJsonString(jsonObject, "login").toString(),
                 jsonObject.getInt("followers"),
                 jsonObject.getString("html_url"),
                 new NullableJsonString(jsonObject,"name").string(),

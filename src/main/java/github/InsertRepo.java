@@ -8,14 +8,14 @@ import java.sql.*;
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class InsertRepo implements SqlCommand {
-    private final JsonRepo jsonRepo;
+    private final GhRepo ghRepo;
     private final String source;
     private final int ownerId;
 
     public InsertRepo(
-            final JsonRepo jsonRepo, final String source, final int ownerId
+            final GhRepo ghRepo, final String source, final int ownerId
     ) {
-        this.jsonRepo = jsonRepo;
+        this.ghRepo = ghRepo;
         this.source = source;
         this.ownerId = ownerId;
     }
@@ -31,10 +31,10 @@ public final class InsertRepo implements SqlCommand {
                                 user, Statement.RETURN_GENERATED_KEYS
                         )
         ) {
-            pstmt.setString(1, this.jsonRepo.name());
-            pstmt.setString(2, this.jsonRepo.fullName());
+            pstmt.setString(1, this.ghRepo.name());
+            pstmt.setString(2, this.ghRepo.fullName());
             pstmt.setInt(3, ownerId);
-            pstmt.setString(4, this.jsonRepo.description());
+            pstmt.setString(4, this.ghRepo.description());
             pstmt.setString(5, this.source);
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();

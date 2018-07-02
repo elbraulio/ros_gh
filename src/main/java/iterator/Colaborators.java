@@ -55,7 +55,7 @@ public class Colaborators {
             throws IOException, InterruptedException {
         final List<GhColaborator> list = new LinkedList<>();
         final JsonArray contributors = tryJsonArray(
-                3, this.github, this.fullName, this.canRequest
+                100, this.github, this.fullName, this.canRequest
         );
 
         for (int i = 0; i < contributors.size(); i++) {
