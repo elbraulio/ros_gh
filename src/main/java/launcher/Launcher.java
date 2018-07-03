@@ -36,37 +36,42 @@ public class Launcher {
         ).connection()
         ) {
             for (RosPackage rosPackage : new FromJsonFile(path).repoList()) {
-                if (rosPackage.source().isEmpty()) {
-                    printSourceNotFound(rosPackage);
-                } else {
-                    printProcessState(rosPackage);
-                    GhRepo ghRepo = rosPackage.asRepo(github);
-                    canRequest.waitForRate();
-                    // save owner if not exists
-                    final int ownerId =
-                            new InsertGhUserIfNotExists(
-                                    ghRepo.owner(), github, canRequest
-                            ).execute(connection, -1);
-                    // save repo
-                    final int repoId = new InsertRepoIfNotExists(
-                            ghRepo,
-                            rosPackage.source(), ownerId, canRequest
-                    ).execute(connection, -1);
-                    // save all contributors
-                    for (
-                            GhColaborator ghColaborator : new Colaborators(
-                            ghRepo.fullName(), canRequest, github
-                    ).colaboratorList()
-                            ) {
-                        // save ghUser and link to repo
-                        final int contributorId =
+                try {
+                    if (rosPackage.source().isEmpty()) {
+                        printSourceNotFound(rosPackage);
+                    } else {
+                        printProcessState(rosPackage);
+                        GhRepo ghRepo = rosPackage.asRepo(github);
+                        canRequest.waitForRate();
+                        // save owner if not exists
+                        final int ownerId =
                                 new InsertGhUserIfNotExists(
-                                        ghColaborator.login(), github,
-                                        canRequest).execute(connection, -1);
-                        new GhUserCommitRepo(
-                                contributorId, ghColaborator.commits(), repoId
+                                        ghRepo.owner(), github, canRequest
+                                ).execute(connection, -1);
+                        // save repo
+                        final int repoId = new InsertRepoIfNotExists(
+                                ghRepo,
+                                rosPackage.source(), ownerId, canRequest
                         ).execute(connection, -1);
+                        // save all contributors
+                        for (
+                                GhColaborator ghColaborator : new Colaborators(
+                                ghRepo.fullName(), canRequest, github
+                        ).colaboratorList()
+                                ) {
+                            // save ghUser and link to repo
+                            final int contributorId =
+                                    new InsertGhUserIfNotExists(
+                                            ghColaborator.login(), github,
+                                            canRequest).execute(connection, -1);
+                            new GhUserCommitRepo(
+                                    contributorId, ghColaborator.commits(), repoId
+                            ).execute(connection, -1);
+                        }
                     }
+                } catch (NullPointerException e) {
+                    e.printStackTrace();
+                    continue;
                 }
             }
         }
