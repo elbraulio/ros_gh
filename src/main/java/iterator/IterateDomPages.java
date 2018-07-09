@@ -14,7 +14,7 @@ import java.util.Stack;
  *
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class IterateUserPages implements Iterator<IterateUserLinks> {
+public final class IterateDomPages implements Iterator<Iterator<String>> {
     /**
      * The first value from the stack represent the current iterated page.
      * Just for keep the immutability of this class, by using this instead of
@@ -31,6 +31,7 @@ public final class IterateUserPages implements Iterator<IterateUserLinks> {
      * Last page to iterate.
      */
     private final int lastPage;
+    private final BuildIteratorForContent buildIteratorForContent;
 
     /**
      * Ctor.
@@ -39,13 +40,15 @@ public final class IterateUserPages implements Iterator<IterateUserLinks> {
      * @param initialPage Page where the iteration begins.
      * @param finalPage   Page where the iteration ends.
      */
-    public IterateUserPages(
-            final PagedDom pagedDom, final int initialPage, final int finalPage
+    public IterateDomPages(
+            final PagedDom pagedDom, final int initialPage, final int finalPage,
+            final BuildIteratorForContent buildIteratorForContent
     ) {
         this(
                 new StackWithInitialValues<>(initialPage).stack(),
                 pagedDom,
-                finalPage
+                finalPage,
+                buildIteratorForContent
         );
     }
 
@@ -57,14 +60,16 @@ public final class IterateUserPages implements Iterator<IterateUserLinks> {
      * @param pagedDom        The paged dom that will be iterated.
      * @param lastPage        Page where the iteration ends.
      */
-    private IterateUserPages(
+    private IterateDomPages(
             final Stack<Integer> withInitialPage,
             final PagedDom pagedDom,
-            final int lastPage
+            final int lastPage,
+            final BuildIteratorForContent buildIteratorForContent
     ) {
         this.currentPage = withInitialPage;
         this.pagedDom = pagedDom;
         this.lastPage = lastPage;
+        this.buildIteratorForContent = buildIteratorForContent;
     }
 
     @Override
@@ -73,11 +78,11 @@ public final class IterateUserPages implements Iterator<IterateUserLinks> {
     }
 
     @Override
-    public IterateUserLinks next() {
+    public Iterator<String> next() {
         try {
             final int page = this.currentPage.peek();
             this.currentPage.push(page + 1);
-            return new IterateUserLinks(this.pagedDom.page(page));
+            return buildIteratorForContent.iterator(this.pagedDom.page(page));
         } catch (IOException e) {
             throw new NoSuchElementException(
                     "page: " + this.currentPage.peek() + " | " + e.getMessage()

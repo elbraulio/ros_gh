@@ -1,17 +1,14 @@
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
-import com.jcabi.http.Request;
-import com.jcabi.http.response.JsonResponse;
 import github.*;
 import iterator.Colaborators;
 import org.junit.Ignore;
 import org.junit.Test;
-import resources.SqliteConnection;
+import tools.SqliteConnection;
 import tools.CanRequest;
 import tools.FromJsonFile;
 
-import javax.json.*;
-import java.io.*;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -25,8 +22,8 @@ public final class GithubInfoTest {
     public void fetchGithubData()
             throws IOException, SQLException, ClassNotFoundException,
             InterruptedException {
-        final String token = "62d4bef9321253abf1a4525f97eb6744bd3b1b24";
-        final String path = "src/test/java/resources/github/distribution.json";
+        final String token = "381a360d9fe7a2ed6d45e2a593375132d91e6717";
+        final String path = "src/test/java/resources/github/indigo.json";
         final Github github = new RtGithub(token);
         final CanRequest canRequest = new CanRequest(60);
         try (final Connection connection = new SqliteConnection(
@@ -38,22 +35,22 @@ public final class GithubInfoTest {
                     printSourceNotFound(rosPackage);
                 } else {
                     printProcessState(rosPackage);
-                    JsonRepo jsonRepo = rosPackage.asRepo(github);
+                    GhRepo ghRepo = rosPackage.asRepo(github);
                     canRequest.waitForRate();
                     // save owner if not exists
                     final int ownerId =
                             new InsertGhUserIfNotExists(
-                                    jsonRepo.owner(), github, canRequest
+                                    ghRepo.owner(), github, canRequest
                             ).execute(connection, -1);
                     // save repo
-                    final int repoId = new InsertRepo(
-                            jsonRepo,
-                            rosPackage.source(), ownerId
+                    final int repoId = new InsertRepoIfNotExists(
+                            ghRepo,
+                            rosPackage.source(), ownerId, canRequest
                     ).execute(connection, -1);
                     // save all contributors
                     for (
                             GhColaborator ghColaborator : new Colaborators(
-                            jsonRepo.fullName(), canRequest, github
+                            ghRepo.fullName(), canRequest, github
                     ).colaboratorList()
                             ) {
                         // save ghUser and link to repo

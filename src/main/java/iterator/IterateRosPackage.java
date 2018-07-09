@@ -1,7 +1,6 @@
 package iterator;
 
 import com.jcabi.github.Github;
-import github.JsonRepo;
 import github.RosPackage;
 
 import java.util.Iterator;

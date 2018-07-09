@@ -2,6 +2,7 @@ package user;
 
 import org.jsoup.nodes.Document;
 import tag.*;
+import tools.RosUserIdFromUrl;
 
 import java.util.List;
 
@@ -35,6 +36,11 @@ public final class RosDomUser implements RosUser {
                 this.document.select(".down-votes")
                         .get(0).text()
         );
+    }
+
+    @Override
+    public int rosId() {
+        return new RosUserIdFromUrl(this.document.location()).id();
     }
 
     @Override

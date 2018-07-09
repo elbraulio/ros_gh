@@ -6,16 +6,16 @@ import tools.StackWithInitialValues;
 import java.util.*;
 
 /**
- * Iterates a {@link IterateUserPages}. Retrieving each user link from each
+ * Iterates a {@link IterateDomPages}. Retrieving each user link from each
  * page.
  *
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class IteratePagedUsersLinks implements Iterator<String> {
+public final class IteratePagedContent implements Iterator<String> {
     /**
      * Users list page iterator.
      */
-    private final Iterator<IterateUserLinks> pagedUserList;
+    private final Iterator<Iterator<String>> iterator;
 
     /**
      * Each link retrieved from the iterator.
@@ -32,11 +32,12 @@ public final class IteratePagedUsersLinks implements Iterator<String> {
     /**
      * Ctor.
      *
-     * @param pagedUserList users list page iterator.
+     * @param iterator users list page iterator.
      */
-    public IteratePagedUsersLinks(final Iterator<IterateUserLinks> pagedUserList) {
+    public IteratePagedContent(final Iterator<Iterator<String>>
+                                          iterator) {
         this(
-                pagedUserList,
+                iterator,
                 new LinkedList<>(),
                 new StackWithInitialValues<>(0).stack()
         );
@@ -46,17 +47,17 @@ public final class IteratePagedUsersLinks implements Iterator<String> {
      * Ctor.
      * This Ctor. hides the {@link Stack} from the user.
      *
-     * @param pagedUserList users list page iterator.
+     * @param iterator users list page iterator.
      * @param links         initial set of links retrieved from the iterator.
      * @param nextLinkIndex current iterated link index.
      */
-    private IteratePagedUsersLinks(
-            final Iterator<IterateUserLinks> pagedUserList,
+    private IteratePagedContent(
+            final Iterator<Iterator<String>> iterator,
             final List<String> links,
             final Stack<Integer> nextLinkIndex
     ) {
 
-        this.pagedUserList = pagedUserList;
+        this.iterator = iterator;
         this.links = links;
         this.nextLinkIndex = nextLinkIndex;
     }
@@ -66,7 +67,7 @@ public final class IteratePagedUsersLinks implements Iterator<String> {
         if (this.nextLinkIndex.peek() < this.links.size()) {
             return true;
         } else {
-            return this.pagedUserList.hasNext();
+            return this.iterator.hasNext();
         }
     }
 
@@ -77,10 +78,10 @@ public final class IteratePagedUsersLinks implements Iterator<String> {
             this.nextLinkIndex.push(currentIndex + 1);
             return this.links.get(currentIndex);
         } else {
-            if (this.pagedUserList.hasNext()) {
+            if (this.iterator.hasNext()) {
                 this.links.addAll(
                         new IteratorAsList<>(
-                                this.pagedUserList.next()
+                                this.iterator.next()
                         ).asList()
                 );
                 return next();

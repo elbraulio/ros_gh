@@ -22,7 +22,7 @@ public final class RosPackage {
         this.source = source;
     }
 
-    public JsonRepo asRepo(Github github) throws IOException {
+    public GhRepo asRepo(Github github) throws IOException {
         return new JsonRepo(
                 github.entry()
                         .uri()

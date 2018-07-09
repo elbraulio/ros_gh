@@ -10,21 +10,20 @@ import java.sql.Statement;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class GhUserExists implements SqlQuery<Boolean> {
-    private final String owner;
+public class GhRepoExists implements SqlQuery<Boolean> {
+    private final String name;
 
-    public GhUserExists(String owner) {
-
-        this.owner = owner;
+    public GhRepoExists(String name) {
+        this.name = name;
     }
 
     @Override
     public Boolean query(Connection connection) throws SQLException {
-        String userExists = "SELECT * FROM gh_user " +
-                "WHERE login='" + this.owner + "'";
+        String repoExists = "SELECT * FROM gh_repo " +
+                "WHERE name='" + this.name + "'";
         try (
                 Statement stmt = connection.createStatement();
-                ResultSet rs = stmt.executeQuery(userExists)
+                ResultSet rs = stmt.executeQuery(repoExists)
         ) {
             return rs.next();
         }
