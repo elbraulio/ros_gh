@@ -2,15 +2,21 @@ package launcher;
 
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
+import dom.RosUserPagedDom;
 import github.*;
 import iterator.Colaborators;
-import tools.CanRequest;
-import tools.FromJsonFile;
-import tools.SqliteConnection;
+import iterator.IterateByUserLinks;
+import iterator.IterateDomPages;
+import iterator.IteratePagedContent;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import tools.*;
+import user.RosDomUser;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Iterator;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -20,9 +26,48 @@ public class Launcher {
     public static void main(String[] args) throws ClassNotFoundException,
             SQLException, InterruptedException, IOException {
         final String token = "381a360d9fe7a2ed6d45e2a593375132d91e6717";
-        final String file = args[0];
-        final String dbPath = args[1];
-        fetchGithubData(file, token, dbPath);
+        switch (args[0]){
+            case "gh":
+                fetchGithubData(args[1], token, args[2]);
+                break;
+            case "rs":
+                fetchRosAnswersUsers(args[1]);
+                break;
+            default:
+                System.out.println("Usage: ...");
+        }
+    }
+
+    private static void fetchRosAnswersUsers(String dbPath)
+            throws SQLException, ClassNotFoundException, IOException {
+        final int initialPage = 1;
+        final String root = "https://answers.ros.org";
+        final Document usersPage = Jsoup.connect(root + "/users/").get();
+        final Iterator<String> usersLinks = new IteratePagedContent(
+                new IterateDomPages(
+                        new RosUserPagedDom(),
+                        initialPage,
+                        new LastRosUserPage(usersPage).value(),
+                        new IterateByUserLinks()
+                )
+        );
+        try (
+                final Connection connection = new SqliteConnection(
+                        dbPath
+                ).connection()
+        ) {
+            int count = 1;
+            while (usersLinks.hasNext()) {
+                final String next = usersLinks.next();
+                System.out.println(
+                        "Processing user " + count++ + " ->" + next
+                );
+                new SaveIntoSqliteDb(
+                        new RosDomUser(Jsoup.connect(root + next).get()),
+                        connection
+                ).execute();
+            }
+        }
     }
 
 

@@ -8,7 +8,7 @@ import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import org.junit.Test;
 import resources.FakePagedDom;
-import resources.SaveIntoSqliteDb;
+import tools.SaveIntoSqliteDb;
 import tools.SqliteConnection;
 import tools.IteratorAsList;
 import tools.LastRosUserPage;

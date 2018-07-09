@@ -1,4 +1,4 @@
-package resources;
+package tools;
 
 import tag.Tag;
 import tag.TagWithCount;
@@ -21,14 +21,15 @@ public class SaveIntoSqliteDb {
     public void execute() throws SQLException {
         // TODO: 16-05-18 refactor this temporal coupling
         // insert user
-        String user = "INSERT INTO ros_user(name,up_votes,down_votes) " +
-                "VALUES(?,?,?)";
+        String user = "INSERT INTO ros_user(name,up_votes,down_votes, id) " +
+                "VALUES(?,?,?,?)";
         int userId = 0;
 
         try (PreparedStatement pstmt = this.connection.prepareStatement(user, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, this.rosUser.name());
             pstmt.setInt(2, this.rosUser.upVotes());
             pstmt.setInt(3, this.rosUser.downVotes());
+            pstmt.setInt(4, this.rosUser.rosId());
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
             if (rs.next()){
