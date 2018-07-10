@@ -1,0 +1,1465 @@
+{
+  "count": 40959,
+  "pages": 820,
+  "questions": [
+    {
+      "tags": [
+        "hardware",
+        "drivers"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13036,
+      "answer_ids": [
+        13031,
+        13036
+      ],
+      "id": 9033,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 677,
+      "last_activity_at": "1297774294",
+      "title": "what hardware drivers does ROS provide?",
+      "url": "http://answers.ros.org/question/9033/what-hardware-drivers-does-ros-provide/",
+      "author": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "added_at": "1297650523",
+      "summary": "<p>A list of stacks, packages, or tutorials related to hardware drivers.</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "FAQ",
+        "getting_started",
+        "package"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13019,
+      "answer_ids": [
+        13019
+      ],
+      "id": 9036,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 702,
+      "last_activity_at": "1297722788",
+      "title": "What is a ROS package?",
+      "url": "http://answers.ros.org/question/9036/what-is-a-ros-package/",
+      "author": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "added_at": "1297698004",
+      "summary": "<p>Information on ROS packages.</p>\n",
+      "score": 3
+    },
+    {
+      "tags": [
+        "FAQ",
+        "getting_started",
+        "beginner"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13037,
+      "answer_ids": [
+        13037,
+        13020,
+        13142
+      ],
+      "id": 9037,
+      "last_activity_by": {
+        "username": "Alper Aydemir",
+        "id": 119
+      },
+      "view_count": 886,
+      "last_activity_at": "1297994601",
+      "title": "How do I get started with ROS?",
+      "url": "http://answers.ros.org/question/9037/how-do-i-get-started-with-ros/",
+      "author": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "added_at": "1297698172",
+      "summary": "<p>Where to get started.</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "rosmake",
+        "FAQ",
+        "getting_started"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13038,
+      "answer_ids": [
+        13040,
+        13038
+      ],
+      "id": 9038,
+      "last_activity_by": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "view_count": 558,
+      "last_activity_at": "1297775268",
+      "title": "How do I build everything?",
+      "url": "http://answers.ros.org/question/9038/how-do-i-build-everything/",
+      "author": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "added_at": "1297698285",
+      "summary": "<p>There's no Makefile in the root of ros-pkg!</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "FAQ",
+        "getting_started",
+        "package"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13039,
+      "answer_ids": [
+        13105,
+        13070,
+        13039
+      ],
+      "id": 9039,
+      "last_activity_by": {
+        "username": "makokal",
+        "id": 31
+      },
+      "view_count": 711,
+      "last_activity_at": "1297881471",
+      "title": "How do I build a ROS package?",
+      "url": "http://answers.ros.org/question/9039/how-do-i-build-a-ros-package/",
+      "author": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "added_at": "1297698424",
+      "summary": "<p>I am getting errors when I type make.</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "geometry",
+        "tf"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13008,
+      "answer_ids": [
+        13008
+      ],
+      "id": 9040,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 1135,
+      "last_activity_at": "1297704239",
+      "title": "Which data types does tf use?",
+      "url": "http://answers.ros.org/question/9040/which-data-types-does-tf-use/",
+      "author": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "added_at": "1297702785",
+      "summary": "<p>I want to know what datatypes tf can work with natively.  </p>\n",
+      "score": 5
+    },
+    {
+      "tags": [
+        "rosbuild",
+        "rosmake",
+        "cmake",
+        "licensing",
+        "segway"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13009,
+      "answer_ids": [
+        14242,
+        13454,
+        13009
+      ],
+      "id": 9041,
+      "last_activity_by": {
+        "username": "IRI Robotics Lab",
+        "id": 437
+      },
+      "view_count": 811,
+      "last_activity_at": "1303106369",
+      "title": "Build Architecture Question",
+      "url": "http://answers.ros.org/question/9041/build-architecture-question/",
+      "author": {
+        "username": "William",
+        "id": 10
+      },
+      "added_at": "1297710721",
+      "summary": "<p>So I have been working on using IRI's segway library to implement a segway driver for ROS, and I have run into a situation where I don't know how to proceed.</p>\n\n<p>IRI is setting up a port of their stuff for ROS, so at this point it is more educational for me.</p>\n\n<p>So, the IRI segway library relies on some of their other libraries.</p>\n\n<p>Here is the dependency Structure:</p>\n\n<ul>\n<li>My ROS Node depends on iri_segway_rmp200.</li>\n<li>iri_segway_rmp200 depends on iricomms and iriutils.</li>\n<li>iricomms depends on iriutils.</li>\n</ul>\n\n<p>All of the IRI stuff is in SVN and is LGPL licensed, my stuff can be considered MIT.  They are setup to build dynamically linked libraries (.so on linux and .dylib on osx).  </p>\n\n<p>The way I see it there are a few ways to approach this setup in ROS: (Maybe there is a 4th, correct setup)</p>\n\n<ol>\n<li>Put a script in rosdep.yaml to (svn co; make; sudo make install) each of the libraries from IRI.\n<ul>\n<li>This is good because the libraries are installed and no further configuration is required, but requires root access</li>\n<li>Also, they install Find&lt;lib&gt;.cmake files in the cmake shared Modules folder, which is nice</li>\n</ul></li>\n<li>Create a ROS pkg for each library and use rosmake to build them, using the svn_checkout.mk make script and patches to build and install them to the pkg dir\n<ul>\n<li>This is nice because the libraries are contained in the ros pkg</li>\n<li>But, you need to export cpp flags to include and link directories</li>\n<li>How do you handle runtime dynamic linking?</li>\n</ul></li>\n<li>Download/Distribute and build the libraries in your ROS pkg and statically link your node to the libraries\n<ul>\n<li>Doesn't allow multiple nodes to link to a single source for the libraries (build the libs for each node that uses them)</li>\n</ul></li>\n</ol>\n\n<p>So here are my questions:</p>\n\n<ol>\n<li>What is the preferred method of build architecture?</li>\n<li>How do you handle dynamic linking at runtime? (the .so file is in package A, and how does a binary in package B find it at runtime?) </li>\n<li>How can you handle installing and referencing Find&lt;lib&gt;.cmake files that libraries have? (use manifext.xml's &lt;depend ...=\"\"/&gt; instead, is my guess)</li>\n<li>What if any licensing concerns are there? (patches and static linking, etc)</li>\n</ol>\n\n<p>Sorry if some of these questions are silly, I am still learning these more complicated build systems (rosmake/cmake).</p>\n\n<p>Thanks in advanced!</p>\n",
+      "score": 3
+    },
+    {
+      "tags": [
+        "answers.ros.org"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13011,
+      "answer_ids": [
+        13011,
+        13010
+      ],
+      "id": 9042,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 3512,
+      "last_activity_at": "1297720911",
+      "title": "When should one use answers.ros.org vs. the ros-users mailing list?",
+      "url": "http://answers.ros.org/question/9042/when-should-one-use-answersrosorg-vs-the-ros-users-mailing-list/",
+      "author": {
+        "username": "Patrick Bouffard",
+        "id": 12
+      },
+      "added_at": "1297716199",
+      "summary": "<p> There should be some straightforward guidelines as to which one to pick. Also what is the scope of  <a href=\"http://answers.ros.org\">answers.ros.org</a> , is it the same as ros-users? What about questions that would otherwise have been asked on ros-developers, ros-kinect, or pcl-users? </p>\n",
+      "score": 23
+    },
+    {
+      "tags": [
+        "urdf",
+        "xacro",
+        "robot_model"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13024,
+      "answer_ids": [
+        13095,
+        13024
+      ],
+      "id": 9043,
+      "last_activity_by": {
+        "username": "hsu",
+        "id": 91
+      },
+      "view_count": 1163,
+      "last_activity_at": "1297861087",
+      "title": "Using XACRO for Generating URDF Files",
+      "url": "http://answers.ros.org/question/9043/using-xacro-for-generating-urdf-files/",
+      "author": {
+        "username": "mjcarroll",
+        "id": 9
+      },
+      "added_at": "1297719129",
+      "summary": "<p>Generally, at what point does a project become large enough to justify the added time of writing a .xacro file (xml macro for generating URDF files) versus just using a hand-written URDF file?</p>\n",
+      "score": 7
+    },
+    {
+      "tags": [
+        "FAQ",
+        "answers.ros.org",
+        "tagging"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13012,
+      "answer_ids": [
+        13012
+      ],
+      "id": 9044,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 347,
+      "last_activity_at": "1297720936",
+      "title": "What are the best practices for tagging questions?",
+      "url": "http://answers.ros.org/question/9044/what-are-the-best-practices-for-tagging-questions/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297720358",
+      "summary": "<p>I have a question which refers to a specific stack or package how should I tag it?  </p>\n",
+      "score": 6
+    },
+    {
+      "tags": [
+        "plumesim"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13013,
+      "answer_ids": [
+        13013
+      ],
+      "id": 9045,
+      "last_activity_by": {
+        "username": "jbourne",
+        "id": 23668
+      },
+      "view_count": 295,
+      "last_activity_at": "1459868877",
+      "title": "Plume Sim in ROS",
+      "url": "http://answers.ros.org/question/9045/plume-sim-in-ros/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297721473",
+      "summary": "<p>I have used plume sim in Player/Stage - now I want to use it in ROS. However, I am not able to get much of a clue about installing it and using it.</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "ompl_planning",
+        "arm_navigation"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13014,
+      "answer_ids": [
+        13014
+      ],
+      "id": 9046,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 666,
+      "last_activity_at": "1297721650",
+      "title": "unable to get valid path when calling /ompl_planning/plan_kinematic_path",
+      "url": "http://answers.ros.org/question/9046/unable-to-get-valid-path-when-calling-ompl_planningplan_kinematic_path/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297721608",
+      "summary": "<div class=\"snippet\"><p>I feel a little desperate since I don't know what I'm doing wrong here:\n From within our grasp_planner, I want to call the\n\"/plan_kinematic_path\" service from the ompl package.</p>\n\n<p>Here is how I set it all up:</p>\n\n<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n ros::service::waitForService(\"/ompl_planning/plan_kinematic_path\");</p>\n\n<p>ros::ServiceClient client =\nn.serviceClient&lt;motion_planning_msgs::getmotionplan&gt;(\"/ompl_planning/plan_kinematic_path\");</p>\n\n<p>motion_planning_msgs::GetMotionPlan::Request req;\n  motion_planning_msgs::GetMotionPlan::Response res;</p>\n\n<p>std::vector&lt;std::string&gt; names(7);\n  names[0] = \"arm_1_joint\";\n  names[1] = \"arm_2_joint\";\n  names[2] = \"arm_3_joint\";\n  names[3] = \"arm_4_joint\";\n  names[4] = \"arm_5_joint\";\n  names[5] = \"arm_6_joint\";\n  names[6] = \"arm_7_joint\";</p>\n\n<p>req.motion_plan_request.goal_constraints.joint_constraints.resize(names.size());\n  for (unsigned int i = 0 ; i &lt; names.size(); ++i)\n  {</p>\n\n<p>req.motion_plan_request.goal_constraints.joint_constraints[i].joint_name\n= names[i];</p>\n\n<p>req.motion_plan_request.goal_constraints.joint_constraints[i].position =\n0.0;</p>\n\n<p>req.motion_plan_request.goal_constraints.joint_constraints[i].tolerance_below\n= 0.1;</p>\n\n<p>req.motion_plan_request.goal_constraints.joint_constraints[i].tolerance_above\n= 0.1;\n  }</p>\n\n<p>//req.motion_plan_request.planner_id=\"\";\n  req.motion_plan_request.group_name=\"arm\";\n  req.motion_plan_request.num_planning_attempts=1;\n  //req.motion_plan_request.allowed_planning_time=ros::Duration(50.0);</p>\n\n<p>ROS_INFO(\"calling service...\");\n  if (client.call(req, res))\n  {\n    ROS_INFO(\"Result: %d\", res.error_code.val);\n  }\n  else\n  {\n    ROS_ERROR(\"Failed to call service plan_kinematic_path\");\n    return 1;\n  }\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>\n\n<p>I.e. I just want a plan that brings the arm back into its home position\nat (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0).</p>\n\n<p>The output from the planner is the following (with Debub output):</p>\n\n<p>~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n'kinematic::LBKPIECE[LBKPIECEkConfig2cob]', with priority 11\nvolume was set\nnormalization 0 val 0.537644\nnormalization 1 val -1.20871\nnormalization 2 val 0.204787\nnormalization 3 val 0.943959\nnormalization 4 val -0.0503284\nnormalization 5 val 0.00951776\nnormalization 6 val -0.00680026\nnormalization 0 val 0.537644\nnormalization 1 val -1.20871\nnormalization 2 val 0.204787\nnormalization 3 val 0.943959\nnormalization 4 val -0.0503284\nnormalization 5 val 0.00951776\nnormalization 6 val -0.00680026\nsettings:\n  - dimension = 7\n  - start states:\n0.537644 -1.20871 0.204787 0.943959 -0.0503284 0.00951776 -0.00680026\nGoal state, threshold = 1e-12, memory address = 0x7fb9b40adb00, state =\n0 0 0 0 0 0 0\nJoint constraints:\n[-0.1, 0.1] [-0.1, 0.1] [-0.1, 0.1] [-0.1, 0.1] [-0.1, 0.1] [-0.1, 0.1]\n[-0.1, 0.1]\n  - bounding box:\n<a href=\"0.05914\">-2.957, 2.957</a> <a href=\"0.041686\">-2.0843, 2.0843</a> <a href=\"0.05914\">-2.957,\n2.957</a> <a href=\"0.041686\">-2.0843, 2.0843</a> <a href=\"0.05914\">-2.957, 2.957</a>\n<a href=\"0.0416879\">-2.0844, 2.0844</a> <a href=\"0.05914\">-2.957, 2.957</a>\nPath constraints:\n0 kinematic constraints</p>\n\n<p>touch between sdh_thumb_2_link and sdh_thumb_3_link\ntouch between sdh_finger_23_link and sdh_thumb_3_link\ntouch between sdh_finger_12_link and sdh_finger_13_link\ntouch between sdh_palm_link and sdh_thumb_2_link\n...\n//some more allowed collisions\n//not a single collision is not allowed!!!\n...\ntouch between arm_1_link and arm_2_link\ntouch between arm_0_link and arm_1_link\ntouch between torso_tray_link and base_link\ntouch between head_cover_link and torso_upper_neck_tilt_link\ntouch between torso_lower_neck_tilt_link and torso_upper_neck_tilt_link\nInfo:    LBKPIECE1: Starting with 2 states\nInfo:    LBKPIECE1: Created 2 (1 start + 1 goal) states in 2 cells (1\nstart + 1 goal)\nspent 0.0222179 seconds\n0.0222179; Average planning time: 0.0222179\n'kinematic::LBKPIECE[LBKPIECEkConfig2cob]' is 10\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>\n\n<p>What irritates me is that \"Ompl says ok\".......because ...<span class=\"expander\"> <a>(more)</a></span></p></div>",
+      "score": 2
+    },
+    {
+      "tags": [
+        "pcd",
+        "pcl",
+        "perception_pcl"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13015,
+      "answer_ids": [
+        13015
+      ],
+      "id": 9047,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 563,
+      "last_activity_at": "1297721793",
+      "title": "pcl bag_to_pcd",
+      "url": "http://answers.ros.org/question/9047/pcl-bag_to_pcd/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297721768",
+      "summary": "<p>I'm trying to convert a bagfile into pcd files using bag_to_pcd. But\neverything I get is</p>\n\n<p>1292497206.348,\n but the tf buffer only contains a single transform at time 1292497207.122.\n When trying to transform between /head_tof_link and /base_link.</p>\n\n<p>What's wrong? Replaying the bag file using rosbag play seems to work\ncorrectly.</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "urdf",
+        "robot_model"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13180,
+      "answer_ids": [
+        13182,
+        13180
+      ],
+      "id": 9048,
+      "last_activity_by": {
+        "username": "Kadir Firat Uyanik",
+        "id": 81
+      },
+      "view_count": 2016,
+      "last_activity_at": "1298242032",
+      "title": "omniwheel design in urdf",
+      "url": "http://answers.ros.org/question/9048/omniwheel-design-in-urdf/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297721893",
+      "summary": "<p>Do you know any ros-package including an omni-wheel urdf? Or does anyone\nhappen to design an omniwheel in urdf? I just don't want to re-invent the\nwheel :)</p>\n\n<p>By the way, what I mean by omni-wheel is the one having a main wheel and\nseveral roller wheels -mostly perpendicularly aligned-. Like the ones on the\nrobotino platform. I don't prefer using two motors for each wheel that can\nimitate an omniwheel (=omni-drive) or changing the friction properties of\nthe surfaces in gazebo. These are some of the tricks that I'm aware of.</p>\n",
+      "score": 4
+    },
+    {
+      "tags": [
+        "bsd",
+        "licensing"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13016,
+      "answer_ids": [
+        13016
+      ],
+      "id": 9049,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 1903,
+      "last_activity_at": "1511981225",
+      "title": "BSD license questions",
+      "url": "http://answers.ros.org/question/9049/bsd-license-questions/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297721959",
+      "summary": "<p>I have a general question about BSD licenses for statically compiled libraries. </p>\n\n<p>The BSD license states, among other things, </p>\n\n<p>{{{\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:</p>\n\n<p>...</p>\n\n<ul>\n<li>Redistribution's in binary form must reproduce the above copyright notice,\nthis list of conditions and the following disclaimer in the documentation\nand/or other materials provided with the distribution.\n}}}</li>\n</ul>\n\n<p>Is shipping an executable that statically links portions of a BSD library \"redistribution\"? Does the BSD license agreement need to incorporated in that case?</p>\n\n<p>The above clause is meant to apply to the library. However, when using statically linked libraries, they become incorporated into a larger binary, which is usually not redistributable.</p>\n\n<p>How are these cases usually interpreted?</p>\n",
+      "score": 3
+    },
+    {
+      "tags": [
+        "drivers",
+        "arm_navigation",
+        "delta"
+      ],
+      "answer_count": 7,
+      "accepted_answer_id": 13094,
+      "answer_ids": [
+        13072,
+        13372,
+        13084,
+        13093,
+        33643,
+        18913,
+        13094
+      ],
+      "id": 9050,
+      "last_activity_by": {
+        "username": "Damien",
+        "id": 2349
+      },
+      "view_count": 3325,
+      "last_activity_at": "1336578696",
+      "title": "Using ROS for a Delta Robot",
+      "url": "http://answers.ros.org/question/9050/using-ros-for-a-delta-robot/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297722117",
+      "summary": "<p>At the moment i'm involved in a project where we are trying to built a\nDelta Robot. So i start reading the docs and tutorials and i've a few\nquestions.</p>\n\n<p>The kinematic model for the Delta Robot has already been developed; a\ninverse and forward model is available to me.</p>\n\n<p>I'm trying to find out if i'm heading the right way. I've found a page\non the ROS wiki named 'Running arm navigation on non-PR2 arm'\n[http://www.ros.org/wiki/arm_navigation/Tutorials/Running%20arm%20navigation%20on%20non-PR2%20arm]</p>\n\n<p>Is it right to say that if i implement the functions mentioned in the\narticle above that i can have a working Delta Robot (kinematic model,\nthat is)? Is there perhaps a better way?</p>\n\n<p>We are probably going with the Trio Whistle from ElmoMC for controlling\nthe motors. I think it's best to start with developing the kinematic\nmodel and then implement packages for communication with the controller.\nAny tips or ideas on this? I've already found a package with CANopen\nsupport for the Elmo Harmonica\n[http://www.ros.org/wiki/cob_canopen_motor] (basically the same as a\nwhistler)...</p>\n",
+      "score": 6
+    },
+    {
+      "tags": [
+        "cob_simulation",
+        "arm_navigation"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13017,
+      "answer_ids": [
+        13017
+      ],
+      "id": 9052,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 421,
+      "last_activity_at": "1297722392",
+      "title": "trajectory error in simulation / controller parameters",
+      "url": "http://answers.ros.org/question/9052/trajectory-error-in-simulation-controller-parameters/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297722354",
+      "summary": "<p>I'm a student at University of Stuttgart and work at IPA Fraunhofer with the Care-O-bot.\nWe have here some problems with the planned trajectory in simulation. The actual executed trajectory of the robot arm in rviz differs from the planned one (display_path (motion_planning_msgs/DisplayTrajectory)). We guess that it comes from the dynamic model and the chosen controller parameters in the arm_controller_cob3-1.yaml file (cob_simulation/cob_controller_configuration_gazebo/ros/controller).\nSo we're looking for ideas, hints and rules how to choose these parameters or explanations where the trajectory error could come from.</p>\n\n<p>Thanks in advance for your help!</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "topic_tools",
+        "syncronization"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13018,
+      "answer_ids": [
+        266899,
+        13018
+      ],
+      "id": 9053,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 491,
+      "last_activity_at": "1297722632",
+      "title": "Synchronize throttling",
+      "url": "http://answers.ros.org/question/9053/synchronize-throttling/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297722585",
+      "summary": "<p>Does the throttle node under topic_tools support synchronized\nthrottling? I have a stereo camera and I'm logging left/image_rect,\nright/image_rect and the relevant camera info topics. Is there an\neasy way to log at a slower rate and keep all the messages in sync?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "answers.ros.org"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13026,
+      "answer_ids": [
+        13026
+      ],
+      "id": 9054,
+      "last_activity_by": {
+        "username": "Eric Perko",
+        "id": 14
+      },
+      "view_count": 331,
+      "last_activity_at": "1297726751",
+      "title": "Can I add tags to an existing question?",
+      "url": "http://answers.ros.org/question/9054/can-i-add-tags-to-an-existing-question/",
+      "author": {
+        "username": "Patrick Bouffard",
+        "id": 12
+      },
+      "added_at": "1297722635",
+      "summary": "<p>And if so, how?</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "uvc_camera",
+        "stereo_proc",
+        "vision_opencv"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13021,
+      "answer_ids": [
+        13021
+      ],
+      "id": 9055,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 490,
+      "last_activity_at": "1297723016",
+      "title": "Gumstix, uvc_camera and cv_capture",
+      "url": "http://answers.ros.org/question/9055/gumstix-uvc_camera-and-cv_capture/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297722980",
+      "summary": "<p>I've observed something surprising with a small UVC camera on the\ngumstix overo. If I use the camera_node from uvc_camera, I get barely\n2 fps in 640x480.\nOn the other hand, if I make a small application using the opencv\ncvCapture function, I get close to 10fps at the same resolution.</p>\n\n<p>Here is the cv code in all its complexity:</p>\n\n<pre><code>       CvCapture* capture = 0;\n       capture = cvCaptureFromCAM( -1 );\n       IplImage *cv_image = NULL;\n       ros::Rate loop_rate(10);\n       while (ros::ok())\n       {\n           cv_image = cvQueryFrame(capture);\n           try {\n               image_pub_.publish(bridge_.cvToImgMsg(cv_image, \"bgr8\"));\n           } catch (sensor_msgs::CvBridgeException error) {\n               ROS_ERROR(\"error\");\n           }\n           ros::spinOnce();\n           loop_rate.sleep();\n       }\n\n       cvReleaseCapture(&amp;capture);\n</code></pre>\n\n<p>On the same camera on my laptop, both cv_capture and uvc_camera\npublish at 10 fps.</p>\n\n<p>I guess that means there is something that would need optimisation in\nthe uvc_camera/camera_node, but for now I'll be fine with just\nreporting :-)</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "visualization",
+        "rviz",
+        "vmware"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13022,
+      "answer_ids": [
+        13029,
+        13022
+      ],
+      "id": 9056,
+      "last_activity_by": {
+        "username": "130s",
+        "id": 875
+      },
+      "view_count": 1364,
+      "last_activity_at": "1315579685",
+      "title": "ROS in VMWare, No information shown in rviz",
+      "url": "http://answers.ros.org/question/9056/ros-in-vmware-no-information-shown-in-rviz/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297723142",
+      "summary": "<p>I installed  ROS on a VMWare Ubuntu image on a MAC.\nI am using a kinect camera, when I run roslaunch openni_camera openni_kinect.launch,\nit is good. but there is nothing shows in rviz, no message could be received.\nWhen I use a rosbag file, it is good. Could you help me out?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "ps3joy",
+        "bluetooth"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13023,
+      "answer_ids": [
+        13023
+      ],
+      "id": 9057,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 602,
+      "last_activity_at": "1297723379",
+      "title": "PS3joy six axis with bluetooth keyboard and mouse",
+      "url": "http://answers.ros.org/question/9057/ps3joy-six-axis-with-bluetooth-keyboard-and-mouse/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297723346",
+      "summary": "<p>I was just wondering if anyone has tried to use the ps3joy package with a bluetooth keyboard and mouse and run into the issue I am having.  The instructions on the wiki detail how to allow the ps3 controller to pass through the operating system and let the ps3joy.py script access it, but that involves disabling all bluetooth input devices.  Does anyone know a better way, maybe disabling only the playstation device instead of all bluetooth input devices?</p>\n\n<p>I've looked around on google, but with little success.</p>\n\n<p> Here are some of the ROS wiki links:\n <a href=\"http://www.ros.org/wiki/ps3joy/KarmicInstructions#Disable_interception_of_HID_devices_by_bluetoothd\">http://www.ros.org/wiki/ps3joy/Karmic...</a> \n <a href=\"http://www.ros.org/wiki/ps3joy/Tutorials/PairingJoystickAndBluetoothDongle\">http://www.ros.org/wiki/ps3joy/Tutori...</a></p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "installation",
+        "Ubuntu"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13025,
+      "answer_ids": [
+        13032,
+        13544,
+        13025
+      ],
+      "id": 9058,
+      "last_activity_by": {
+        "username": "Julius",
+        "id": 252
+      },
+      "view_count": 948,
+      "last_activity_at": "1299573249",
+      "title": "ROS and Ubuntu 10.10",
+      "url": "http://answers.ros.org/question/9058/ros-and-ubuntu-1010/",
+      "author": {
+        "username": "noonv",
+        "id": 20
+      },
+      "added_at": "1297726030",
+      "summary": "<p>Could ROS work under Ubuntu 10.10?</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "carlike",
+        "navigation",
+        "robot_model"
+      ],
+      "answer_count": 5,
+      "accepted_answer_id": 13179,
+      "answer_ids": [
+        13179,
+        225777,
+        13211,
+        13028,
+        18894
+      ],
+      "id": 9059,
+      "last_activity_by": {
+        "username": "croesmann",
+        "id": 12166
+      },
+      "view_count": 7155,
+      "last_activity_at": "1454514203",
+      "title": "How can I use the navigation stack on a carlike robot?",
+      "url": "http://answers.ros.org/question/9059/how-can-i-use-the-navigation-stack-on-a-carlike-robot/",
+      "author": {
+        "username": "sebsch",
+        "id": 23
+      },
+      "added_at": "1297739731",
+      "summary": "<p>AFAIK the navigation stack in its current state does not work for a carlike robot. The last time I checked, base_local_planner required the robot to be able to turn in place.</p>\n\n<p>Would I have to implement an alternative to base_local_planner or is there an easier way to make base_local_planner work for carlike robots?</p>\n",
+      "score": 9
+    },
+    {
+      "tags": [
+        "meta",
+        "answers.ros.org",
+        "FAQ"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13027,
+      "answer_ids": [
+        13030,
+        13027
+      ],
+      "id": 9060,
+      "last_activity_by": {
+        "username": "kwc",
+        "id": 11
+      },
+      "view_count": 996,
+      "last_activity_at": "1297761057",
+      "title": "Is ROS Answers an Alternative to the [ros-users] Mailing List?",
+      "url": "http://answers.ros.org/question/9060/is-ros-answers-an-alternative-to-the-ros-users-mailing-list/",
+      "author": {
+        "username": "Adi Shavit",
+        "id": 24
+      },
+      "added_at": "1297746337",
+      "summary": "<p>This may be a meta-question, but is <strong>ROS Answers</strong> an alternative to the [ros-users] mailing list? <br/>\nThe search, tagging and editing facilities cerainly make <strong>ROS Answers</strong> a better medium.</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "FAQ",
+        "answers.ros.org"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13033,
+      "answer_ids": [
+        13033,
+        100616,
+        62474
+      ],
+      "id": 9061,
+      "last_activity_by": {
+        "username": "herodotus",
+        "id": 5890
+      },
+      "view_count": 957,
+      "last_activity_at": "1384312525",
+      "title": "How do I get Karma?",
+      "url": "http://answers.ros.org/question/9061/how-do-i-get-karma/",
+      "author": {
+        "username": "Tully",
+        "id": 7
+      },
+      "added_at": "1297767664",
+      "summary": "<p>I want to know how to earn karma on this site.  </p>\n",
+      "score": 8
+    },
+    {
+      "tags": [
+        "openni",
+        "swissranger"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13043,
+      "answer_ids": [
+        13043
+      ],
+      "id": 9062,
+      "last_activity_by": {
+        "username": "kwc",
+        "id": 11
+      },
+      "view_count": 391,
+      "last_activity_at": "1297775775",
+      "title": "Swissranger with OpenNI",
+      "url": "http://answers.ros.org/question/9062/swissranger-with-openni/",
+      "author": {
+        "username": "blueskin",
+        "id": 26
+      },
+      "added_at": "1297771685",
+      "summary": "<p>Has anyone worked on using OpenNI tracking algorithms with Swissranger data or any PointCloud data? I am able to obtain PointCloud data published by swissranger but not sure how I can use with OpenNI, well, I'll try to figure out something but in the meantime wanted to see if anyone has worked on it already.</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "camera_drivers"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13035,
+      "answer_ids": [
+        13337,
+        13049,
+        13035
+      ],
+      "id": 9063,
+      "last_activity_by": {
+        "username": "Yongqiang Gao",
+        "id": 162
+      },
+      "view_count": 1095,
+      "last_activity_at": "1298846057",
+      "title": "How do I add a new stereo or monocular camera to ROS?",
+      "url": "http://answers.ros.org/question/9063/how-do-i-add-a-new-stereo-or-monocular-camera-to-ros/",
+      "author": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "added_at": "1297773641",
+      "summary": "<ul>\n<li>Do I need to write my own \"driver\"? (That is code that interfaces with the camera APIs and publishes to ROS?)</li>\n<li>In that case, what do I publish? </li>\n<li>Do I give only raw image output or is there a way to publish a stereo pair?</li>\n<li>Are there any examples for how to do this, e.g. from some other stereo cameras?</li>\n<li>What is the easiest way to do this? </li>\n</ul>\n\n<p> copied from ros-users thread:  <a href=\"http://code.ros.org/lurker/message/20110215.125025.1315d930.en.html\">http://code.ros.org/lurker/message/20...</a></p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "GUI",
+        "Qt",
+        "PyQt"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13042,
+      "answer_ids": [
+        13042
+      ],
+      "id": 9064,
+      "last_activity_by": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "view_count": 1081,
+      "last_activity_at": "1297848651",
+      "title": "Is ROS still looking at using Qt?",
+      "url": "http://answers.ros.org/question/9064/is-ros-still-looking-at-using-qt/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297774737",
+      "summary": "<p>A while ago there was a discussion of moving from wxWidgets to Qt and PySide:\n<a href=\"http://https://code.ros.org/gf/project/ros/mailman/?action=ListThreads&amp;mailman_id=8&amp;_forum_action=ForumMessageBrowse&amp;thread_id=44126\">Moving from wxWidgets to Qt</a></p>\n\n<p>How does ROS community feel about Qt in light of recent Nokia-Microsoft partnership announcement?</p>\n\n<p>Qt group did provide an update yesterday:\n<a href=\"http://blog.qt.nokia.com/2011/02/14/update-on-qt/\">Update on Qt</a></p>\n\n<p>PySide also seems to be unaffected:\n<a href=\"http://permalink.gmane.org/gmane.comp.lib.qt.pyside/1912\">Turmoil at Nokia -- no immediate effect on PySide\n</a></p>\n\n<p>Update 2/16/2011: <a href=\"http://conversations.nokia.com/2011/02/16/the-future-for-qt-meego-and-symbian-cto-rich-green-explains/\">3 videos of Nokia CTO talking about the future of Qt</a></p>\n\n<p>Alex Bravo</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "units",
+        "FAQ",
+        "standards"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13041,
+      "answer_ids": [
+        13041,
+        13048
+      ],
+      "id": 9065,
+      "last_activity_by": {
+        "username": "Chad Rockey",
+        "id": 29
+      },
+      "view_count": 1993,
+      "last_activity_at": "1297781265",
+      "title": "What are the units and coordinate conventions in ROS?",
+      "url": "http://answers.ros.org/question/9065/what-are-the-units-and-coordinate-conventions-in-ros/",
+      "author": {
+        "username": "mwise",
+        "id": 28
+      },
+      "added_at": "1297775044",
+      "summary": "<p>Has ROS agreed on a units standard? </p>\n",
+      "score": 4
+    },
+    {
+      "tags": [
+        "Windows",
+        "FAQ"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13044,
+      "answer_ids": [
+        13045,
+        13044
+      ],
+      "id": 9066,
+      "last_activity_by": {
+        "username": "VictorLamoine",
+        "id": 20682
+      },
+      "view_count": 3256,
+      "last_activity_at": "1502110584",
+      "title": "Does ROS run on Windows?",
+      "url": "http://answers.ros.org/question/9066/does-ros-run-on-windows/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297778343",
+      "summary": "<p>Considering that 90% of desktops are (still) Windows-based, are there plans on making at least some parts of ROS run on that OS?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "FAQ",
+        "answers.ros.org"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13050,
+      "answer_ids": [
+        13050
+      ],
+      "id": 9067,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 363,
+      "last_activity_at": "1297785288",
+      "title": "How to get notified of new questions with a certain tag by email?",
+      "url": "http://answers.ros.org/question/9067/how-to-get-notified-of-new-questions-with-a-certain-tag-by-email/",
+      "author": {
+        "username": "Eric Perko",
+        "id": 14
+      },
+      "added_at": "1297779033",
+      "summary": "<p>As the maintainer of cwru-ros-pkg, I'd be interested in getting notified by email of any new questions that are tagged with my repo name (or the stacks or packages contained therein). Is that possible?</p>\n\n<p>I see the option called 'Entire forum (tag filtered):' in my profile-&gt;subscriptions tab, but it's not clear to me when it would choose to send me an email about a new question. I have some tags in my \"Interesting tags\" list - does it generate an email for any question with any of those tags?</p>\n\n<p>What I'm really looking for is the ability to subscribe to a tag via email. For example, on Stack Overflow, if I hover over a tag, I get some information about that tag. One of the options in the little popup box is \"subscribe\", which I then configured to email me whenever a new question is asked or has that tag applied. Does the \"Interesting tags\" and \"Entire forum (tag filtered):\" options let me do that or is there some other way?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "QtCreator",
+        "IDE",
+        "Eclipse"
+      ],
+      "answer_count": 13,
+      "accepted_answer_id": 13047,
+      "answer_ids": [
+        13047,
+        13071,
+        13051,
+        193660,
+        13100,
+        13082,
+        13104,
+        13124,
+        156801,
+        247852,
+        59796,
+        87606,
+        152391
+      ],
+      "id": 9068,
+      "last_activity_by": {
+        "username": "gaojiao",
+        "id": 27141
+      },
+      "view_count": 25477,
+      "last_activity_at": "1478857115",
+      "title": "Which IDE(s) do ROS developers use?",
+      "url": "http://answers.ros.org/question/9068/which-ides-do-ros-developers-use/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297779922",
+      "summary": "<p>While emacs and vi are great, there are also advantages in using IDEs, especially for code exploration and debugging. \nWhich IDE(s) do developers use for C++, Python and other languages?</p>\n",
+      "score": 33
+    },
+    {
+      "tags": [
+        "pr2_computer_monitor"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13081,
+      "answer_ids": [
+        13081
+      ],
+      "id": 9069,
+      "last_activity_by": {
+        "username": "evanmj",
+        "id": 47
+      },
+      "view_count": 214,
+      "last_activity_at": "1297802608",
+      "title": "pr2_computer_monitor with lm_sensors",
+      "url": "http://answers.ros.org/question/9069/pr2_computer_monitor-with-lm_sensors/",
+      "author": {
+        "username": "mjcarroll",
+        "id": 9
+      },
+      "added_at": "1297787800",
+      "summary": "<p>I would like to create a similar node as the <a href=\"http://www.ros.org/wiki/pr2_computer_monitor\" title=\"pr2_computer_monitor\">pr2_computer_monitor</a>, but I do not have access to a computer with IMPI (as I would assume most people don't have).  I was wondering if anyone has written a similar monitoring node with <a href=\"http://lm-sensors.org/\">lm_sensors</a>, which is something that just about every computer is capable of running.</p>\n\n<p>I am mainly interested in temperatures, voltages, and fan speeds, as my robot runs in a high-temperature, battery operated environment (Alabama in the summer).</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "roslaunch",
+        "node",
+        "GUI"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13058,
+      "answer_ids": [
+        29513,
+        13058
+      ],
+      "id": 9070,
+      "last_activity_by": {
+        "username": "Arkapravo",
+        "id": 198
+      },
+      "view_count": 790,
+      "last_activity_at": "1331435963",
+      "title": "Where's *the* ROS executable?",
+      "url": "http://answers.ros.org/question/9070/wheres-the-ros-executable/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297788048",
+      "summary": "<p>I'm used to running eclipse, chrome.exe and gimp by just clicking on an icon.\nNow I read all this stuff about ROS nodes and launch files...</p>\n\n<p>Is there a way to just click an icon and make my robot run?</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "stereo_proc",
+        "remapping",
+        "camera_drivers",
+        "nodelet"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13097,
+      "answer_ids": [
+        13097
+      ],
+      "id": 9071,
+      "last_activity_by": {
+        "username": "marilia15",
+        "id": 5506
+      },
+      "view_count": 1146,
+      "last_activity_at": "1395988932",
+      "title": "How can two identical nodelets in one process remap topics and services?",
+      "url": "http://answers.ros.org/question/9071/how-can-two-identical-nodelets-in-one-process-remap-topics-and-services/",
+      "author": {
+        "username": "joq",
+        "id": 25
+      },
+      "added_at": "1297788210",
+      "summary": "<p>I want to run a stereo pair of 1394 cameras as nodelets. It would be\ngood to run both in the same address space with stereo_image_proc.\nBut, I can't figure out how to remap the topic and service names to do\nthat.</p>\n\n<p>With nodes, I can get the right topic and service names like this:</p>\n\n<pre><code>&lt;launch&gt;\n &lt;group ns=\"stereo\" &gt;\n\n   &lt;!-- left camera --&gt;\n   &lt;node pkg=\"camera1394\" type=\"camera1394_node\" name=\"left_node\" &gt;\n     &lt;rosparam file=\"$(find camera1394)/tests/left.yaml\" /&gt;\n     &lt;remap from=\"camera\" to=\"left\" /&gt;\n   &lt;/node&gt;\n\n   &lt;!-- right camera --&gt;\n   &lt;node pkg=\"camera1394\" type=\"camera1394_node\" name=\"right_node\" &gt;\n     &lt;rosparam file=\"$(find camera1394)/tests/right.yaml\" /&gt;\n     &lt;remap from=\"camera\" to=\"right\" /&gt;\n   &lt;/node&gt;\n\n &lt;/group&gt;\n&lt;/launch&gt;\n</code></pre>\n\n<p>The equivalent nodelet launch script does not work:</p>\n\n<pre><code>&lt;launch&gt;\n &lt;group ns=\"stereo\" &gt;\n\n   &lt;!-- nodelet manager process --&gt;\n   &lt;node pkg=\"nodelet\" type=\"nodelet\" name=\"camera_nodelet_manager\"\n         args=\"manager\" /&gt;\n\n   &lt;!-- left camera --&gt;\n   &lt;node pkg=\"nodelet\" type=\"nodelet\" name=\"left_camera\"\n         args=\"load camera1394/driver camera_nodelet_manager\" &gt;\n     &lt;rosparam file=\"$(find camera1394)/tests/left.yaml\" /&gt;\n     &lt;remap from=\"camera\" to=\"left\" /&gt;\n   &lt;/node&gt;\n\n   &lt;!-- right camera --&gt;\n  &lt;node pkg=\"nodelet\" type=\"nodelet\" name=\"right_camera\"\n        args=\"load camera1394/driver camera_nodelet_manager\" &gt;\n     &lt;rosparam file=\"$(find camera1394)/tests/right.yaml\" /&gt;\n     &lt;remap from=\"camera\" to=\"right\" /&gt;\n  &lt;/node&gt;\n\n &lt;/group&gt;\n&lt;/launch&gt;\n</code></pre>\n\n<p>The failure is that neither <code>&lt;remap&gt;</code> works and both nodelets try to\ndeclare the same service names: <code>/stereo/camera/set_camera_info</code>,\n<code>/stereo/camera/image_raw/compressed/set_parameters</code>, etc..</p>\n\n<p>It seems that the <code>&lt;remap&gt;</code> has to be applied to the nodelet manager\nnode, not the nodes doing the load.</p>\n\n<p>So, how do I remap camera--&gt;left for one nodelet and camera--&gt;right\nfor the other?</p>\n\n<p>Or, is there some other way to solve this problem?</p>\n",
+      "score": 3
+    },
+    {
+      "tags": [
+        "hardware",
+        "hobby",
+        "getting_started",
+        "beginner"
+      ],
+      "answer_count": 5,
+      "accepted_answer_id": 13146,
+      "answer_ids": [
+        13052,
+        13112,
+        13146,
+        192602,
+        13059
+      ],
+      "id": 9072,
+      "last_activity_by": {
+        "username": "Cerin",
+        "id": 2186
+      },
+      "view_count": 5196,
+      "last_activity_at": "1410546066",
+      "title": "Which robot can or should I get to run ROS?",
+      "url": "http://answers.ros.org/question/9072/which-robot-can-or-should-i-get-to-run-ros/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297788414",
+      "summary": "<p>I've heard a lot of good things about ROS and I want to try running it.</p>\n\n<p>PR2 is a little too expensive to me though. Is there anything more afordable to give ROS a try? \nWhat is the best use of my money?</p>\n",
+      "score": 5
+    },
+    {
+      "tags": [
+        "tutorials",
+        "ticket",
+        "FAQ",
+        "getting_started",
+        "community"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13056,
+      "answer_ids": [
+        13056
+      ],
+      "id": 9073,
+      "last_activity_by": {
+        "username": "Tully",
+        "id": 7
+      },
+      "view_count": 712,
+      "last_activity_at": "1297789083",
+      "title": "How can I get involved in ROS community?",
+      "url": "http://answers.ros.org/question/9073/how-can-i-get-involved-in-ros-community/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297788571",
+      "summary": "<p>I'm just starting to learn ROS.\nIs there anything I can do to help ROS while I'm learning it?</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "answers.ros.org",
+        "getting_started"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13053,
+      "answer_ids": [
+        13055,
+        13053
+      ],
+      "id": 9074,
+      "last_activity_by": {
+        "username": "Tully",
+        "id": 7
+      },
+      "view_count": 262,
+      "last_activity_at": "1297788832",
+      "title": "how do I revise my original question",
+      "url": "http://answers.ros.org/question/9074/how-do-i-revise-my-original-question/",
+      "author": {
+        "username": "joq",
+        "id": 25
+      },
+      "added_at": "1297788670",
+      "summary": "<p>My question went out when only 10% complete. I don't know why.</p>\n\n<p>The page says I can revise it, but it does not say how.</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "hobby",
+        "getting_started",
+        "beginner",
+        "science"
+      ],
+      "answer_count": 5,
+      "accepted_answer_id": 13062,
+      "answer_ids": [
+        13062,
+        13199,
+        13063,
+        13174,
+        13060
+      ],
+      "id": 9075,
+      "last_activity_by": {
+        "username": "Yongqiang Gao",
+        "id": 162
+      },
+      "view_count": 1234,
+      "last_activity_at": "1298308084",
+      "title": "Is ROS only for Computer Scientists?",
+      "url": "http://answers.ros.org/question/9075/is-ros-only-for-computer-scientists/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297789965",
+      "summary": "<p>I see ROS is being used by several top-level universities.</p>\n\n<p>Do I have to be a computer scientist to use ROS?</p>\n",
+      "score": 5
+    },
+    {
+      "tags": [
+        "languages",
+        "world",
+        "getting_started"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13065,
+      "answer_ids": [
+        13065
+      ],
+      "id": 9077,
+      "last_activity_by": {
+        "username": "tfoote",
+        "id": 3
+      },
+      "view_count": 372,
+      "last_activity_at": "1297808560",
+      "title": "Is there ROS documentation in languages other than English?",
+      "url": "http://answers.ros.org/question/9077/is-there-ros-documentation-in-languages-other-than-english/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297790515",
+      "summary": "<p>Do other people around the world use ROS? Or is it only a US thing?</p>\n\n<p>Is there ROS documentation in languages other than English?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "meetup",
+        "community",
+        "groups",
+        "getting_started"
+      ],
+      "answer_count": 4,
+      "accepted_answer_id": 13083,
+      "answer_ids": [
+        13064,
+        35724,
+        13067,
+        13083
+      ],
+      "id": 9078,
+      "last_activity_by": {
+        "username": "David Lu",
+        "id": 19
+      },
+      "view_count": 938,
+      "last_activity_at": "1406913813",
+      "title": "How do I find people around me who use ROS?",
+      "url": "http://answers.ros.org/question/9078/how-do-i-find-people-around-me-who-use-ros/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297790658",
+      "summary": "<p>I live in a medium-size city. </p>\n\n<p>Is there a way for me to find other people in my area that use ROS?</p>\n",
+      "score": 12
+    },
+    {
+      "tags": [
+        "Python",
+        "framework",
+        "FAQ",
+        "C++",
+        "languages"
+      ],
+      "answer_count": 1,
+      "accepted_answer_id": 13066,
+      "answer_ids": [
+        13066
+      ],
+      "id": 9079,
+      "last_activity_by": {
+        "username": "joq",
+        "id": 25
+      },
+      "view_count": 965,
+      "last_activity_at": "1297791641",
+      "title": "Do I need to know any specific computer language or framework to use ROS?",
+      "url": "http://answers.ros.org/question/9079/do-i-need-to-know-any-specific-computer-language-or-framework-to-use-ros/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297791033",
+      "summary": "<p>Do I have to know both C++ <em>and</em> Python to use ROS?</p>\n\n<p>Do I need to learn any specific frameworks?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "FAQ",
+        "getting_started"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13073,
+      "answer_ids": [
+        13076,
+        13078,
+        13073
+      ],
+      "id": 9081,
+      "last_activity_by": {
+        "username": "mmwise",
+        "id": 2
+      },
+      "view_count": 752,
+      "last_activity_at": "1297798500",
+      "title": "Supported platforms",
+      "url": "http://answers.ros.org/question/9081/supported-platforms/",
+      "author": {
+        "username": "Wim",
+        "id": 38
+      },
+      "added_at": "1297793833",
+      "summary": "<p>On which platforms is ROS supported?</p>\n",
+      "score": 1
+    },
+    {
+      "tags": [
+        "getting_started",
+        "beginner",
+        "sites"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13077,
+      "answer_ids": [
+        13074,
+        13080,
+        13077
+      ],
+      "id": 9082,
+      "last_activity_by": {
+        "username": "joq",
+        "id": 25
+      },
+      "view_count": 697,
+      "last_activity_at": "1297802405",
+      "title": "Is ROS.org the only place of information about ROS?",
+      "url": "http://answers.ros.org/question/9082/is-rosorg-the-only-place-of-information-about-ros/",
+      "author": {
+        "username": "Alex Bravo",
+        "id": 27
+      },
+      "added_at": "1297794932",
+      "summary": "<p>Are there other places?</p>\n",
+      "score": 2
+    },
+    {
+      "tags": [
+        "Kinect",
+        "NXT",
+        "IDE",
+        "Lego"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13130,
+      "answer_ids": [
+        13075,
+        14435,
+        13130
+      ],
+      "id": 9083,
+      "last_activity_by": {
+        "username": "fergs",
+        "id": 84
+      },
+      "view_count": 2089,
+      "last_activity_at": "1304370120",
+      "title": "ROS + Lego NXT + Kinect?",
+      "url": "http://answers.ros.org/question/9083/ros-lego-nxt-kinect/",
+      "author": {
+        "username": "veltrop",
+        "id": 42
+      },
+      "added_at": "1297795231",
+      "summary": "<p>Here's a question I received recently, thought it would be good to put up here:</p>\n\n<blockquote>\n  <p>My project group is going to try\n  programming a Lego Mindstorm NXT robot\n  and the Kinect.</p>\n  \n  <p>We are currently still trying to\n  figure how to interface the Kinect\n  with our NXT robot.</p>\n  \n  <p>We have read on the internet that it\n  is possible to used ROS-Kinect and\n  ROS-NXT. Also, we have explored the\n  possibility of using C# on OpenKinect.\n  However, we are unable to figure how\n  to interface both the NXT and Kinect\n  such that the Kinect is able to\n  control the NXT. Also, may we ask\n  which software/IDE/platform which we\n  could use to program both the NXT and\n  Kinect at the same time?</p>\n</blockquote>\n",
+      "score": 3
+    },
+    {
+      "tags": [
+        "vslam",
+        "compile_error",
+        "eigen"
+      ],
+      "answer_count": 3,
+      "accepted_answer_id": 13417,
+      "answer_ids": [
+        13958,
+        13417,
+        13444
+      ],
+      "id": 9084,
+      "last_activity_by": {
+        "username": "Asomerville",
+        "id": 351
+      },
+      "view_count": 602,
+      "last_activity_at": "1301335458",
+      "title": "vslam eigen and compile_error",
+      "url": "http://answers.ros.org/question/9084/vslam-eigen-and-compile_error/",
+      "author": {
+        "username": "Prasad",
+        "id": 61
+      },
+      "added_at": "1297816912",
+      "summary": "<div class=\"snippet\"><p>Hello,</p>\n\n<p>I am trying to compile vslam as instructed but halting at some error mentioned below:</p>\n\n<p>Is there anything that i am suppose to make link to eigen3 externally?</p>\n\n<blockquote>\n  <p>[rosmake-3] Finished &lt;&lt;&lt; rosnode\n  ROS_NOBUILD in package rosnode <br/>\n  [rosmake-3] Starting &gt;&gt;&gt;\n  image_transport [ make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt;\n  image_transport ROS_NOBUILD in package\n  image_transport <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; cv_bridge [\n  make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; cv_bridge\n  ROS_NOBUILD in package cv_bridge <br/>\n  [rosmake-3] Starting &gt;&gt;&gt;\n  image_geometry [ make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt;\n  image_geometry ROS_NOBUILD in package\n  image_geometry <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; rosmsg [ make\n  ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; rosmsg\n  ROS_NOBUILD in package rosmsg  No\n  Makefile in package rosmsg <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; rosservice [\n  make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; rosservice\n  ROS_NOBUILD in package rosservice <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; roswtf [ make\n  ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; roswtf\n  ROS_NOBUILD in package roswtf <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; tf [ make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; tf\n  ROS_NOBUILD in package tf <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; nav_msgs [\n  make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; nav_msgs\n  ROS_NOBUILD in package nav_msgs <br/>\n  [rosmake-3] Starting &gt;&gt;&gt;\n  dynamic_reconfigure [ make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt;\n  dynamic_reconfigure ROS_NOBUILD in\n  package dynamic_reconfigure <br/>\n  [rosmake-3] Starting &gt;&gt;&gt; stereo_msgs [\n  make ] <br/>\n  [rosmake-3] Finished &lt;&lt;&lt; stereo_msgs\n  ROS_NOBUILD in package stereo_msgs <br/>\n  [rosmake-2] Finished &lt;&lt;&lt; bpcg [PASS] [\n  1.40 seconds ]                                                                                                                   [rosmake-1] Finished &lt;&lt;&lt;\n  vocabulary_tree [PASS] [ 1.51 seconds\n  ] <br/>\n  [ rosmake ] Last 40 linesame_common:\n  3.5 sec ]                                                                                               [ 1 Active 51/54 Complete ]\n  {-------------------------------------------------------------------------------   /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:206:\n  error: \u2018SelfAdjoint\u2019 was not declared\n  in this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:206:\n  error: \u2018Upper\u2019 was not declared in\n  this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:206:\n  error: template argument 3 is invalid \n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:212:\n  error: \u2018SelfAdjoint\u2019 was not declared\n  in this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:212:\n  error: \u2018Lower\u2019 was not declared in\n  this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:212:\n  error: template argument 3 is invalid \n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:231:\n  error: \u2018SelfAdjoint\u2019 was not declared\n  in this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:231:\n  error: \u2018Lower\u2019 was not declared in\n  this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:231:\n  error: template argument 3 is invalid \n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:237:\n  error: \u2018SelfAdjoint\u2019 was not declared\n  in this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:237:\n  error: \u2018Upper\u2019 was not declared in\n  this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:237:\n  error: \u2018Dynamic\u2019 was not declared in\n  this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:237:\n  error: template argument 3 is invalid \n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:237:\n  error: template argument 4 is invalid \n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:255:\n  error: \u2018SelfAdjoint\u2019 was not declared\n  in this scope <br/>\n  /opt/ros/cturtle/stacks/geometry_experimental/eigen3/include/Eigen3/src/Core/SelfAdjointView.h:255:\n  error: \u2018Lower\u2019 was not declared ...</br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></br/></p></blockquote><span class=\"expander\"> <a>(more)</a></span></div>",
+      "score": 1
+    },
+    {
+      "tags": [
+        "nodelet",
+        "image_pipeline",
+        "image_proc",
+        "camera_drivers"
+      ],
+      "answer_count": 2,
+      "accepted_answer_id": 13273,
+      "answer_ids": [
+        13091,
+        13273
+      ],
+      "id": 9085,
+      "last_activity_by": {
+        "username": "Patrick Mihelich",
+        "id": 180
+      },
+      "view_count": 985,
+      "last_activity_at": "1298537640",
+      "title": "How can I speed up image rectification?",
+      "url": "http://answers.ros.org/question/9085/how-can-i-speed-up-image-rectification/",
+      "author": {
+        "username": "Ken",
+        "id": 13
+      },
+      "added_at": "1297829711",
+      "summary": "<p>I hope to increase the rectified frame rate that I'm getting from image_proc. I'm feeding it a 64 fps 704x456 video stream, with that 704x456 rectangle being the region of interest sampled from a 1600x1200 sensor. The camera calibration is specified for the full-sensor size, and I'm using the Diamondback version of image_proc.</p>\n\n<pre><code>$ rostopic hz /camera/image_raw\naverage rate: 64.023\n$ rostopic hz /camera/image_color\naverage rate: 64.113\n$ rostopic hz /camera/image_rect_color\naverage rate: 27.558\n$ top\n  767 user      20   0  587m 109m  11m S  *115*  0.9 132:37.80 image_proc\n</code></pre>\n\n<p>Using earlier versions of image_proc and camera1394, I was able to get 38 fps rectified by choosing an MxN subrectangle [slightly larger than the current ROI] and calibrating with that. In that case, the Image and CameraInfo messages would both specify MxN pixels. Now, though, camera_info lists the full 1624x1224, and I suspected that something inside the rectify nodelet was copying my ROI onto a full-size image before undistorting anything.</p>\n\n<pre><code>$ rostopic echo /camera/image_raw\nheight: 456\nwidth: 704\nencoding: bayer_rggb8\nis_bigendian: 0\nstep: 704\n</code></pre>\n\n<p>However, when I remove the ROI the undistorted framerate drops further:</p>\n\n<pre><code>$ rostopic hz /camera/image_color\naverage rate: 29.145\n$ rostopic hz /camera/image_rect_color\naverage rate: 19.497\n</code></pre>\n\n<p>so I'm unsure of the cause of the slowdown. Can anyone see what's going on?</p>\n",
+      "score": 3
+    },
+    {
+      "tags": [
+        "answers.ros.org"
+      ],
+      "answer_count": 5,
+      "accepted_answer_id": 13086,
+      "answer_ids": [
+        13143,
+        35210,
+        35106,
+        48769,
+        13086
+      ],
+      "id": 9086,
+      "last_activity_by": {
+        "username": "AdrianPeng",
+        "id": 3585
+      },
+      "view_count": 387,
+      "last_activity_at": "1353510262",
+      "title": "Where is the commenting tool?",
+      "url": "http://answers.ros.org/question/9086/where-is-the-commenting-tool/",
+      "author": {
+        "username": "Homer Manalo",
+        "id": 74
+      },
+      "added_at": "1297834407",
+      "summary": "<p>I cannot find any clickable under the posts.</p>\n",
+      "score": 4
+    },
+    {
+      "tags": [
+        "Kinect",
+        "vslam",
+        "navigation",
+        "UAV"
+      ],
+      "answer_count": 4,
+      "accepted_answer_id": 13089,
+      "answer_ids": [
+        13085,
+        13427,
+        13828,
+        13089
+      ],
+      "id": 9087,
+      "last_activity_by": {
+        "username": "rreid",
+        "id": 323
+      },
+      "view_count": 2283,
+      "last_activity_at": "1300765442",
+      "title": "VSLAM based navigation with Kinect, where do I begin?",
+      "url": "http://answers.ros.org/question/9087/vslam-based-navigation-with-kinect-where-do-i-begin/",
+      "author": {
+        "username": "tom",
+        "id": 58
+      },
+      "added_at": "1297840908",
+      "summary": "<p>I'm interested in developing a robot (UAV) indoor navigation system basing on a MS Kinect (or Kinect-like, like the <a href=\"http://www.primesense.com/?p=514\">PrimeSense dev kit</a>) sensor. I'm specifically interested in corridor following. </p>\n\n<p>I've recently bought a <a href=\"http://beagleboard.org/hardware-xM\">BeagleBoard-xM</a> platform and installed Ubuntu and ROS on it. I'd like to start off without any flying platform and implement the navigation layer first. So here is my plan (and questions):</p>\n\n<ol>\n<li>I have to buy a sensor for VSLAM (ie. Kinect or so): do you have any suggestions on which one should I choose? I unfortunately wasn't able to connect PrimeSense recently, is it even worth it, or should I stick with the original Kinect?</li>\n<li>Which stacks should I start playing with? I'm particularly interested in indoor navigation and attitude estimation (I could fuse with <a href=\"http://en.wikipedia.org/wiki/Inertial_measurement_unit\">IMU</a> based attitude data afterwards).</li>\n<li>I would then try to implement a distributed system (Desktop PC + BB-xM) via ROS, with both peers doing a part of calculations. How would you design such a system, what potential risks do you see right away?</li>\n</ol>\n\n<p>Any suggestions welcome, tom.</p>\n",
+      "score": 2
+    }
+  ]
+}

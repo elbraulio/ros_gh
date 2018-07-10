@@ -5,7 +5,7 @@ import iterator.IteratePagedContent;
 import org.jsoup.Jsoup;
 import org.junit.Ignore;
 import org.junit.Test;
-import question.RosDomQuestion;
+import question.DefaultRosDomQuestion;
 import tools.LastRosAnswersPage;
 
 import java.io.IOException;
@@ -40,7 +40,7 @@ public class FetchAnswersTest {
         final Iterator<String> contentLinks = makeIteratorForTest();
         while (contentLinks.hasNext()) {
             System.out.println(
-                    new RosDomQuestion(
+                    new DefaultRosDomQuestion(
                             Jsoup.connect(root + contentLinks.next()).get()
                     )
             );

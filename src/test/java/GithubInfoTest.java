@@ -53,7 +53,7 @@ public final class GithubInfoTest {
                             ghRepo.fullName(), canRequest, github
                     ).colaboratorList()
                             ) {
-                        // save ghUser and link to repo
+                        // save ghUser and url to repo
                         final int contributorId =
                                 new InsertGhUserIfNotExists(
                                         ghColaborator.login(), github,

@@ -11,7 +11,7 @@ import java.util.List;
 public interface RosQuestion {
     String title();
 
-    String author();
+    int author();
 
     String date();
 
@@ -21,5 +21,19 @@ public interface RosQuestion {
 
     HtmlContent body();
 
-    String link();
+    String url();
+
+    int rosId();
+
+    int answerCount();
+
+    int acceptedAnswerId();
+
+    long lastActivityAt();
+
+    int lastActivityBy();
+
+    int viewCount();
+
+    int votes();
 }
