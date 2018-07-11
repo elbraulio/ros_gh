@@ -17,17 +17,13 @@ public interface RosQuestion {
 
     List<Tag> tags();
 
-    List<String> participants();
+    List<String> collaborators();
 
-    HtmlContent body();
+    HtmlContent content();
 
     String url();
 
     int rosId();
-
-    int answerCount();
-
-    int acceptedAnswerId();
 
     long lastActivityAt();
 
