@@ -20,7 +20,7 @@ public class DefaultRosDomQuestion implements RosDomQuestion {
     }
 
     @Override
-    public List<String> collaborators() {
+    public List<String> participants() {
         final List<String> participants = new LinkedList<>();
         this.document.select("div.user-info > a[href]")
                 .forEach(
@@ -31,5 +31,10 @@ public class DefaultRosDomQuestion implements RosDomQuestion {
                         e -> participants.add(e.text())
                 );
         return new DistintcElements<>(participants).list();
+    }
+
+    @Override
+    public int votes() {
+        return 0;
     }
 }
