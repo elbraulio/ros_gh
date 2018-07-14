@@ -11,16 +11,16 @@ import java.util.*;
  *
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class IteratePagedContent implements Iterator<String> {
+public final class IteratePagedContent <T> implements Iterator<T> {
     /**
      * Users list page iterator.
      */
-    private final Iterator<Iterator<String>> iterator;
+    private final Iterator<Iterator<T>> iterator;
 
     /**
      * Each url retrieved from the iterator.
      */
-    private final List<String> links;
+    private final List<T> links;
 
     /**
      * The first value from the stack represent the current iterated url index.
@@ -34,8 +34,7 @@ public final class IteratePagedContent implements Iterator<String> {
      *
      * @param iterator users list page iterator.
      */
-    public IteratePagedContent(final Iterator<Iterator<String>>
-                                          iterator) {
+    public IteratePagedContent(final Iterator<Iterator<T>> iterator) {
         this(
                 iterator,
                 new LinkedList<>(),
@@ -52,8 +51,8 @@ public final class IteratePagedContent implements Iterator<String> {
      * @param nextLinkIndex current iterated url index.
      */
     private IteratePagedContent(
-            final Iterator<Iterator<String>> iterator,
-            final List<String> links,
+            final Iterator<Iterator<T>> iterator,
+            final List<T> links,
             final Stack<Integer> nextLinkIndex
     ) {
 
@@ -72,7 +71,7 @@ public final class IteratePagedContent implements Iterator<String> {
     }
 
     @Override
-    public String next() {
+    public T next() {
         final int currentIndex = this.nextLinkIndex.peek();
         if (currentIndex < this.links.size()) {
             this.nextLinkIndex.push(currentIndex + 1);

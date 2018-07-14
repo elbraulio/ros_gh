@@ -17,7 +17,7 @@ public class IteratePagedContentTest {
 
     @Test @Ignore
     public void iterateOverAllPages() throws IOException {
-        IteratePagedContent s = new IteratePagedContent(
+        IteratePagedContent s = new IteratePagedContent<>(
                 new IterateDomPages(
                         new RosQuestionsPagedDom(),
                         1,

@@ -43,7 +43,7 @@ public class Launcher {
         final int initialPage = 1;
         final String root = "https://answers.ros.org";
         final Document usersPage = Jsoup.connect(root + "/users/").get();
-        final Iterator<String> usersLinks = new IteratePagedContent(
+        final Iterator<String> usersLinks = new IteratePagedContent<>(
                 new IterateDomPages(
                         new RosUserPagedDom(),
                         initialPage,
