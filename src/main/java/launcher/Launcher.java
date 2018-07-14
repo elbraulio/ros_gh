@@ -4,15 +4,17 @@ import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
 import dom.RosUserPagedDom;
 import github.*;
-import iterator.Colaborators;
-import iterator.IterateByUserLinks;
-import iterator.IterateDomPages;
-import iterator.IteratePagedContent;
+import iterator.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import question.ApiRosQuestion;
+import question.DefaultApiRosQuestion;
+import question.DefaultRosDomQuestion;
+import question.InsertQuestionWithExtras;
 import tools.*;
 import user.RosDomUser;
 
+import javax.json.JsonArray;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -33,9 +35,50 @@ public class Launcher {
             case "rs":
                 fetchRosAnswersUsers(args[1]);
                 break;
+            case "ra":
+                fetchRosAnswersQuestions(args[1]);
+                break;
             default:
                 System.out.println("Usage: ...");
         }
+    }
+
+    private static void fetchRosAnswersQuestions(String dbPath)
+            throws IOException {
+        final Iterator<JsonArray> iterable = new IterateApiQuestionPage();
+        iterable.forEachRemaining(
+                jsonArray -> {
+                    for (int i = 0; i < jsonArray.size(); i++) {
+                        final ApiRosQuestion question =
+                                new DefaultApiRosQuestion(
+                                        jsonArray.getJsonObject(i)
+                                );
+                        try {
+                            System.out.println(question.url());
+                            // general info
+                            new InsertQuestionWithExtras(
+                                    question,
+                                    new DefaultRosDomQuestion(question.id())
+                            ).execute(
+                                    new SqliteConnection(dbPath).connection(), -1
+                            );
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            continue;
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                            continue;
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        } catch (ClassNotFoundException e) {
+                            e.printStackTrace();
+                        } catch (NullPointerException n) {
+                            n.printStackTrace();
+                            continue;
+                        }
+                    }
+                }
+        );
     }
 
     private static void fetchRosAnswersUsers(String dbPath)
