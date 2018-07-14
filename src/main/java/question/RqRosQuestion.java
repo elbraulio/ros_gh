@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public class RqRosQuestion {
     private final String url =
-            "https://answers.ros.org/api/v1/questions/?sort=age-asc";
+            "https://answers.ros.org/api/v1/questions/?sort=age-asc&page=";
 
 
     private final int page;
@@ -21,7 +21,7 @@ public class RqRosQuestion {
     }
 
     public JsonArray jsonArray() throws IOException {
-        return new JdkRequest(this.url)
+        return new JdkRequest(this.url + this.page)
                 .fetch()
                 .as(JsonResponse.class)
                 .json()

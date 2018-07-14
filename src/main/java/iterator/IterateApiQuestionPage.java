@@ -34,7 +34,7 @@ public class IterateApiQuestionPage implements Iterator<JsonArray> {
     @Override
     public JsonArray next() {
         try {
-            return new RqRosQuestion(this.currentPage).jsonArray();
+            return new RqRosQuestion(this.currentPage++).jsonArray();
         } catch (IOException e) {
             e.printStackTrace();
         }

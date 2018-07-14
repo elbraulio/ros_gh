@@ -21,7 +21,7 @@ public class DefaultRosDomQuestion implements RosDomQuestion {
     public DefaultRosDomQuestion(int id) throws IOException {
         this(
                 Jsoup.connect(
-                "https://answers.ros.org/question/" + id
+                        "https://answers.ros.org/question/" + id
                 ).get()
         );
     }
@@ -31,21 +31,8 @@ public class DefaultRosDomQuestion implements RosDomQuestion {
     }
 
     @Override
-    public List<Integer> participants() {
-        final List<Integer> participants = new LinkedList<>();
-        this.document.select("div.user-info > a[href]")
-                .forEach(
-                        e -> participants.add(
-                                Integer.parseInt(e.attr("href"))
-                        )
-                );
-        this.document.select("a.author > a[href]")
-                .forEach(
-                        e -> participants.add(
-                                Integer.parseInt(e.attr("href"))
-                        )
-                );
-        return new DistintcElements<>(participants).list();
+    public List<Answer> participants() {
+        return new Participants(this.document).asList();
     }
 
     @Override

@@ -27,6 +27,7 @@ public class InsertQuestionWithExtras implements SqlCommand {
             throws SQLException, IOException, InterruptedException {
         new InsertRosQuestion(this.api, this.dom.votes())
                 .execute(connection, -1);
+        // general info
         for (String tag : this.api.tags()) {
             if (!new RosTagExist(tag).query(connection)) {
                 final int tagId = new InsertRosTag(tag).execute(connection, -1);
@@ -37,6 +38,14 @@ public class InsertQuestionWithExtras implements SqlCommand {
                 new InsertQuestionTag(this.api.id(), tagId)
                         .execute(connection, -1);
             }
+        }
+
+        // answers
+        for (Answer answer : this.dom.participants()){
+                final int answerId = new InsertAnswer(answer)
+                        .execute(connection, -1);
+                new InsertAswerQuestion(answerId, this.api.id())
+                        .execute(connection,  -1);
         }
         return 1;
     }

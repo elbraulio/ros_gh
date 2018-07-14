@@ -67,6 +67,7 @@ public class FetchAnswersTest {
                                 );
                         try {
                             System.out.println(question.url());
+                            // general info
                             new InsertQuestionWithExtras(
                                     question,
                                     new DefaultRosDomQuestion(question.id())
@@ -75,12 +76,17 @@ public class FetchAnswersTest {
                             );
                         } catch (IOException e) {
                             e.printStackTrace();
+                            continue;
                         } catch (InterruptedException e) {
                             e.printStackTrace();
+                            continue;
                         } catch (SQLException e) {
                             e.printStackTrace();
                         } catch (ClassNotFoundException e) {
                             e.printStackTrace();
+                        } catch (NullPointerException n) {
+                            n.printStackTrace();
+                            continue;
                         }
                     }
                 }
