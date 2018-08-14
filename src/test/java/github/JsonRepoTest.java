@@ -6,7 +6,7 @@ import javax.json.Json;
 import javax.json.JsonObject;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -24,10 +24,10 @@ public class JsonRepoTest {
                         Json.createObjectBuilder()
                                 .add("login", "elbraulio")
                 ).build();
-        JsonRepo jsonRepo = new JsonRepo(jsonObject);
-        assertThat(jsonRepo.name(), is("ros_gh"));
-        assertThat(jsonRepo.fullName(), is("github.com/ros_gh"));
-        assertThat(jsonRepo.description(), is("recomendation system"));
-        assertThat(jsonRepo.owner(), is("elbraulio"));
+        GhRepo ghRepo = new JsonRepo(jsonObject);
+        assertThat(ghRepo.name(), is("ros_gh"));
+        assertThat(ghRepo.fullName(), is("github.com/ros_gh"));
+        assertThat(ghRepo.description(), is("recomendation system"));
+        assertThat(ghRepo.owner(), is("elbraulio"));
     }
 }

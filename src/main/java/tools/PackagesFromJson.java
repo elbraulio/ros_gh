@@ -27,27 +27,22 @@ public class PackagesFromJson implements CanBeList<RosPackage> {
                             repositories.getJsonObject(pckg);
                     String repoUrl = "";
                     String source = "";
-                    if (repo.containsKey("source")) {
+                    if (isOnGithub("source", repo)) {
                         repoUrl = repo.getJsonObject("source")
                                 .getString("url");
                         source = "source";
-                    } else if (repo.containsKey("doc")) {
+                    } else if (isOnGithub("doc", repo)) {
                         repoUrl = repo.getJsonObject("doc")
                                 .getString("url");
                         source = "doc";
-                    } else if (repo.containsKey("release")) {
+                    } else if (isOnGithub("release", repo)) {
                         repoUrl = repo.getJsonObject("release")
                                 .getString("url");
                         source = "release";
-                    }
-                    if(!repoUrl.isEmpty()){
-                        String[] info = repoUrl.split("/");
-                        String stored = info[2];
-                        if (!stored.equals("github.com")) {
-                            source = "";
-                            repoUrl = "";
-                            System.out.println("NOT FOUND ON GITHUB : " + pckg);
-                        }
+                    } else {
+                        System.out.println("NOT FOUND ON GITHUB : " + pckg);
+                        source = "";
+                        repoUrl = "";
                     }
 
                     rosPackages.add(new RosPackage(pckg, repoUrl, source));
@@ -55,6 +50,15 @@ public class PackagesFromJson implements CanBeList<RosPackage> {
         );
 
         return rosPackages;
+    }
+
+    private boolean isOnGithub(String source, JsonObject repo){
+        if(repo.containsKey(source)){
+            final String url = repo.getJsonObject(source).getString("url");
+            final String[] info = url.split("/");
+            return info[2].equals("github.com");
+        }
+        return false;
     }
 
     @Override
