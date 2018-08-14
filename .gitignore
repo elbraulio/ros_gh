@@ -3,3 +3,4 @@
 target/
 *.db
 .DS_Store
+.Rproj.user
