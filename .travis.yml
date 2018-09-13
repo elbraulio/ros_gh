@@ -3,11 +3,9 @@ language: java
 script:
   - mvn clean verify
   - mvn cobertura:cobertura
-env:
-  global:
-    - MAVEN_OPTS="-Xmx256m"
-    - JAVA_OPTS="-Xmx256m"
+
 jdk:
   - oraclejdk8
+  
 after_success:
   - bash <(curl -s https://codecov.io/bash)
