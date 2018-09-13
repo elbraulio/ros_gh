@@ -8,6 +8,6 @@ env:
     - MAVEN_OPTS="-Xmx256m"
     - JAVA_OPTS="-Xmx256m"
 jdk:
-  - oraclejdk9
+  - oraclejdk8
 after_success:
   - bash <(curl -s https://codecov.io/bash)
