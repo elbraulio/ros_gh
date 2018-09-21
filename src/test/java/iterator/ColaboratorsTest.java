@@ -4,6 +4,7 @@ import com.jcabi.github.RtGithub;
 import github.GhColaborator;
 import github.GhRepo;
 import org.hamcrest.CoreMatchers;
+import org.junit.Ignore;
 import org.junit.Test;
 import tools.CanRequest;
 
@@ -17,7 +18,7 @@ import static org.junit.Assert.*;
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public class ColaboratorsTest {
-    @Test
+    @Test @Ignore
     public void findBraulio() throws IOException, InterruptedException {
         List<GhColaborator> list = new Colaborators(
                 "elbraulio/ros_gh",
