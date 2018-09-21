@@ -17,23 +17,23 @@ import java.util.List;
  */
 public class Colaborators {
 
-    private final String fullName;
+    private final String repoFullName;
     private final CanRequest canRequest;
     private final Github github;
 
-    public Colaborators(String fullName, CanRequest canRequest, Github github) {
+    public Colaborators(String repoFullName, CanRequest canRequest, Github github) {
 
-        this.fullName = fullName;
+        this.repoFullName = repoFullName;
         this.canRequest = canRequest;
         this.github = github;
     }
 
     private JsonArray tryJsonArray(
-            int tries, Github github, String repoUrl, CanRequest canRequest
+            int tries, Github github, String repoName, CanRequest canRequest
     ) throws IOException, InterruptedException {
         try {
             JsonArray array = github.entry()
-                    .uri().path("/repos/" + repoUrl
+                    .uri().path("/repos/" + repoName
                             + "/stats/contributors")
                     .back()
                     .fetch()
@@ -43,7 +43,7 @@ public class Colaborators {
         } catch (JsonException je) {
             if (tries > 0) {
                 return tryJsonArray(
-                        tries - 1, github, repoUrl, canRequest
+                        tries - 1, github, repoName, canRequest
                 );
             } else {
                 throw je;
@@ -55,7 +55,7 @@ public class Colaborators {
             throws IOException, InterruptedException {
         final List<GhColaborator> list = new LinkedList<>();
         final JsonArray contributors = tryJsonArray(
-                100, this.github, this.fullName, this.canRequest
+                100, this.github, this.repoFullName, this.canRequest
         );
 
         for (int i = 0; i < contributors.size(); i++) {

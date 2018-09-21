@@ -3,7 +3,7 @@ package github;
 
 import com.jcabi.github.Github;
 import com.jcabi.http.response.JsonResponse;
-import tools.ExtractRepoFromUrl;
+import tools.ExtractRepoFromShortUrl;
 
 import java.io.IOException;
 
@@ -27,7 +27,7 @@ public final class RosPackage {
                 github.entry()
                         .uri()
                         .path(
-                                "/repos/" + new ExtractRepoFromUrl(this.repoUrl)
+                                "/repos/" + new ExtractRepoFromShortUrl(this.repoUrl)
                                         .repoFullName()
                         )
                         .back()

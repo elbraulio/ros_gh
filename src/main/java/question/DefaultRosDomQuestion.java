@@ -2,14 +2,9 @@ package question;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import tag.QuestionTags;
-import tag.Tag;
-import tools.DistintcElements;
-import tools.HtmlContent;
 import tools.QuestionIdFromUrl;
 
 import java.io.IOException;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
