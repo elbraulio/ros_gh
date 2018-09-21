@@ -1,0 +1,15 @@
+package tools;
+
+import org.junit.Test;
+
+import static org.junit.Assert.*;
+
+/**
+ * @author Braulio Lopez (brauliop.3@gmail.com)
+ */
+public class HtmlContentTest {
+    @Test
+    public void brainless(){
+        assertEquals("tags", new HtmlContent("tags").toString());
+    }
+}

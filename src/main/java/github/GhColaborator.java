@@ -20,4 +20,13 @@ public class GhColaborator {
     public int commits() {
         return this.total;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof GhColaborator){
+            return ((GhColaborator) o).author.equals(this.author);
+        } else {
+            return false;
+        }
+    }
 }

@@ -46,4 +46,13 @@ public class DefaultGhRepo implements GhRepo {
     public int dbId() {
         return this.id;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if(o instanceof DefaultGhRepo){
+            return ((DefaultGhRepo) o).id == this.id;
+        } else {
+            return false;
+        }
+    }
 }

@@ -11,15 +11,25 @@ import java.util.List;
 public interface RosQuestion {
     String title();
 
-    String author();
+    int author();
 
     String date();
 
     List<Tag> tags();
 
-    List<String> participants();
+    List<String> collaborators();
 
-    HtmlContent body();
+    HtmlContent content();
 
-    String link();
+    String url();
+
+    int rosId();
+
+    long lastActivityAt();
+
+    int lastActivityBy();
+
+    int viewCount();
+
+    int votes();
 }

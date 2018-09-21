@@ -3,10 +3,10 @@ package tools;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class ExtractRepoFromUrl {
+public final class ExtractRepoFromShortUrl {
     private final String repoUrl;
 
-    public ExtractRepoFromUrl(String repoUrl) {
+    public ExtractRepoFromShortUrl(String repoUrl) {
         this.repoUrl = repoUrl;
     }
 

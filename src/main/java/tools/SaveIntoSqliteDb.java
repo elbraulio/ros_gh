@@ -20,6 +20,20 @@ public class SaveIntoSqliteDb {
 
     public void execute() throws SQLException {
         // TODO: 16-05-18 refactor this temporal coupling
+
+        String exists = "SELECT * FROM ros_user WHERE id=" + this.rosUser.rosId();
+
+        try (
+                Statement stmt = this.connection.createStatement();
+                ResultSet rs = stmt.executeQuery(exists)
+        ) {
+            if (rs.next()) {
+                // if exists dont save
+                return;
+            }
+        }
+
+
         // insert user
         String user = "INSERT INTO ros_user(name,up_votes,down_votes, id) " +
                 "VALUES(?,?,?,?)";
@@ -32,8 +46,8 @@ public class SaveIntoSqliteDb {
             pstmt.setInt(4, this.rosUser.rosId());
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
-            if (rs.next()){
-                userId=rs.getInt(1);
+            if (rs.next()) {
+                userId = rs.getInt(1);
             }
         }
 
@@ -56,8 +70,8 @@ public class SaveIntoSqliteDb {
                         pstmt.setString(1, tag.name());
                         pstmt.executeUpdate();
                         ResultSet rs1 = pstmt.getGeneratedKeys();
-                        if (rs1.next()){
-                            tagId=rs1.getInt(1);
+                        if (rs1.next()) {
+                            tagId = rs1.getInt(1);
                         }
                     }
                 }
@@ -93,8 +107,8 @@ public class SaveIntoSqliteDb {
                         pstmt.setString(1, tag.name());
                         pstmt.executeUpdate();
                         ResultSet rs1 = pstmt.getGeneratedKeys();
-                        if (rs1.next()){
-                            tagId=rs1.getInt(1);
+                        if (rs1.next()) {
+                            tagId = rs1.getInt(1);
                         }
                     }
                 }
@@ -129,8 +143,8 @@ public class SaveIntoSqliteDb {
                         pstmt.setString(1, tag.name());
                         pstmt.executeUpdate();
                         ResultSet rs1 = pstmt.getGeneratedKeys();
-                        if (rs1.next()){
-                            tagId=rs1.getInt(1);
+                        if (rs1.next()) {
+                            tagId = rs1.getInt(1);
                         }
                     }
                 }

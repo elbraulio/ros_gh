@@ -4,5 +4,8 @@ script:
   - mvn clean verify
   - mvn cobertura:cobertura
 
+jdk:
+  - oraclejdk8
+  
 after_success:
   - bash <(curl -s https://codecov.io/bash)

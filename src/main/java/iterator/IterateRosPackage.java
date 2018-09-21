@@ -14,6 +14,7 @@ public class IterateRosPackage implements Iterator<RosPackage> {
     private final Github github;
     private int next;
 
+    // TODO: 21-09-18 why does this exist? is just a collection.
     public IterateRosPackage(
             final List<RosPackage> rosPackages, final Github github
     ) {

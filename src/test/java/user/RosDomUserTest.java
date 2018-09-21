@@ -228,4 +228,26 @@ public class RosDomUserTest {
                 )
         );
     }
+
+    @Test
+    public void asString() throws IOException {
+        assertThat(
+                new RosDomUser(
+                        Jsoup.parse(
+                                new File(
+                                        this.fakeEmptyPerfilPath
+                                ),
+                                "UTF-8"
+                        )
+                ).toString(),
+                is(
+                        "name: elbraulio\n" +
+                                "upVotes: 0\n" +
+                                "downVotes: 0\n" +
+                                "tags: []\n" +
+                                "interestingTag: []\n" +
+                                "ignoredtag: []\n"
+                )
+        );
+    }
 }

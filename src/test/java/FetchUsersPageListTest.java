@@ -37,7 +37,7 @@ public final class FetchUsersPageListTest {
         final int finalPage = 2;
         assertThat(
                 new IteratorAsList<>(
-                        new IteratePagedContent(
+                        new IteratePagedContent<>(
                                 new IterateDomPages(
                                         new FakePagedDom(),
                                         initialPage,
@@ -66,7 +66,7 @@ public final class FetchUsersPageListTest {
         final int initialPage = 1;
         final Document firstPage = pagedDom.page(1);
         final List<String> links = new IteratorAsList<>(
-                new IteratePagedContent(
+                new IteratePagedContent<>(
                         new IterateDomPages(
                                 pagedDom,
                                 initialPage,
@@ -102,7 +102,7 @@ public final class FetchUsersPageListTest {
     private Iterator<String> makeIteratorForTest() throws IOException {
         final int initialPage = 1;
         final Document usersPage = Jsoup.connect(root + "/users/").get();
-        return new IteratePagedContent(
+        return new IteratePagedContent<>(
                 new IterateDomPages(
                         new RosUserPagedDom(),
                         initialPage,

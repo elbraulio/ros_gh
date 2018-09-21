@@ -6,24 +6,24 @@ import tools.StackWithInitialValues;
 import java.util.*;
 
 /**
- * Iterates a {@link IterateDomPages}. Retrieving each user link from each
+ * Iterates a {@link IterateDomPages}. Retrieving each user url from each
  * page.
  *
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class IteratePagedContent implements Iterator<String> {
+public final class IteratePagedContent <T> implements Iterator<T> {
     /**
      * Users list page iterator.
      */
-    private final Iterator<Iterator<String>> iterator;
+    private final Iterator<Iterator<T>> iterator;
 
     /**
-     * Each link retrieved from the iterator.
+     * Each url retrieved from the iterator.
      */
-    private final List<String> links;
+    private final List<T> links;
 
     /**
-     * The first value from the stack represent the current iterated link index.
+     * The first value from the stack represent the current iterated url index.
      * Just for keep the immutability of this class, by using this instead of
      * a mutable int that stores the current index on the iteration.
      */
@@ -34,8 +34,7 @@ public final class IteratePagedContent implements Iterator<String> {
      *
      * @param iterator users list page iterator.
      */
-    public IteratePagedContent(final Iterator<Iterator<String>>
-                                          iterator) {
+    public IteratePagedContent(final Iterator<Iterator<T>> iterator) {
         this(
                 iterator,
                 new LinkedList<>(),
@@ -49,11 +48,11 @@ public final class IteratePagedContent implements Iterator<String> {
      *
      * @param iterator users list page iterator.
      * @param links         initial set of links retrieved from the iterator.
-     * @param nextLinkIndex current iterated link index.
+     * @param nextLinkIndex current iterated url index.
      */
     private IteratePagedContent(
-            final Iterator<Iterator<String>> iterator,
-            final List<String> links,
+            final Iterator<Iterator<T>> iterator,
+            final List<T> links,
             final Stack<Integer> nextLinkIndex
     ) {
 
@@ -72,7 +71,7 @@ public final class IteratePagedContent implements Iterator<String> {
     }
 
     @Override
-    public String next() {
+    public T next() {
         final int currentIndex = this.nextLinkIndex.peek();
         if (currentIndex < this.links.size()) {
             this.nextLinkIndex.push(currentIndex + 1);

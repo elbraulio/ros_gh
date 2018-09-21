@@ -38,6 +38,50 @@ CREATE TABLE IF NOT EXISTS ros_user_ignored_tag (
     ON DELETE CASCADE ON UPDATE NO ACTION
 );
 
+CREATE TABLE IF NOT EXISTS ros_question (
+    id integer PRIMARY KEY,
+    title text NOT NULL,
+    author integer NOT NULL,
+    added_at text NOT NULL,
+    summary text NOT NULL,
+    url text NOT NULL,
+    last_activity_at text,
+    last_activity_by integer,
+    view_count integer NOT NULL,
+    votes integer NOT NULL,
+    FOREIGN KEY (author) REFERENCES ros_user (id)
+            ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS ros_question_tag (
+    ros_question_id integer NOT NULL,
+    ros_tag_id integer NOT NULL,
+    FOREIGN KEY (ros_question_id) REFERENCES ros_question (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION,
+    FOREIGN KEY (ros_tag_id) REFERENCES ros_tag (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS ros_answer (
+    id integer PRIMARY KEY,
+    author integer NOT NULL,
+    type text NOT NULL,
+    date text NOT NULL,
+    votes integer NOT NULL,
+    is_accepted integer NOT NULL,
+    FOREIGN KEY (author) REFERENCES ros_user (id)
+        ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
+CREATE TABLE IF NOT EXISTS ros_question_answer (
+    ros_question_id integer NOT NULL,
+    ros_answer_id integer NOT NULL,
+    FOREIGN KEY (ros_question_id) REFERENCES ros_question (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION,
+    FOREIGN KEY (ros_answer_id) REFERENCES ros_answer (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
+
 CREATE TABLE IF NOT EXISTS gh_user (
     id integer PRIMARY KEY,
     login text NOT NULL,
