@@ -2,7 +2,6 @@ package question;
 
 import tools.SqlCommand;
 
-import java.io.IOException;
 import java.sql.*;
 
 /**
@@ -17,7 +16,7 @@ public class InsertAnswer implements SqlCommand {
 
     @Override
     public int execute(Connection connection, int defaultValue)
-            throws SQLException, IOException, InterruptedException {
+            throws SQLException {
         String user = "INSERT INTO ros_answer(" +
                 "author," +
                 "type," +
@@ -35,10 +34,7 @@ public class InsertAnswer implements SqlCommand {
             pstmt.setString(i++, this.answer.type());
             pstmt.setString(i++, this.answer.date());
             pstmt.setInt(i++, this.answer.votes());
-            pstmt.setInt(
-                    i++,
-                    this.answer.isAccepted() ? 1 : 0
-            );
+            pstmt.setInt(i++, this.answer.isAccepted() ? 1 : 0);
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
             if (rs.next()) {
