@@ -26,15 +26,20 @@ public class GhUserByLogin implements SqlQuery<GhUser> {
                 Statement stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery(userExists)
         ) {
-            return new GhUser(
-                    rs.getInt("id"),
-                    rs.getString("login"),
-                    rs.getInt("followers"),
-                    rs.getString("url"),
-                    rs.getString("name"),
-                    rs.getString("company"),
-                    rs.getString("email")
-            );
+            if(rs.next()) {
+                return new GhUser(
+                        rs.getInt("id"),
+                        rs.getString("login"),
+                        rs.getInt("followers"),
+                        rs.getString("url"),
+                        rs.getString("name"),
+                        rs.getString("company"),
+                        rs.getString("email")
+                );
+            } else {
+                // TODO: 22-09-18 remove this null
+                return null;
+            }
         }
     }
 }
