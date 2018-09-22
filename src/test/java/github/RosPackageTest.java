@@ -4,7 +4,8 @@ import com.jcabi.github.RtGithub;
 import org.junit.Test;
 
 import java.io.IOException;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)

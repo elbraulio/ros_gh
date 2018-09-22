@@ -1,6 +1,5 @@
 package tag;
 
-import github.GhUser;
 import tools.SqlQuery;
 
 import java.sql.Connection;

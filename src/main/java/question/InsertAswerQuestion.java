@@ -2,7 +2,6 @@ package question;
 
 import tools.SqlCommand;
 
-import java.io.IOException;
 import java.sql.*;
 
 /**
