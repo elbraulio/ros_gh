@@ -8,7 +8,7 @@ import tools.SqliteConnection;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
