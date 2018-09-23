@@ -2,7 +2,6 @@ package tag;
 
 import tools.SqlCommand;
 
-import java.io.IOException;
 import java.sql.*;
 
 /**
@@ -17,7 +16,7 @@ public class InsertRosTag implements SqlCommand {
 
     @Override
     public int execute(Connection connection, int defaultValue)
-            throws SQLException, IOException, InterruptedException {
+            throws SQLException {
         String insertTag = "INSERT INTO ros_tag(name) VALUES(?)";
         try (PreparedStatement pstmt = connection
                 .prepareStatement(insertTag, Statement.RETURN_GENERATED_KEYS)) {

@@ -2,7 +2,6 @@ package question;
 
 import tools.SqlCommand;
 
-import java.io.IOException;
 import java.sql.*;
 
 /**
@@ -19,7 +18,7 @@ public class InsertRosQuestion implements SqlCommand {
 
     @Override
     public int execute(Connection connection, int defaultValue)
-            throws SQLException, IOException, InterruptedException {
+            throws SQLException {
         final String user = "INSERT INTO ros_question(" +
                 "id," +
                 "title," +

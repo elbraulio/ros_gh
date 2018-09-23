@@ -2,22 +2,20 @@ package iterator;
 
 import com.jcabi.github.RtGithub;
 import github.GhColaborator;
-import github.GhRepo;
-import org.hamcrest.CoreMatchers;
+import org.junit.Ignore;
 import org.junit.Test;
 import tools.CanRequest;
 
 import java.io.IOException;
 import java.util.List;
 
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public class ColaboratorsTest {
-    @Test
+    @Test @Ignore
     public void findBraulio() throws IOException, InterruptedException {
         List<GhColaborator> list = new Colaborators(
                 "elbraulio/ros_gh",

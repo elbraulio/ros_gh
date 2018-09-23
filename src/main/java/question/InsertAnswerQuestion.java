@@ -2,17 +2,16 @@ package question;
 
 import tools.SqlCommand;
 
-import java.io.IOException;
 import java.sql.*;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class InsertAswerQuestion implements SqlCommand {
+public class InsertAnswerQuestion implements SqlCommand {
     private final int answerId;
     private final int questionId;
 
-    public InsertAswerQuestion(int answerId, int questionId) {
+    public InsertAnswerQuestion(int answerId, int questionId) {
         this.answerId = answerId;
         this.questionId = questionId;
     }

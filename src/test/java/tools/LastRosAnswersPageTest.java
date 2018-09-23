@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.io.IOException;
 
 import static junit.framework.TestCase.assertTrue;
-import static org.hamcrest.CoreMatchers.is;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
