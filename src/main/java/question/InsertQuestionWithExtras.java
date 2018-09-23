@@ -45,7 +45,7 @@ public class InsertQuestionWithExtras implements SqlCommand {
         for (Answer answer : this.dom.participants()){
                 final int answerId = new InsertAnswer(answer)
                         .execute(connection, -1);
-                new InsertAswerQuestion(answerId, this.api.id())
+                new InsertAnswerQuestion(answerId, this.api.id())
                         .execute(connection,  -1);
         }
         return 1;
