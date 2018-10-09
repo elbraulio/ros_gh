@@ -1,6 +1,7 @@
 package github;
 
 import com.jcabi.github.RtGithub;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ import static org.junit.Assert.assertEquals;
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public class RosPackageTest {
-    @Test
+    @Test @Ignore
     public void network() throws IOException {
         final RosPackage pkge = new RosPackage(
                 "ros_gh",

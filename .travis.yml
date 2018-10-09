@@ -9,4 +9,5 @@ jdk:
   - oraclejdk8
   
 after_success:
+  - ./createdb.sh
   - bash <(curl -s https://codecov.io/bash)
