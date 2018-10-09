@@ -3,6 +3,7 @@ language: java
 script:
   - ./createdb.sh
   - mvn clean verify
+  - ./createdb.sh
   - mvn cobertura:cobertura
 
 jdk:
