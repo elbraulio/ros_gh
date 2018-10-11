@@ -9,6 +9,7 @@ For now we don't have releases 🙄, so if you want to use these tools you'll ne
 
 ```shell
 git clone https://github.com/elbraulio/ros_gh.git
+cd ros_gh
 mvn verify
 ```
 
