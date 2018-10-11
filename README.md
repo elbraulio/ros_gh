@@ -19,11 +19,11 @@ mvn verify
 
 ### Github
 
-Here we use [jcabi-github](https://github.com/jcabi/jcabi-github) to get info from Github and [CanRequest](https://github.com/elbraulio/ros_gh/blob/master/src/test/java/tools/CanRequestTest.java) to handle API Github's rate limit. Here are the steps for collecting data from Github:
+Here we use [jcabi-github](https://github.com/jcabi/jcabi-github) to get info from Github and [CanRequest](https://github.com/elbraulio/ros_gh/blob/master/src/test/java/tools/CanRequestTest.java) to handle Github's API rate limit. Here are the steps for collecting data from Github:
 
 1. get a [token](https://github.com/settings/tokens) from your Github account.
 2. choose a [distribution file](https://github.com/elbraulio/ros_gh/tree/master/src/test/java/resources/github) to extract information from its package repositories.
-3. Use the script below to collect the data. In this example we fetch data from indigo distribution. This repository [includes these files](https://github.com/elbraulio/ros_gh/tree/master/src/test/java/resources/github) as Json files, all of them were from [this repo](https://github.com/ros/rosdistro) and can be used.
+3. use the script below to collect the data. In this example we fetch data from indigo distribution. This repository [includes these files](https://github.com/elbraulio/ros_gh/tree/master/src/test/java/resources/github) as Json files, all of them were from [this repo](https://github.com/ros/rosdistro) and can be used.
 
 ```java
 @Test
@@ -34,13 +34,13 @@ public void ghInfo() throws InterruptedException, IOException {
     final CanRequest canRequest = new CanRequest(60);
     for (RosPackage rosPackage : new FromJsonFile(path).repoList()) {
         if (!rosPackage.source().isEmpty()) {
-            GhRepo ghRepo = rosPackage.asRepo(github);
+            final GhRepo ghRepo = rosPackage.asRepo(github);
             canRequest.waitForRate();
-            GhUser ghUser = new FetchGhUser(
+            final GhUser ghUser = new FetchGhUser(
                 github, ghRepo.owner()
             ).ghUser();
             canRequest.waitForRate();
-            List<GhColaborator> colaborators = new Colaborators(
+            final List<GhColaborator> colaborators = new Colaborators(
                 ghRepo.fullName(), canRequest, github
             ).colaboratorList();
             System.out.println("repo: " + ghRepo.name());
@@ -84,14 +84,14 @@ public void rosUserProfile() throws IOException {
 
 #### Questions, answers and comments
 
-ROS Answers is supported by askbot, so it has an [API](https://github.com/ASKBOT/askbot-devel/blob/master/askbot/doc/source/api.rst) that can be used to read Questions content but it doesn't provide any information about answers content. Therefore we also use scraper that read DOM pages to get information about answers.
+ROS Answers is supported by askbot, so it has an [API](https://github.com/ASKBOT/askbot-devel/blob/master/askbot/doc/source/api.rst) that can be used to read question's content but it doesn't provide any information about answers content. Therefore we also use scraper that read DOM pages to get information about answers.
 
 ```java
 @Test
 public void rosQuestions() throws IOException {
     final Iterator<JsonArray> iterable = new IterateApiQuestionPage();
     while (iterable.hasNext()) {
-        JsonArray questionArray = iterable.next();
+        final JsonArray questionArray = iterable.next();
         for (int i = 0; i < questionArray.size(); i++) {
             final ApiRosQuestion questionApi = new DefaultApiRosQuestion(
                 questionArray.getJsonObject(i)
