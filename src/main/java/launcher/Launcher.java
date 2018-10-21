@@ -1,4 +1,4 @@
-package org.elbraulio.rosgh.launcher;
+package launcher;
 
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
