@@ -18,13 +18,10 @@ public abstract class AbstractAlgorithm implements Algorithm {
         this.sort = sort;
     }
 
-    protected abstract void before();
-
-    protected abstract List<Aspirant> feed();
+    protected abstract List<Aspirant> feed(Question question);
 
     @Override
-    public List<Aspirant> aspirants() {
-        before();
-        return sort.orderedList(feed());
+    public List<Aspirant> aspirants(Question question) {
+        return sort.orderedList(feed(question));
     }
 }
