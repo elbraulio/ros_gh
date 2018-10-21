@@ -1,12 +1,12 @@
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
-import github.*;
-import iterator.Colaborators;
+import org.elbraulio.rosgh.github.*;
+import org.elbraulio.rosgh.iterator.Colaborators;
 import org.junit.Ignore;
 import org.junit.Test;
-import tools.CanRequest;
-import tools.FromJsonFile;
-import tools.SqliteConnection;
+import org.elbraulio.rosgh.tools.CanRequest;
+import org.elbraulio.rosgh.tools.FromJsonFile;
+import org.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.io.IOException;
 import java.sql.Connection;

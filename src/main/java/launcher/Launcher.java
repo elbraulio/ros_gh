@@ -2,17 +2,17 @@ package launcher;
 
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
-import dom.RosUserPagedDom;
-import github.*;
-import iterator.*;
+import org.elbraulio.rosgh.dom.RosUserPagedDom;
+import org.elbraulio.rosgh.github.*;
+import org.elbraulio.rosgh.iterator.*;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import question.ApiRosQuestion;
-import question.DefaultApiRosQuestion;
-import question.DefaultRosDomQuestion;
-import question.InsertQuestionWithExtras;
-import tools.*;
-import user.RosDomUser;
+import org.elbraulio.rosgh.question.ApiRosQuestion;
+import org.elbraulio.rosgh.question.DefaultApiRosQuestion;
+import org.elbraulio.rosgh.question.DefaultRosDomQuestion;
+import org.elbraulio.rosgh.question.InsertQuestionWithExtras;
+import org.elbraulio.rosgh.tools.*;
+import org.elbraulio.rosgh.user.RosDomUser;
 
 import javax.json.JsonArray;
 import java.io.IOException;
