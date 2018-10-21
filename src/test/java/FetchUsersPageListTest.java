@@ -1,18 +1,18 @@
-import dom.PagedDom;
-import dom.RosUserPagedDom;
-import iterator.IterateByUserLinks;
-import iterator.IterateDomPages;
-import iterator.IteratePagedContent;
+import org.elbraulio.rosgh.dom.PagedDom;
+import org.elbraulio.rosgh.dom.RosUserPagedDom;
+import org.elbraulio.rosgh.iterator.IterateByUserLinks;
+import org.elbraulio.rosgh.iterator.IterateDomPages;
+import org.elbraulio.rosgh.iterator.IteratePagedContent;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import org.junit.Test;
-import resources.FakePagedDom;
-import tools.IteratorAsList;
-import tools.LastRosUserPage;
-import tools.SaveIntoSqliteDb;
-import tools.SqliteConnection;
-import user.RosDomUser;
+import org.elbraulio.rosgh.tools.IteratorAsList;
+import org.elbraulio.rosgh.tools.LastRosUserPage;
+import org.elbraulio.rosgh.tools.SaveIntoSqliteDb;
+import org.elbraulio.rosgh.tools.SqliteConnection;
+import org.elbraulio.rosgh.user.RosDomUser;
+import testtools.FakePagedDom;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -120,7 +120,7 @@ public final class FetchUsersPageListTest {
         final Iterator<String> usersLinks = makeIteratorForTest();
         try (
                 final Connection connection = new SqliteConnection(
-                        "src/test/java/resources/sqlite/test.db"
+                        "src/test/resources/sqlite/test.db"
                 ).connection()
         ) {
             int count = 1;

@@ -41,7 +41,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>launcher.Launcher</mainClass>
+                            <mainClass>org.elbraulio.rosgh.launcher.Launcher</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -52,7 +52,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>launcher.Launcher</mainClass>
+                            <mainClass>org.elbraulio.rosgh.launcher.Launcher</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
