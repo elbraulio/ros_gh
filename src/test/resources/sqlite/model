@@ -112,3 +112,12 @@ CREATE TABLE IF NOT EXISTS gh_commits (
     FOREIGN KEY (gh_repo_id) REFERENCES gh_repo (id)
     ON DELETE CASCADE ON UPDATE NO ACTION
 );
+
+CREATE TABLE IF NOT EXISTS linked_users (
+    ros_user_id integer NOT NULL,
+    gh_user_id integer NOT NULL,
+    FOREIGN KEY (ros_user_id) REFERENCES ros_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION,
+    FOREIGN KEY (gh_user_id) REFERENCES gh_user (id)
+    ON DELETE CASCADE ON UPDATE NO ACTION
+);
