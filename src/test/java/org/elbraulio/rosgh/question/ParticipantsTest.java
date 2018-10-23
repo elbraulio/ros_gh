@@ -16,7 +16,7 @@ public class ParticipantsTest {
     @Ignore
     public void answers() throws IOException {
         List<Answer> answers = new Participants(
-                Jsoup.connect("https://answers.ros.org/org.elbraulio.rosgh.question/11887").get()
+                Jsoup.connect("https://answers.ros.org/question/11887").get()
         ).asList();
         for (Answer answer : answers) {
             System.out.println("-----------");
@@ -27,5 +27,4 @@ public class ParticipantsTest {
             System.out.println(answer.isAccepted());
         }
     }
-
 }

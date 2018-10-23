@@ -76,7 +76,7 @@ public class SaveIntoSqliteDb {
                     }
                 }
             }
-            // then join user with org.elbraulio.rosgh.tag
+            // then join user with tag
             String join = "INSERT INTO ros_user_tag(ros_user_id,ros_tag_id," +
                     "count) VALUES (?,?,?)";
             try (PreparedStatement pstmt = this.connection.prepareStatement
@@ -113,7 +113,7 @@ public class SaveIntoSqliteDb {
                     }
                 }
             }
-            // then join user with org.elbraulio.rosgh.tag
+            // then join user with tag
             String join = "INSERT INTO ros_user_interesting_tag(ros_user_id," +
                     "ros_tag_id) VALUES (?,?)";
             try (PreparedStatement pstmt = this.connection.prepareStatement
@@ -149,7 +149,7 @@ public class SaveIntoSqliteDb {
                     }
                 }
             }
-            // then join user with org.elbraulio.rosgh.tag
+            // then join user with tag
             String join = "INSERT INTO ros_user_ignored_tag(ros_user_id," +
                     "ros_tag_id) VALUES (?,?)";
             try (PreparedStatement pstmt = this.connection.prepareStatement
