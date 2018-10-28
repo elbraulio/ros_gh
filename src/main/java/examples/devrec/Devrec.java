@@ -69,10 +69,30 @@ public class Devrec implements Algorithm {
                 }
             }
             this.logger.info("Ruu matrix:\n" + printMatrix(ruu));
+            /*
+             * create KA rank for each user.
+             */
+            for (int i = 0; i < ruu.length; i++) {
+                aspirants.add(
+                        new DvrecAspirant(ka(i, projects.get(513), ruu, rup))
+                );
+            }
         } catch (Exception e) {
             this.logger.error("e", e);
         }
         return aspirants;
+    }
+
+    private double ka(
+            int userIndex, int projectIndex, double[][] ruu, double[][] rup
+    ) {
+        double ka = 0d;
+        for (int i = 0; i < rup.length; i++) {
+            if (rup[i][projectIndex] == 1) {
+                ka += ruu[userIndex][i];
+            }
+        }
+        return ka;
     }
 
     /**
@@ -117,5 +137,25 @@ public class Devrec implements Algorithm {
             builder.append("\n");
         }
         return builder.toString();
+    }
+
+    final class DvrecAspirant implements Aspirant {
+
+        private final double ka;
+
+        public DvrecAspirant(double ka) {
+
+            this.ka = ka;
+        }
+
+        @Override
+        public double rank() {
+            return this.ka;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(this.ka);
+        }
     }
 }

@@ -15,5 +15,6 @@ public class Launcher {
         List<Aspirant> sorted = new ByRankDesc().orderedList(
                 devrec.aspirants(null)
         );
+        System.out.println(sorted);
     }
 }
