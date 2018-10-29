@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class Devrec implements Algorithm {
+public final class Devrec implements Algorithm {
 
     private final Logger logger = Logger.getLogger(Devrec.class);
 
