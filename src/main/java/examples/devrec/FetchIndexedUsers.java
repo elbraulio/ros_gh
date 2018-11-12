@@ -18,7 +18,8 @@ public class FetchIndexedUsers {
     }
 
     public Map<Integer, Integer> map() throws SQLException {
-        String userExists = "SELECT distinct gh_user_id FROM linked_users;";
+        String userExists = "SELECT distinct gh_user_id FROM linked_users " +
+                "ORDER BY gh_user_id;";
         Map<Integer, Integer> map = new HashMap<>();
         try (
                 Statement stmt = connection.createStatement();

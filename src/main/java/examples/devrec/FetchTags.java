@@ -19,7 +19,7 @@ public final class FetchTags {
 
     public Map<Integer, Integer> map() throws SQLException {
         String userExists = "SELECT distinct ros_tag_id " +
-                "FROM linked_tag_project;";
+                "FROM linked_tag_project ORDER BY ros_tag_id;";
         Map<Integer, Integer> map = new HashMap<>();
         try (
                 Statement stmt = connection.createStatement();
