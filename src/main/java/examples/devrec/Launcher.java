@@ -15,9 +15,14 @@ public class Launcher {
     private static final Logger logger = Logger.getLogger(Launcher.class);
 
     public static void main(String... args) {
+        long ti = System.currentTimeMillis();
         Algorithm devrec = new Devrec();
         List<Aspirant> sorted = new ByRankDesc().orderedList(
                 devrec.aspirants(null)
+        );
+        logger.info(
+                "process finished at " +
+                        (System.currentTimeMillis() - ti)/1000 + " seconds"
         );
         logger.info(sorted);
     }

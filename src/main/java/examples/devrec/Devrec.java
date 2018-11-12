@@ -72,6 +72,7 @@ public final class Devrec implements Algorithm {
                     ruuDA[j][i] = jaccardSimilarity(i, j, rup);
                 }
             }
+            new SaveRuuToFile(ruuDA, "ruu_da").save();
             /*
              * create a map with all related tags. <id, matrix index>, both int
              * are in asc order and matrix index starts from 0.
@@ -81,10 +82,10 @@ public final class Devrec implements Algorithm {
             double[][] rut = new double[users.size()][tags.size()];
             for (int userId : users.keySet()) {
                 int userIndex = users.get(userId);
-                this.logger.info("rut " + userIndex++ + " de " + rut.length);
+                this.logger.info("rut " + userIndex + " de " + rut.length);
                 for (int tagId : tags.keySet()) {
                     int tagIndex = tags.get(tagId);
-                    this.logger.info("      rut tag " + tagIndex++ + " de " + tags.size());
+                    this.logger.info("      rut tag " + tagIndex + " de " + tags.size());
                     double fixtu = fetchTagCount(tagId, userId, connection);
                     double fixt = countWithFixedTag(tagId, connection);
                     double fixu = countWithFixedUser(userId, connection);
@@ -93,6 +94,19 @@ public final class Devrec implements Algorithm {
                     );
                 }
             }
+            /*
+             * create Ruu association matrix filled with 0's. This matrix is
+             * symmetric.
+             */
+            double[][] ruuKA = new double[users.size()][users.size()];
+            for (int i = 0; i < ruuKA.length; i++) {
+                this.logger.info("ruuKA " + i + " de " + ruuKA.length);
+                for (int j = i; j < ruuKA.length; j++) {
+                    ruuKA[i][j] = vectorSpace(i, j, rut);
+                    ruuKA[j][i] = vectorSpace(i, j, rut);
+                }
+            }
+            new SaveRuuToFile(ruuKA, "ruu_ka").save();
             /*
              * create DA rank for each user.
              */
@@ -107,6 +121,14 @@ public final class Devrec implements Algorithm {
             this.logger.error("e", e);
         }
         return aspirants;
+    }
+
+    private double vectorSpace(int i, int j, double[][] rut) {
+        double sum = 0d;
+        for (int k = 0; k < rut[i].length; k++) {
+            sum += rut[i][k] * rut[j][k];
+        }
+        return sum;
     }
 
     private double fetchTagCount(int tagId, int userId, Connection connection)
