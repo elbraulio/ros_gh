@@ -4,11 +4,9 @@ import org.apache.log4j.Logger;
 import org.elbraulio.rosgh.algorithm.Algorithm;
 import org.elbraulio.rosgh.algorithm.Aspirant;
 import org.elbraulio.rosgh.algorithm.Question;
-import org.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -19,220 +17,117 @@ import java.util.Map;
 public final class Devrec implements Algorithm {
 
     private final Logger logger = Logger.getLogger(Devrec.class);
+    private final double[][] ruuDA;
+    private final double[][] ruuKA;
+    private final Connection connection;
+    private final Map<Integer, Integer> users;
+
+    public Devrec(Connection connection) throws SQLException {
+        this(
+                connection,
+                new FetchIndexedProjects(
+                        connection
+                ).map(),
+                new FetchIndexedUsers(
+                        connection
+                ).map(),
+                new FetchTags(connection).map()
+        );
+    }
+
+    public Devrec(
+            Connection connection, Map<Integer, Integer> projects,
+            Map<Integer, Integer> users, Map<Integer, Integer> tags
+    ) throws SQLException {
+        this(
+                connection,
+                projects, users, tags,
+                new Rup(connection, projects, users).matrix(),
+                new Rut(
+                        connection, tags, users,
+                        new FetchTagCount(connection).count()
+                ).matrix()
+        );
+    }
+
+    public Devrec(
+            Connection connection, Map<Integer, Integer> projects,
+            Map<Integer, Integer> users, Map<Integer, Integer> tags,
+            double[][] rup, double[][] rut
+    ) {
+        this(
+                connection, users,
+                new RuuDA(users, rup).matrix(),
+                new RuuKA(users, rut).matrix()
+        );
+    }
+
+    public Devrec(
+            Connection connection,
+            Map<Integer, Integer> users,
+            double[][] ruuDA, double[][] ruuKA
+    ) {
+        this.connection = connection;
+        this.users = users;
+        this.ruuDA = ruuDA;
+        this.ruuKA = ruuKA;
+    }
 
     @Override
-    public List<Aspirant> aspirants(Question question) {
+    public List<Aspirant> aspirants(Question question) throws SQLException {
         List<Aspirant> aspirants = new LinkedList<>();
-        try (
-                Connection connection = new SqliteConnection(
-                        "/Users/elbraulio/Documents/v1.0.db"
-                ).connection()
-        ) {
-            /*
-             * <id, matrix index>, both int are in asc order and matrix index
-             * starts from 0.
-             */
-            Map<Integer, Integer> projects = new FetchIndexedProjects(
-                    connection
-            ).map();
-            Map<Integer, Integer> users = new FetchIndexedUsers(
-                    connection
-            ).map();
-
-            /*
-             * create Rup association matrix filled with 0's.
-             * ----p1-p2- ... -pn
-             * |u1
-             * |u2
-             * |...
-             * |un
-             * then fill with 1's when a user collaborates in a repository.
-             */
-            double[][] rup = new double[users.size()][projects.size()];
-            for (int userId : users.keySet()) {
-                int userIndex = users.get(userId);
-                this.logger.info("rup " + userIndex + " de " + rup.length);
-                List<Integer> collaborations = new FetchIndexProjectsByUser(
-                        userId, connection
-                ).list();
-                for (int projectId : collaborations) {
-                    int projectIndex = projects.get(projectId);
-                    rup[userIndex][projectIndex] = 1;
-                }
-            }
-            /*
-             * create Ruu association matrix filled with 0's. This matrix is
-             * symmetric.
-             */
-            double[][] ruuDA = new double[users.size()][users.size()];
-            for (int i = 0; i < ruuDA.length; i++) {
-                this.logger.info("ruuDA " + i + " de " + ruuDA.length);
-                for (int j = i; j < ruuDA.length; j++) {
-                    ruuDA[i][j] = jaccardSimilarity(i, j, rup);
-                    ruuDA[j][i] = jaccardSimilarity(i, j, rup);
-                }
-            }
-            new SaveRuuToFile(ruuDA, "ruu_da").save();
-            /*
-             * create a map with all related tags. <id, matrix index>, both int
-             * are in asc order and matrix index starts from 0.
-             */
-            Map<Integer, Integer> tags = new FetchTags(connection).map();
-            double allCountSum = new FetchTagCount(connection).count();
-            double[][] rut = new double[users.size()][tags.size()];
-            for (int userId : users.keySet()) {
-                int userIndex = users.get(userId);
-                this.logger.info("rut " + userIndex + " de " + rut.length);
-                for (int tagId : tags.keySet()) {
-                    int tagIndex = tags.get(tagId);
-                    this.logger.info("      rut tag " + tagIndex + " de " + tags.size());
-                    double fixtu = fetchTagCount(tagId, userId, connection);
-                    double fixt = countWithFixedTag(tagId, connection);
-                    double fixu = countWithFixedUser(userId, connection);
-                    rut[userIndex][tagIndex] = calculateRelationUT(
-                            fixtu, fixu, allCountSum, fixt
-                    );
-                }
-            }
-            /*
-             * create Ruu association matrix filled with 0's. This matrix is
-             * symmetric.
-             */
-            double[][] ruuKA = new double[users.size()][users.size()];
-            for (int i = 0; i < ruuKA.length; i++) {
-                this.logger.info("ruuKA " + i + " de " + ruuKA.length);
-                for (int j = i; j < ruuKA.length; j++) {
-                    ruuKA[i][j] = vectorSpace(i, j, rut);
-                    ruuKA[j][i] = vectorSpace(i, j, rut);
-                }
-            }
-            new SaveRuuToFile(ruuKA, "ruu_ka").save();
-            /*
-             * create DA rank for each user.
-             */
-            for (int i = 0; i < ruuDA.length; i++) {
-                aspirants.add(
-                        new DvrecAspirant(
-                                rank(i, projects.get(513), ruuDA, rup)
-                        )
-                );
-            }
-        } catch (Exception e) {
-            this.logger.error("e", e);
+        for (int i = 0; i < ruuDA.length; i++) {
+            this.logger.info("rank for user " + i + " of " + ruuDA.length);
+            aspirants.add(
+                    new DvrecAspirant(
+                            findId(i, users, -1),
+                            rank(
+                                    i, 513, ruuDA, users,
+                                    new CheckProject(connection)
+                            ),
+                            rank(
+                                    i, 8, ruuKA, users,
+                                    new CheckTag(connection)
+                            )
+                    )
+            );
         }
         return aspirants;
     }
 
-    private double vectorSpace(int i, int j, double[][] rut) {
-        double sum = 0d;
-        for (int k = 0; k < rut[i].length; k++) {
-            sum += rut[i][k] * rut[j][k];
-        }
-        return sum;
-    }
-
-    private double fetchTagCount(int tagId, int userId, Connection connection)
-            throws SQLException {
-        return new FetchTagCount(
-                tagId, userId, connection
-        ).count();
-    }
-
-    /**
-     * Calculte the rut association
-     *
-     * @param fixtu       count of a tag for a user
-     * @param fixu        count of all tags for a user
-     * @param allCountSum count for all tags for all user
-     * @param fixt        count for a tag for all users
-     * @return rut association value
-     */
-    private double calculateRelationUT(
-            double fixtu, double fixu, double allCountSum, double fixt
-    ) {
-        if (fixu == 0d || fixt == 0d) {
-            return 0;
-        }
-        return (fixtu / fixu) * Math.log(allCountSum / fixt);
-    }
-
-    private final Map<Integer, Integer> mapFxu = new HashMap<>();
-
-    private double countWithFixedUser(
-            int userId, Connection connection
-    ) throws SQLException {
-        if (mapFxu.containsKey(userId)) {
-            return mapFxu.get(userId);
-        } else {
-            int count = new FetchTagCount(
-                    "gh_user_id=" + userId, "1", connection
-            ).count();
-            mapFxu.put(userId, count);
-            return count;
-        }
-    }
-
-    private final Map<Integer, Integer> mapFxt = new HashMap<>();
-
-    private double countWithFixedTag(
-            int tagId, Connection connection
-    ) throws SQLException {
-        if (mapFxt.containsKey(tagId)) {
-            return mapFxt.get(tagId);
-        } else {
-            int count = new FetchTagCount(
-                    "1", "ros_tag_id=" + tagId, connection
-            ).count();
-            mapFxt.put(tagId, count);
-            return count;
-        }
-    }
 
     /**
      * Calculate rank.
      *
-     * @param userIndex    user index on rup
-     * @param projectIndex project index on rup
-     * @param ruu          user-user relation matrix
-     * @param rup          user-project relation matrix
+     * @param userIndex user index on ruu
+     * @param relatedId related tag or project id on db
+     * @param ruu       user-user relation matrix
      * @return rank
      */
     private double rank(
-            int userIndex, int projectIndex, double[][] ruu, double[][] rup
-    ) {
-        double da = 0d;
-        for (int i = 0; i < rup.length; i++) {
-            if (rup[i][projectIndex] == 1) {
-                da += ruu[userIndex][i];
+            int userIndex, int relatedId, double[][] ruu,
+            Map<Integer, Integer> users, CheckRelated checkRelated
+    ) throws SQLException {
+        double rank = 0d;
+        List<Integer> relatedUsers = checkRelated.isRelated(relatedId);
+        for (int userId : relatedUsers) {
+            this.logger.info(
+                    "  relation to user " + userId + " of " + relatedUsers.size()
+            );
+            if (this.users.containsKey(userId)) {
+                rank += ruu[userIndex][users.get(userId)];
             }
         }
-        return da;
+        return rank;
     }
 
-    /**
-     * Compare similarity between user i toward user j.
-     *
-     * @param i   user to compared
-     * @param j   user to compare with
-     * @param rup user project relation matrix.
-     * @return jaccard index between user i and j.
-     */
-    private double jaccardSimilarity(int i, int j, double[][] rup) {
-        double[] projectsI = rup[i];
-        double[] projectsJ = rup[j];
-        double sum = 0d;
-        double sampleI = 0d;
-        double sampleJ = 0d;
-        for (int k = 0; k < projectsI.length; k++) {
-            sum += projectsI[k] + projectsJ[k] == 2d ? 1 : 0;
-            sampleI += projectsI[k];
-            sampleJ += projectsJ[k];
+    private int findId(int value, Map<Integer, Integer> idIndex, int onDefault) {
+        for (Map.Entry<Integer, Integer> entry : idIndex.entrySet()) {
+            if (entry.getValue() == value) {
+                return entry.getKey();
+            }
         }
-        if (sampleI + sampleJ == 0) {
-            return 0;
-        } else {
-            return sum / (sampleI + sampleJ);
-        }
+        return onDefault;
     }
 
     /**
@@ -255,10 +150,13 @@ public final class Devrec implements Algorithm {
 
     final class DvrecAspirant implements Aspirant {
 
+        private final int id;
+        private final double da;
         private final double ka;
 
-        public DvrecAspirant(double ka) {
-
+        public DvrecAspirant(int id, double da, double ka) {
+            this.id = id;
+            this.da = da;
             this.ka = ka;
         }
 
@@ -269,7 +167,7 @@ public final class Devrec implements Algorithm {
 
         @Override
         public String toString() {
-            return String.valueOf(this.ka);
+            return "{id: " + this.id + ", rank: " + this.rank() + "}\n";
         }
     }
 }
