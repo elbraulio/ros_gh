@@ -32,7 +32,6 @@ public final class MatrixFromFile implements Matrix {
             for (int i = 0; i < this.size; i++) {
                 line = br.readLine();
                 cols = line.split(",");
-                this.logger.info("user " + i + " of " + this.size);
                 for (int j = 0; j < this.size; j++) {
                     ruu[i][j] = Double.parseDouble(cols[j]);
                 }

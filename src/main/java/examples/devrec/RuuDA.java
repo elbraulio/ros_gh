@@ -2,6 +2,7 @@ package examples.devrec;
 
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -29,6 +30,11 @@ public final class RuuDA implements Matrix {
                 ruuDA[i][j] = new JaccardSimilarity(i, j, rup).val();
                 ruuDA[j][i] = new JaccardSimilarity(i, j, rup).val();
             }
+        }
+        try {
+            new SaveRuuToFile(ruuDA, "ruu_da").save();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return ruuDA;
     }
