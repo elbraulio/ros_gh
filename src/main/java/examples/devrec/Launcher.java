@@ -23,7 +23,7 @@ public class Launcher {
             throws SQLException, ClassNotFoundException, IOException {
         try (
                 Connection connection = new SqliteConnection(
-                        "/Users/elbraulio/Documents/v1.0.db"
+                        "/Users/elbraulio/Documents/v1.1.db"
                 ).connection()
         ) {
             long ti = System.currentTimeMillis();
@@ -33,8 +33,8 @@ public class Launcher {
             Algorithm devrec = new Devrec(
                     connection,
                     users,
-                    new MatrixFromFile("ruu_da.v1", users.size()).matrix(),
-                    new MatrixFromFile("ruu_ka.v1", users.size()).matrix()
+                    new MatrixFromFile("ruu_da.v2", users.size()).matrix(),
+                    new MatrixFromFile("ruu_ka.v2", users.size()).matrix()
             );
             List<Aspirant> sorted = new ByRankDesc().orderedList(
                     devrec.aspirants(null)

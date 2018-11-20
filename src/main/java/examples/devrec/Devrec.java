@@ -76,8 +76,9 @@ public final class Devrec implements Algorithm {
     @Override
     public List<Aspirant> aspirants(Question question) throws SQLException {
         List<Aspirant> aspirants = new LinkedList<>();
+        int count = 1;
         for (int i = 0; i < ruuDA.length; i++) {
-            this.logger.info("rank for user " + i + " of " + ruuDA.length);
+            this.logger.info("rank for user " + count++ + " of " + ruuDA.length);
             aspirants.add(
                     new DvrecAspirant(
                             findId(i, users, -1),
@@ -86,7 +87,7 @@ public final class Devrec implements Algorithm {
                                     new CheckProject(connection)
                             ),
                             rank(
-                                    i, 8, ruuKA, users,
+                                    i, 49, ruuKA, users,
                                     new CheckTag(connection)
                             )
                     )
@@ -111,9 +112,6 @@ public final class Devrec implements Algorithm {
         double rank = 0d;
         List<Integer> relatedUsers = checkRelated.isRelated(relatedId);
         for (int userId : relatedUsers) {
-            this.logger.info(
-                    "  relation to user " + userId + " of " + relatedUsers.size()
-            );
             if (this.users.containsKey(userId)) {
                 rank += ruu[userIndex][users.get(userId)];
             }
@@ -167,7 +165,11 @@ public final class Devrec implements Algorithm {
 
         @Override
         public String toString() {
-            return "{id: " + this.id + ", rank: " + this.rank() + "}\n";
+            return "DvrecAspirant{" +
+                    "id=" + id +
+                    ", da=" + da +
+                    ", ka=" + ka +
+                    '}' + '\n';
         }
     }
 }

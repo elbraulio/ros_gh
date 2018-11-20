@@ -39,7 +39,10 @@ public final class FetchTagCount {
                 "from ros_user_tag " +
                 "where ros_user_id in " +
                 "(select ros_user_id from linked_users where " +
-                this.whereUser + ") and " + this.whereTag + ";";
+                this.whereUser + ") " +
+                "and ros_tag_id in (select distinct ros_tag_id from " +
+                "linked_tag_project) " +
+                "and " + this.whereTag + ";";
         try (
                 Statement stmt = connection.createStatement();
                 ResultSet rs = stmt.executeQuery(userExists)

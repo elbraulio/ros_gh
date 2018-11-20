@@ -5,6 +5,7 @@ import org.apache.log4j.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -34,7 +35,9 @@ public final class Rut implements Matrix {
         for (int userId : users.keySet()) {
             int userIndex = users.get(userId);
             this.logger.info("rut " + userIndex + " de " + rut.length);
-            for (int tagId : tags.keySet()) {
+            List<Integer> realtedTags =
+                    new RelatedTags(this.connection).isRelated(userId);
+            for (int tagId : realtedTags) {
                 int tagIndex = tags.get(tagId);
                 this.logger.info("      rut tag " + tagIndex + " de " + tags.size());
                 double fixtu = new FetchTagCount(

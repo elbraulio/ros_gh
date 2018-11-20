@@ -2,6 +2,7 @@ package examples.devrec;
 
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -28,8 +29,13 @@ public final class RuuKA implements Matrix {
             this.logger.info("ruuKA " + i + " de " + ruuKA.length);
             for (int j = i; j < ruuKA.length; j++) {
                 ruuKA[i][j] = vectorSpace(i, j, rut);
-                ruuKA[j][i] = vectorSpace(i, j, rut);
+                ruuKA[j][i] = ruuKA[i][j];
             }
+        }
+        try {
+            new SaveRuuToFile(ruuKA, "ruu_ka").save();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return ruuKA;
     }
