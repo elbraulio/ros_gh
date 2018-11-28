@@ -73,7 +73,7 @@ public final class Devrec implements Algorithm {
     }
 
     @Override
-    public List<Aspirant> aspirants(TagedItem item) throws SQLException {
+    public List<Aspirant> aspirants(TaggedItem item) throws SQLException {
         List<Aspirant> aspirants = new LinkedList<>();
         int count = 1;
         for (int i = 0; i < ruuDA.length; i++) {

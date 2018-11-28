@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class TagedItem {
+public final class TaggedItem {
     public int userId() {
         return 513;
     }
