@@ -3,7 +3,6 @@ package examples.devrec;
 import org.apache.log4j.Logger;
 import org.elbraulio.rosgh.algorithm.Algorithm;
 import org.elbraulio.rosgh.algorithm.Aspirant;
-import org.elbraulio.rosgh.algorithm.Question;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -74,7 +73,7 @@ public final class Devrec implements Algorithm {
     }
 
     @Override
-    public List<Aspirant> aspirants(Question question) throws SQLException {
+    public List<Aspirant> aspirants(TagedItem item) throws SQLException {
         List<Aspirant> aspirants = new LinkedList<>();
         int count = 1;
         for (int i = 0; i < ruuDA.length; i++) {
@@ -83,11 +82,11 @@ public final class Devrec implements Algorithm {
                     new DvrecAspirant(
                             findId(i, users, -1),
                             rank(
-                                    i, 513, ruuDA, users,
+                                    i, item.userId(), ruuDA, users,
                                     new CheckProject(connection)
                             ),
                             rank(
-                                    i, 49, ruuKA, users,
+                                    i, item.tags().get(0), ruuKA, users,
                                     new CheckTag(connection)
                             )
                     )
