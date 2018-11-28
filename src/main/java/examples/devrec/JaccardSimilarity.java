@@ -25,17 +25,15 @@ public final class JaccardSimilarity {
         double[] projectsI = rup[i];
         double[] projectsJ = rup[j];
         double sum = 0d;
-        double sampleI = 0d;
-        double sampleJ = 0d;
+        double total = 0d;
         for (int k = 0; k < projectsI.length; k++) {
             sum += projectsI[k] + projectsJ[k] == 2d ? 1 : 0;
-            sampleI += projectsI[k];
-            sampleJ += projectsJ[k];
+            total++;
         }
-        if (sampleI + sampleJ == 0) {
+        if (total == 0) {
             return 0;
         } else {
-            return sum / (sampleI + sampleJ);
+            return sum / total;
         }
     }
 }
