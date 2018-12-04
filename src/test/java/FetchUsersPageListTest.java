@@ -1,17 +1,17 @@
-import org.elbraulio.rosgh.dom.PagedDom;
-import org.elbraulio.rosgh.dom.RosUserPagedDom;
-import org.elbraulio.rosgh.iterator.IterateByUserLinks;
-import org.elbraulio.rosgh.iterator.IterateDomPages;
-import org.elbraulio.rosgh.iterator.IteratePagedContent;
+import com.elbraulio.rosgh.dom.PagedDom;
+import com.elbraulio.rosgh.dom.RosUserPagedDom;
+import com.elbraulio.rosgh.iterator.IterateByUserLinks;
+import com.elbraulio.rosgh.iterator.IterateDomPages;
+import com.elbraulio.rosgh.iterator.IteratePagedContent;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.elbraulio.rosgh.tools.IteratorAsList;
-import org.elbraulio.rosgh.tools.LastRosUserPage;
-import org.elbraulio.rosgh.tools.SaveIntoSqliteDb;
-import org.elbraulio.rosgh.tools.SqliteConnection;
-import org.elbraulio.rosgh.user.RosDomUser;
+import com.elbraulio.rosgh.tools.IteratorAsList;
+import com.elbraulio.rosgh.tools.LastRosUserPage;
+import com.elbraulio.rosgh.tools.SaveIntoSqliteDb;
+import com.elbraulio.rosgh.tools.SqliteConnection;
+import com.elbraulio.rosgh.user.RosDomUser;
 import testtools.FakePagedDom;
 
 import java.io.IOException;

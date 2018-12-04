@@ -1,12 +1,12 @@
+import com.elbraulio.rosgh.github.*;
 import com.jcabi.github.Github;
 import com.jcabi.github.RtGithub;
-import org.elbraulio.rosgh.github.*;
-import org.elbraulio.rosgh.iterator.Colaborators;
+import com.elbraulio.rosgh.iterator.Colaborators;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.elbraulio.rosgh.tools.CanRequest;
-import org.elbraulio.rosgh.tools.FromJsonFile;
-import org.elbraulio.rosgh.tools.SqliteConnection;
+import com.elbraulio.rosgh.tools.CanRequest;
+import com.elbraulio.rosgh.tools.FromJsonFile;
+import com.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.io.IOException;
 import java.sql.Connection;
