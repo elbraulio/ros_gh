@@ -29,6 +29,10 @@ public interface RosUser {
 
     String avatarUrl();
 
+    long joinedAt();
+
+    long lastSeenAt();
+
     /* TODO: 18-05-18 Too many methods!
      * this 3 method should be one UserTag object returned by 1 method
      */

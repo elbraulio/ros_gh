@@ -4,6 +4,10 @@ import org.elbraulio.rosgh.tag.*;
 import org.elbraulio.rosgh.tools.RosUserIdFromUrl;
 import org.jsoup.nodes.Document;
 
+import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -84,8 +88,26 @@ public final class RosDomUser implements RosUser {
     @Override
     public String avatarUrl() {
         String url = document.selectFirst(".gravatar").attr("src");
-        if(url.contains("nophoto.png")) return null;
+        if (url.contains("nophoto.png")) return null;
         return url;
+    }
+
+    @Override
+    public long joinedAt() {
+        return LocalDateTime.parse(
+                document.select("td:contains(member since)")
+                        .next().select("strong > abbr").attr("title"),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss Z")
+        ).toEpochSecond(ZoneOffset.UTC);
+    }
+
+    @Override
+    public long lastSeenAt() {
+        return LocalDateTime.parse(
+                document.select("td:contains(last seen)").next()
+                        .select("strong > abbr").attr("title"),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss Z")
+        ).toEpochSecond(ZoneOffset.UTC);
     }
 
     @Override
@@ -110,6 +132,14 @@ public final class RosDomUser implements RosUser {
                 "downVotes: " + this.downVotes() + "\n" +
                 "tags: " + this.tags() + "\n" +
                 "interestingTag: " + this.interestingTags() + "\n" +
-                "ignoredtag: " + this.ignoredTags() + "\n";
+                "ignoredtag: " + this.ignoredTags() + "\n" +
+                "karma: " + this.karma() + "\n" +
+                "location: " + this.location() + "\n" +
+                "description: " + this.description() + "\n" +
+                "realName: " + this.realName() + "\n" +
+                "age: " + this.age() + "\n" +
+                "avatarUrl: " + this.avatarUrl() + "\n" +
+                "joinedAt: " + this.joinedAt() + "\n" +
+                "lastSeenAt: " + this.lastSeenAt() + "\n";
     }
 }
