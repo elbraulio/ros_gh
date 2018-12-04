@@ -1,8 +1,8 @@
 package org.elbraulio.rosgh.user;
 
-import org.jsoup.nodes.Document;
 import org.elbraulio.rosgh.tag.*;
 import org.elbraulio.rosgh.tools.RosUserIdFromUrl;
+import org.jsoup.nodes.Document;
 
 import java.util.List;
 
@@ -44,6 +44,51 @@ public final class RosDomUser implements RosUser {
     }
 
     @Override
+    public int karma() {
+        return Integer.parseInt(
+                this.document.select(".scoreNumber")
+                        .get(0).text().replace(",", "")
+        );
+    }
+
+    @Override
+    public String location() {
+        return document.select("td:contains(location)")
+                .next().text();
+    }
+
+    @Override
+    public String description() {
+        if (document.selectFirst(".user-about > p") != null)
+            return document.selectFirst(".user-about > p").text();
+        else return "";
+    }
+
+    @Override
+    public String realName() {
+        return document.select("td:contains(real name)")
+                .next().text();
+    }
+
+    @Override
+    public Integer age() {
+        if (document.select("td:contains(age, years)")
+                .next().hasText()) {
+            return Integer.parseInt(
+                    document.select("td:contains(age, years)")
+                            .next().text()
+            );
+        } else return null;
+    }
+
+    @Override
+    public String avatarUrl() {
+        String url = document.selectFirst(".gravatar").attr("src");
+        if(url.contains("nophoto.png")) return null;
+        return url;
+    }
+
+    @Override
     public List<Tag> interestingTags() {
         return new TagList(this.document, new InterestingTags()).asList();
     }
@@ -59,7 +104,7 @@ public final class RosDomUser implements RosUser {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "name: " + this.name() + "\n" +
                 "upVotes: " + this.upVotes() + "\n" +
                 "downVotes: " + this.downVotes() + "\n" +
