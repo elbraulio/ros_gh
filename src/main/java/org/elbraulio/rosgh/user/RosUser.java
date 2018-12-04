@@ -17,6 +17,18 @@ public interface RosUser {
 
     int rosId();
 
+    int karma();
+
+    String location();
+
+    String description();
+
+    String realName();
+
+    Integer age();
+
+    String avatarUrl();
+
     /* TODO: 18-05-18 Too many methods!
      * this 3 method should be one UserTag object returned by 1 method
      */
