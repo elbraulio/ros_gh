@@ -73,7 +73,7 @@ public final class Devrec implements Algorithm {
     }
 
     @Override
-    public List<Aspirant> aspirants(TaggedItem item) throws SQLException {
+    public List<Aspirant> aspirants(DefaultTaggedItem item) throws SQLException {
         List<Aspirant> aspirants = new LinkedList<>();
         int count = 1;
         for (int i = 0; i < ruuDA.length; i++) {
@@ -82,7 +82,7 @@ public final class Devrec implements Algorithm {
                     new DvrecAspirant(
                             findId(i, users, -1),
                             rank(
-                                    i, item.userId(), ruuDA, users,
+                                    i, item.projectId(), ruuDA, users,
                                     new CheckProject(connection)
                             ),
                             rank(

@@ -1,6 +1,6 @@
 package org.elbraulio.rosgh.algorithm;
 
-import examples.devrec.TaggedItem;
+import examples.devrec.DefaultTaggedItem;
 
 import java.util.List;
 
@@ -20,10 +20,10 @@ public abstract class AbstractAlgorithm implements Algorithm {
         this.sort = sort;
     }
 
-    protected abstract List<Aspirant> feed(TaggedItem item);
+    protected abstract List<Aspirant> feed(DefaultTaggedItem item);
 
     @Override
-    public List<Aspirant> aspirants(TaggedItem item) {
+    public List<Aspirant> aspirants(DefaultTaggedItem item) {
         return sort.orderedList(feed(item));
     }
 }
