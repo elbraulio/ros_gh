@@ -8,7 +8,9 @@ CREATE TABLE IF NOT EXISTS ros_user (
     description text,
     real_name text,
     age integer,
-    avatar_url text
+    avatar_url text,
+    joined_at integer not null,
+    last_seen_at integer not null
 );
 
 CREATE TABLE IF NOT EXISTS ros_tag (
