@@ -36,8 +36,9 @@ public class SaveIntoSqliteDb {
 
         // insert user
         String user = "INSERT INTO ros_user(name,up_votes,down_votes, id, " +
-                "karma, location, description, real_name, age, avatar_url) " +
-                "VALUES(?,?,?,?,?,?,?,?,?,?)";
+                "karma, location, description, real_name, age, avatar_url, " +
+                "joined_at, last_seen_at) " +
+                "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         int userId = 0;
         try (PreparedStatement pstmt = this.connection.prepareStatement(user, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, this.rosUser.name());
@@ -54,6 +55,8 @@ public class SaveIntoSqliteDb {
                 pstmt.setNull(9, Types.INTEGER);
             }
             pstmt.setString(10, this.rosUser.avatarUrl());
+            pstmt.setLong(11, this.rosUser.joinedAt());
+            pstmt.setLong(12, this.rosUser.lastSeenAt());
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
             if (rs.next()) {
