@@ -6,9 +6,7 @@ import org.elbraulio.rosgh.algorithm.Aspirant;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -72,27 +70,41 @@ public final class Devrec implements Algorithm {
         this.ruuKA = ruuKA;
     }
 
+    /**
+     * All aspirants evaluated with all tags and only with their best rank.
+     *
+     * @param item taggedItem
+     * @return Aspirants to solve a taggedItem
+     * @throws SQLException when fails to read data
+     */
     @Override
     public List<Aspirant> aspirants(DefaultTaggedItem item) throws SQLException {
-        List<Aspirant> aspirants = new LinkedList<>();
-        int count = 1;
-        for (int i = 0; i < ruuDA.length; i++) {
-            this.logger.info("rank for user " + count++ + " of " + ruuDA.length);
-            aspirants.add(
-                    new DvrecAspirant(
-                            findId(i, users, -1),
-                            rank(
-                                    i, item.projectId(), ruuDA, users,
-                                    new CheckProject(connection)
-                            ),
-                            rank(
-                                    i, item.tags().get(0), ruuKA, users,
-                                    new CheckTag(connection)
-                            )
-                    )
-            );
+        Map<Integer, Aspirant> aspirants = new HashMap<>();
+        for (Integer tag : item.tags()) {
+            int count = 1;
+            for (int i = 0; i < ruuDA.length; i++) {
+                this.logger.info("rank for user " + count++ + " of " + ruuDA.length);
+                Aspirant newAspirant = new DvrecAspirant(
+                        findId(i, users, -1),
+                        rank(
+                                i, item.projectId(), ruuDA, users,
+                                new CheckProject(connection)
+                        ),
+                        rank(
+                                i, tag, ruuKA, users,
+                                new CheckTag(connection)
+                        )
+                );
+                if (aspirants.containsKey(newAspirant.id())) {
+                    if (aspirants.get(newAspirant.id()).rank() < newAspirant.rank()) {
+                        aspirants.put(newAspirant.id(), newAspirant);
+                    }
+                } else {
+                    aspirants.put(newAspirant.id(), newAspirant);
+                }
+            }
         }
-        return aspirants;
+        return new ArrayList<>(aspirants.values());
     }
 
 
@@ -160,6 +172,11 @@ public final class Devrec implements Algorithm {
         @Override
         public double rank() {
             return this.ka;
+        }
+
+        @Override
+        public int id() {
+            return this.id;
         }
 
         @Override
