@@ -9,6 +9,7 @@ import org.elbraulio.rosgh.tools.SqliteConnection;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -36,8 +37,10 @@ public class Launcher {
                     new MatrixFromFile("ruu_da.v2", users.size()).matrix(),
                     new MatrixFromFile("ruu_ka.v2", users.size()).matrix()
             );
+            final List<Integer> tagIds = new ArrayList<>(1);
+            tagIds.add(49);
             List<Aspirant> sorted = new ByRankDesc().orderedList(
-                    devrec.aspirants(null)
+                    devrec.aspirants(new DefaultTaggedItem(513, tagIds))
             );
             logger.info(
                     "process finished at " +
