@@ -5,4 +5,5 @@ package org.elbraulio.rosgh.algorithm;
  */
 public interface Aspirant {
     double rank();
+    int id();
 }
