@@ -5,6 +5,7 @@ import org.elbraulio.rosgh.algorithm.Algorithm;
 import org.elbraulio.rosgh.algorithm.Aspirant;
 import org.elbraulio.rosgh.algorithm.ByRankDesc;
 import org.elbraulio.rosgh.algorithm.TaggedItem;
+import org.elbraulio.rosgh.health.HealthCheck;
 import org.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.io.IOException;
@@ -47,6 +48,7 @@ public class Launcher {
             List<Aspirant> sorted = new ByRankDesc().orderedList(
                     devrec.aspirants(question)
             );
+
             logger.info(
                     "process finished at " +
                             (System.currentTimeMillis() - ti) / 1000 + " seconds"
