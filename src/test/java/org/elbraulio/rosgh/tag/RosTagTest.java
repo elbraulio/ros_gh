@@ -15,7 +15,7 @@ public class RosTagTest {
     @Test
     public void name() {
         assertThat(
-                new RosTag("tagName").name(),
+                new RosTag("tagName",0).name(),
                 is("tagName")
         );
     }
@@ -23,23 +23,23 @@ public class RosTagTest {
     @Test
     public void equals() {
         assertThat(
-                new RosTag("aTag"),
-                is(new RosTag("aTag"))
+                new RosTag("aTag", 0),
+                is(new RosTag("aTag", 0))
         );
     }
 
     @Test
     public void notEquals() {
         assertThat(
-                new RosTag("aTag"),
-                not(new RosTag("anotherTag"))
+                new RosTag("aTag", 0),
+                not(new RosTag("anotherTag", 0))
         );
     }
 
     @Test
     public void printToString() {
         assertThat(
-                new RosTag("aTag").toString(),
+                new RosTag("aTag", 0).toString(),
                 is("aTag")
         );
     }

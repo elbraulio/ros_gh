@@ -26,7 +26,7 @@ public class Participants {
                 e -> {
                     answers.add(
                             new Answer(
-                                    Integer.parseInt(
+                                    0, Integer.parseInt(
                                             e.selectFirst(
                                                     "div.user-card > " +
                                                             "a[href]"
@@ -54,7 +54,7 @@ public class Participants {
                     if (!href.attr("href").isEmpty()) {
                         answers.add(
                                 new Answer(
-                                        Integer.parseInt(
+                                        0, Integer.parseInt(
                                                 href.attr("href")
                                                         .split("/")[2]
                                         ),

@@ -6,4 +6,6 @@ package org.elbraulio.rosgh.tag;
 public interface Tag {
 
     String name();
+
+    Integer id();
 }

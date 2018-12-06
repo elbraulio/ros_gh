@@ -18,13 +18,13 @@ public class AnswerTest {
 
     @Before
     public void setUp(){
-        instance = new Answer(author, type, date, votes, isAccepted);
+        instance = new Answer(0, author, type, date, votes, isAccepted);
     }
 
     @Test
     public void equals(){
         assertEquals(
-                new Answer(33, "", "", 1, true),
+                new Answer(0, 33, "", "", 1, true),
                 instance
         );
     }

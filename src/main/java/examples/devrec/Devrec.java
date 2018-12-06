@@ -3,10 +3,15 @@ package examples.devrec;
 import org.apache.log4j.Logger;
 import org.elbraulio.rosgh.algorithm.Algorithm;
 import org.elbraulio.rosgh.algorithm.Aspirant;
+import org.elbraulio.rosgh.algorithm.TaggedItem;
+import org.elbraulio.rosgh.tag.Tag;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -78,31 +83,37 @@ public final class Devrec implements Algorithm {
      * @throws SQLException when fails to read data
      */
     @Override
-    public List<Aspirant> aspirants(DefaultTaggedItem item) throws SQLException {
+    public List<Aspirant> aspirants(TaggedItem item) {
         Map<Integer, Aspirant> aspirants = new HashMap<>();
-        for (Integer tag : item.tags()) {
-            int count = 1;
-            for (int i = 0; i < ruuDA.length; i++) {
-                this.logger.info("rank for user " + count++ + " of " + ruuDA.length);
-                Aspirant newAspirant = new DvrecAspirant(
-                        findId(i, users, -1),
-                        rank(
-                                i, item.projectId(), ruuDA, users,
-                                new CheckProject(connection)
-                        ),
-                        rank(
-                                i, tag, ruuKA, users,
-                                new CheckTag(connection)
-                        )
-                );
-                if (aspirants.containsKey(newAspirant.id())) {
-                    if (aspirants.get(newAspirant.id()).rank() < newAspirant.rank()) {
-                        aspirants.put(newAspirant.id(), newAspirant);
+        try {
+            for (Integer repo : item.repos()) {
+                for (Tag tag : item.tags()) {
+                    int count = 1;
+                    for (int i = 0; i < ruuDA.length; i++) {
+                        this.logger.info("rank for user " + count++ + " of " + ruuDA.length);
+                        Aspirant newAspirant = new DevrecAspirant(
+                                findId(i, users, -1),
+                                rank(
+                                        i, repo, ruuDA, users,
+                                        new CheckProject(connection)
+                                ),
+                                rank(
+                                        i, tag.id(), ruuKA, users,
+                                        new CheckTag(connection)
+                                )
+                        );
+                        if (aspirants.containsKey(newAspirant.id())) {
+                            if (aspirants.get(newAspirant.id()).rank() < newAspirant.rank()) {
+                                aspirants.put(newAspirant.id(), newAspirant);
+                            }
+                        } else {
+                            aspirants.put(newAspirant.id(), newAspirant);
+                        }
                     }
-                } else {
-                    aspirants.put(newAspirant.id(), newAspirant);
                 }
             }
+        } catch (SQLException e) {
+            this.logger.error("sql error", e);
         }
         return new ArrayList<>(aspirants.values());
     }
@@ -157,13 +168,13 @@ public final class Devrec implements Algorithm {
         return builder.toString();
     }
 
-    final class DvrecAspirant implements Aspirant {
+    final class DevrecAspirant implements Aspirant {
 
         private final int id;
         private final double da;
         private final double ka;
 
-        public DvrecAspirant(int id, double da, double ka) {
+        public DevrecAspirant(int id, double da, double ka) {
             this.id = id;
             this.da = da;
             this.ka = ka;
@@ -181,7 +192,7 @@ public final class Devrec implements Algorithm {
 
         @Override
         public String toString() {
-            return "DvrecAspirant{" +
+            return "DevrecAspirant{" +
                     "id=" + id +
                     ", da=" + da +
                     ", ka=" + ka +

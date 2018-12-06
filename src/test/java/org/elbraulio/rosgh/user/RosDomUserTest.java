@@ -82,23 +82,23 @@ public class RosDomUserTest {
                 is(
                         new TagWithCount[]{
                                 new WithCount(
-                                        new RosTag("navigation"),
+                                        new RosTag("navigation", 0),
                                         44
                                 ),
                                 new WithCount(
-                                        new RosTag("kinetic"),
+                                        new RosTag("kinetic", 0),
                                         41
                                 ),
                                 new WithCount(
-                                        new RosTag("move_base"),
+                                        new RosTag("move_base", 0),
                                         40
                                 ),
                                 new WithCount(
-                                        new RosTag("ROS"),
+                                        new RosTag("ROS", 0),
                                         40
                                 ),
                                 new WithCount(
-                                        new RosTag("amcl"),
+                                        new RosTag("amcl", 0),
                                         24
                                 ),
                         }
@@ -119,11 +119,11 @@ public class RosDomUserTest {
                 ).interestingTags().toArray(new Tag[5]),
                 is(
                         new Tag[]{
-                                new RosTag("Kinect"),
-                                new RosTag("gmapping"),
-                                new RosTag("openni"),
-                                new RosTag("xtion"),
-                                new RosTag("wifi"),
+                                new RosTag("Kinect", 0),
+                                new RosTag("gmapping", 0),
+                                new RosTag("openni", 0),
+                                new RosTag("xtion", 0),
+                                new RosTag("wifi", 0),
                         }
                 )
         );
@@ -142,7 +142,7 @@ public class RosDomUserTest {
                 ).ignoredTags().toArray(new Tag[1]),
                 is(
                         new Tag[]{
-                                new RosTag("bfl"),
+                                new RosTag("bfl", 0),
                         }
                 )
         );

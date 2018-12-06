@@ -4,12 +4,12 @@ import org.apache.log4j.Logger;
 import org.elbraulio.rosgh.algorithm.Algorithm;
 import org.elbraulio.rosgh.algorithm.Aspirant;
 import org.elbraulio.rosgh.algorithm.ByRankDesc;
+import org.elbraulio.rosgh.algorithm.TaggedItem;
 import org.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,16 +31,21 @@ public class Launcher {
             Map<Integer, Integer> users = new FetchIndexedUsers(
                     connection
             ).map();
+            int questionId = 9039;
+            TaggedItem question =
+                    new FetchRosQuestion(questionId, connection).item();
+            if (question == null){
+                logger.error("question " + questionId + " not found");
+                System.exit(1);
+            }
             Algorithm devrec = new Devrec(
                     connection,
                     users,
                     new MatrixFromFile("ruu_da.v2", users.size()).matrix(),
                     new MatrixFromFile("ruu_ka.v2", users.size()).matrix()
             );
-            final List<Integer> tagIds = new ArrayList<>(1);
-            tagIds.add(49);
             List<Aspirant> sorted = new ByRankDesc().orderedList(
-                    devrec.aspirants(new DefaultTaggedItem(513, tagIds))
+                    devrec.aspirants(question)
             );
             logger.info(
                     "process finished at " +

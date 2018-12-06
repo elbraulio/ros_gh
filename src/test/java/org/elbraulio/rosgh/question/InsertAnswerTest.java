@@ -27,7 +27,7 @@ public class InsertAnswerTest {
                 .connection();
         id = new InsertAnswer(
                 new Answer(
-                        0, "comment", "", 0, false
+                        0, 0, "comment", "", 0, false
                 )
         ).execute(connection, -1);
     }
