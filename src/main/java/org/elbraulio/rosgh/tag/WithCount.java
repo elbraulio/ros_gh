@@ -8,7 +8,7 @@ public final class WithCount implements TagWithCount {
     private final int count;
 
     public WithCount(final String name, final int count) {
-        this(new RosTag(name), count);
+        this(new RosTag(name, 0), count);
     }
 
     public WithCount(final Tag originTag, final int count) {
@@ -39,7 +39,7 @@ public final class WithCount implements TagWithCount {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.name() + " x " + this.count();
     }
 }

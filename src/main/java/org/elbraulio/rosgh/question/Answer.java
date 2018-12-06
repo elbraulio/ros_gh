@@ -6,14 +6,16 @@ package org.elbraulio.rosgh.question;
 public class Answer {
 
 
+    private final int id;
     private final int author;
     private final String type;
     private final String date;
     private final int votes;
     private final boolean isAccepted;
 
-    public Answer(int author, String type, String date, int votes, boolean
+    public Answer(int id, int author, String type, String date, int votes, boolean
             isAccepted) {
+        this.id = id;
 
         this.author = author;
         this.type = type;
@@ -21,6 +23,8 @@ public class Answer {
         this.votes = votes;
         this.isAccepted = isAccepted;
     }
+
+    public int id() {return this.id;}
 
     public int author() {
         return this.author;

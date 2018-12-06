@@ -5,10 +5,12 @@ package org.elbraulio.rosgh.tag;
  */
 public final class RosTag implements Tag {
     private final String name;
+    private final int id;
 
-    public RosTag(final String name) {
+    public RosTag(final String name, int id) {
 
         this.name = name;
+        this.id = id;
     }
 
     @Override
@@ -17,8 +19,13 @@ public final class RosTag implements Tag {
     }
 
     @Override
-    public boolean equals(Object o){
-        if(o instanceof Tag){
+    public Integer id() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Tag) {
             final Tag tag = (Tag) o;
             return tag.name().equals(this.name());
         } else {
@@ -27,7 +34,7 @@ public final class RosTag implements Tag {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.name();
     }
 }

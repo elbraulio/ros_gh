@@ -53,6 +53,11 @@ public class ByRankDescTest {
         }
 
         @Override
+        public int id() {
+            return 0;
+        }
+
+        @Override
         public String toString() {
             return String.valueOf(this.rank);
         }

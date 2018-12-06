@@ -25,7 +25,7 @@ public class TagList implements CanBeList<Tag> {
         final List<Tag> list = new LinkedList<>();
         this.filterBy.elements(this.document).forEach(
                 element -> {
-                    list.add(new RosTag(element.select("a").text()));
+                    list.add(new RosTag(element.select("a").text(), 0));
                 }
         );
         return list;
