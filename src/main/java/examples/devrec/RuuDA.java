@@ -31,11 +31,6 @@ public final class RuuDA implements Matrix {
                 ruuDA[j][i] = new JaccardSimilarity(i, j, rup).val();
             }
         }
-        try {
-            new SaveRuuToFile(ruuDA, "ruu_da").save();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return ruuDA;
     }
 }
