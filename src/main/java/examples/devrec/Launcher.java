@@ -42,8 +42,8 @@ public class Launcher {
             Algorithm devrec = new Devrec(
                     connection,
                     users,
-                    new MatrixFromFile("ruu_da.v2", users.size()).matrix(),
-                    new MatrixFromFile("ruu_ka.v2", users.size()).matrix()
+                    new MatrixFromFile("/Users/elbraulio/Desktop/ruu_da.v2", users.size()).matrix(),
+                    new MatrixFromFile("/Users/elbraulio/Desktop/ruu_ka.v2", users.size()).matrix()
             );
             List<Aspirant> sorted = new ByRankDesc().orderedList(
                     devrec.aspirants(question)

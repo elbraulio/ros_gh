@@ -86,11 +86,11 @@ public final class Devrec implements Algorithm {
     public List<Aspirant> aspirants(TaggedItem item) {
         Map<Integer, Aspirant> aspirants = new HashMap<>();
         try {
+            int count = 1;
             for (Integer repo : item.repos()) {
+                this.logger.info("rank for user " + count++ + " of " + item.repos().size());
                 for (Tag tag : item.tags()) {
-                    int count = 1;
                     for (int i = 0; i < ruuDA.length; i++) {
-                        this.logger.info("rank for user " + count++ + " of " + ruuDA.length);
                         Aspirant newAspirant = new DevrecAspirant(
                                 findId(i, users, -1),
                                 rank(
