@@ -32,11 +32,6 @@ public final class RuuKA implements Matrix {
                 ruuKA[j][i] = ruuKA[i][j];
             }
         }
-        try {
-            new SaveRuuToFile(ruuKA, "ruu_ka").save();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return ruuKA;
     }
 
