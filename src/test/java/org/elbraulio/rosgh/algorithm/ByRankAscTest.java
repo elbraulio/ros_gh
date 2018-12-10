@@ -11,7 +11,7 @@ import static org.hamcrest.Matchers.is;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class ByRankDescTest {
+public class ByRankAscTest {
     @Test
     public void sort() {
         List<Aspirant> sorted = Arrays.asList(
@@ -30,7 +30,7 @@ public class ByRankDescTest {
                 new OwnAspirant(-0.01),
                 new OwnAspirant(2.3)
         );
-        List<Aspirant> byRank = new ByRankDesc().orderedList(messy);
+        List<Aspirant> byRank = new ByRankAsc().orderedList(messy);
         for (int i = 0; i < sorted.size(); i++) {
             assertThat(
                     String.valueOf(sorted.get(i).rank()),

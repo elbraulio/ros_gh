@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public class ByRankDesc implements Sort {
+public class ByRankAsc implements Sort {
     @Override
     public List<Aspirant> orderedList(List<Aspirant> feed) {
         final List<Aspirant> ordered =  new LinkedList<>(feed);

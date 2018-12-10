@@ -3,9 +3,10 @@ package examples.devrec;
 import org.apache.log4j.Logger;
 import org.elbraulio.rosgh.algorithm.Algorithm;
 import org.elbraulio.rosgh.algorithm.Aspirant;
-import org.elbraulio.rosgh.algorithm.ByRankDesc;
+import org.elbraulio.rosgh.algorithm.ByRankAsc;
 import org.elbraulio.rosgh.algorithm.TaggedItem;
-import org.elbraulio.rosgh.health.HealthCheck;
+import org.elbraulio.rosgh.health.DefaultAccuracy;
+import org.elbraulio.rosgh.health.DefaultHealthCheck;
 import org.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.io.IOException;
@@ -45,15 +46,19 @@ public class Launcher {
                     new MatrixFromFile("/Users/elbraulio/Desktop/ruu_da.v2", users.size()).matrix(),
                     new MatrixFromFile("/Users/elbraulio/Desktop/ruu_ka.v2", users.size()).matrix()
             );
-            List<Aspirant> sorted = new ByRankDesc().orderedList(
+            /*List<Aspirant> sorted = new ByRankAsc().orderedList(
                     devrec.aspirants(question)
-            );
+            );*/
 
             logger.info(
                     "process finished at " +
                             (System.currentTimeMillis() - ti) / 1000 + " seconds"
             );
-            logger.info(sorted);
+           // logger.info(sorted);
+            List<TaggedItem> sample =
+                    new FetchSamle(connection).list().subList(0,5);
+            new DefaultHealthCheck(new DefaultAccuracy(connection), devrec,
+                    sample).logHealth();
         }
     }
 }
