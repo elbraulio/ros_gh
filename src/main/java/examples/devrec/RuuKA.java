@@ -32,13 +32,18 @@ public final class RuuKA implements Matrix {
                 ruuKA[j][i] = ruuKA[i][j];
             }
         }
+        try {
+            new SaveRuuToFile(ruuKA, "ruuKA").save();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return ruuKA;
     }
 
     private double vectorSpace(int i, int j, double[][] rut) {
         double sum = 0d;
         for (int k = 0; k < rut[i].length; k++) {
-            sum += rut[i][k] * rut[j][k];
+            sum += rut[i][k] * rut[j][k] / rut[i].length;
         }
         return sum;
     }

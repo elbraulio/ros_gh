@@ -97,12 +97,11 @@ public final class Devrec implements Algorithm {
                                         i, repo, ruuDA, users,
                                         new CheckProject(connection)
                                 ),
-                                new Normalize(
+
                                         rank(
                                                 i, tag.id(), ruuKA, users,
                                                 new CheckTag(connection)
-                                        ), 0d, 30d, 0d, 1d
-                                ).doubleValue()
+                                        )
                         );
                         if (aspirants.containsKey(newAspirant.id())) {
                             if (aspirants.get(newAspirant.id()).rank() < newAspirant.rank()) {

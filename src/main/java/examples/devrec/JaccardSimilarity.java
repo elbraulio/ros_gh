@@ -28,7 +28,7 @@ public final class JaccardSimilarity {
         double total = 0d;
         for (int k = 0; k < projectsI.length; k++) {
             sum += projectsI[k] + projectsJ[k] == 2d ? 1 : 0;
-            total++;
+            total += projectsI[k] + projectsJ[k] >= 1d ? 1 : 0;
         }
         if (total == 0) {
             return 0;
