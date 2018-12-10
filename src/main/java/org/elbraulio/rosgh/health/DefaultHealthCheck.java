@@ -61,7 +61,7 @@ public final class DefaultHealthCheck implements HealthCheck {
                 Arrays.stream(results.toArray(new Result[0])).reduce(
                         new Result(0, 0, 0),
                         (r1, r2) -> new Result(
-                                r1.recall + r2.recall, 0, 0
+                                0, r1.recall + r2.recall, 0
                         )
                 ).recall / results.size()
         );
@@ -70,7 +70,7 @@ public final class DefaultHealthCheck implements HealthCheck {
                 Arrays.stream(results.toArray(new Result[0])).reduce(
                         new Result(0, 0, 0),
                         (r1, r2) -> new Result(
-                                r1.mrr + r2.mrr, 0, 0
+                                0, 0, r1.mrr + r2.mrr
                         )
                 ).mrr / results.size()
         );

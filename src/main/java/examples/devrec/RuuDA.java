@@ -28,8 +28,13 @@ public final class RuuDA implements Matrix {
             this.logger.info("ruuDA " + i + " de " + ruuDA.length);
             for (int j = i; j < ruuDA.length; j++) {
                 ruuDA[i][j] = new JaccardSimilarity(i, j, rup).val();
-                ruuDA[j][i] = new JaccardSimilarity(i, j, rup).val();
+                ruuDA[j][i] = ruuDA[i][j];
             }
+        }
+        try {
+            new SaveRuuToFile(ruuDA, "ruuDA").save();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return ruuDA;
     }
