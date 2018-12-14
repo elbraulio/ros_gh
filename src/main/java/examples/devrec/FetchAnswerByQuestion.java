@@ -1,6 +1,6 @@
 package examples.devrec;
 
-import org.elbraulio.rosgh.question.Answer;
+import com.elbraulio.rosgh.question.Answer;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

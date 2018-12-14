@@ -1,6 +1,6 @@
 package testtools;
 
-import org.elbraulio.rosgh.dom.PagedDom;
+import com.elbraulio.rosgh.dom.PagedDom;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 

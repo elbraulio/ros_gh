@@ -1,7 +1,7 @@
-import org.elbraulio.rosgh.iterator.IterateByUserLinks;
-import org.elbraulio.rosgh.iterator.IterateDomPages;
-import org.elbraulio.rosgh.iterator.IteratePagedContent;
-import org.elbraulio.rosgh.tools.IteratorAsList;
+import com.elbraulio.rosgh.iterator.IterateByUserLinks;
+import com.elbraulio.rosgh.iterator.IterateDomPages;
+import com.elbraulio.rosgh.iterator.IteratePagedContent;
+import com.elbraulio.rosgh.tools.IteratorAsList;
 import org.junit.Test;
 import testtools.FakePagedDom;
 
