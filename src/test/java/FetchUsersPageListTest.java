@@ -1,24 +1,9 @@
-import org.elbraulio.rosgh.dom.PagedDom;
-import org.elbraulio.rosgh.dom.RosUserPagedDom;
 import org.elbraulio.rosgh.iterator.IterateByUserLinks;
 import org.elbraulio.rosgh.iterator.IterateDomPages;
 import org.elbraulio.rosgh.iterator.IteratePagedContent;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.elbraulio.rosgh.tools.IteratorAsList;
-import org.elbraulio.rosgh.tools.LastRosUserPage;
-import org.elbraulio.rosgh.tools.SaveIntoSqliteDb;
-import org.elbraulio.rosgh.tools.SqliteConnection;
-import org.elbraulio.rosgh.user.RosDomUser;
+import org.junit.Test;
 import testtools.FakePagedDom;
-
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Iterator;
-import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;

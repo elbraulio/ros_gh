@@ -1,9 +1,9 @@
 package org.elbraulio.rosgh.tools;
 
+import org.elbraulio.rosgh.user.RosDomUser;
 import org.hamcrest.Matchers;
 import org.jsoup.Jsoup;
 import org.junit.Test;
-import org.elbraulio.rosgh.user.RosDomUser;
 
 import java.io.IOException;
 
