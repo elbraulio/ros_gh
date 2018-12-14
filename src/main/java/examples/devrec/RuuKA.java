@@ -42,8 +42,10 @@ public final class RuuKA implements Matrix {
 
     private double vectorSpace(int i, int j, double[][] rut) {
         double sum = 0d;
+        double length = 0d;
         for (int k = 0; k < rut[i].length; k++) {
-            sum += rut[i][k] * rut[j][k] / rut[i].length;
+            sum += rut[i][k] * rut[j][k];
+            length += rut[i][k] != 0 || rut[j][k] != 0 ? 1 : 0;
         }
         return sum;
     }

@@ -25,7 +25,7 @@ public class Launcher {
             throws SQLException, ClassNotFoundException, IOException {
         try (
                 Connection connection = new SqliteConnection(
-                        "C:\\Users\\Usuario\\Desktop\\v1.1.db"
+                        "/Users/elbraulio/Google Drive/ros_gh/extractions/v1.1.db"
                 ).connection()
         ) {
             long ti = System.currentTimeMillis();
@@ -42,13 +42,13 @@ public class Launcher {
             Map<Integer, Integer> tags = new FetchTags(connection).map();
             Algorithm devrec = new Devrec(
                     connection,
-                    //new FetchIndexedProjects(connection).map(),
+                    new FetchIndexedProjects(connection).map(),
                     users,
-                   //tags
-                   new MatrixFromFile("C:\\Users\\Usuario\\Desktop\\ruuDA",
+                   tags
+                   /*new MatrixFromFile("C:\\Users\\Usuario\\Desktop\\ruuDA",
                     users.size()).matrix(),
                     new MatrixFromFile("C:\\Users\\Usuario\\Desktop\\ruuKA",
-                            users.size()).matrix()
+                            users.size()).matrix()*/
             );
             logger.info(
                     new ByRankAsc().orderedList(devrec.aspirants(question))
