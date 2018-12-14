@@ -80,7 +80,6 @@ public final class Devrec implements Algorithm {
      *
      * @param item taggedItem
      * @return Aspirants to solve a taggedItem
-     * @throws SQLException when fails to read data
      */
     @Override
     public List<Aspirant> aspirants(TaggedItem item) {

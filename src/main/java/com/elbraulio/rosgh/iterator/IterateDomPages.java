@@ -34,11 +34,10 @@ public final class IterateDomPages implements Iterator<Iterator<String>> {
     private final BuildIteratorForContent buildIteratorForContent;
 
     /**
-     * Ctor.
-     *
-     * @param pagedDom    The paged dom that will be iterated.
-     * @param initialPage Page where the iteration begins.
-     * @param finalPage   Page where the iteration ends.
+     * @param pagedDom                The paged dom that will be iterated.
+     * @param initialPage             Page where the iteration begins.
+     * @param finalPage               Page where the iteration ends.
+     * @param buildIteratorForContent content iterator.
      */
     public IterateDomPages(
             final PagedDom pagedDom, final int initialPage, final int finalPage,
