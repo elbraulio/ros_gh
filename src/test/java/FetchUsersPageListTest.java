@@ -29,8 +29,6 @@ import static org.hamcrest.core.Is.is;
  */
 public final class FetchUsersPageListTest {
 
-    final String root = "https://answers.ros.org";
-
     @Test
     public void fetchAllPages() {
         final int initialPage = 1;
@@ -57,83 +55,5 @@ public final class FetchUsersPageListTest {
                         }
                 )
         );
-    }
-
-    @Test
-    @Ignore
-    public void fetchFirstNUsersLinks() throws IOException {
-        final PagedDom pagedDom = new RosUserPagedDom();
-        final int initialPage = 1;
-        final Document firstPage = pagedDom.page(1);
-        final List<String> links = new IteratorAsList<>(
-                new IteratePagedContent<>(
-                        new IterateDomPages(
-                                pagedDom,
-                                initialPage,
-                                new LastRosUserPage(
-                                        firstPage
-                                ).value(),
-                                new IterateByUserLinks()
-                        )
-                )
-        ).take(100);
-
-        System.out.println(links);
-
-        assertThat(
-                links.size(),
-                is(100)
-        );
-    }
-
-    @Test
-    @Ignore
-    public void fetchAndPrintAllUsers() throws IOException {
-        final Iterator<String> usersLinks = makeIteratorForTest();
-
-        while (usersLinks.hasNext()) {
-            final String next = usersLinks.next();
-            System.out.println(
-                    new RosDomUser(Jsoup.connect(root + next).get())
-            );
-        }
-    }
-
-    private Iterator<String> makeIteratorForTest() throws IOException {
-        final int initialPage = 1;
-        final Document usersPage = Jsoup.connect(root + "/users/").get();
-        return new IteratePagedContent<>(
-                new IterateDomPages(
-                        new RosUserPagedDom(),
-                        initialPage,
-                        new LastRosUserPage(usersPage).value(),
-                        new IterateByUserLinks()
-                )
-        );
-    }
-
-    @Ignore
-    @Test
-    public void saveAllData()
-            throws IOException, SQLException, ClassNotFoundException {
-        // to create the db, follow instructions on resources/sqlite/README.md
-        final Iterator<String> usersLinks = makeIteratorForTest();
-        try (
-                final Connection connection = new SqliteConnection(
-                        "src/test/resources/sqlite/test.db"
-                ).connection()
-        ) {
-            int count = 1;
-            while (usersLinks.hasNext()) {
-                final String next = usersLinks.next();
-                System.out.println(
-                        "Processing user " + count++ + " ->" + next
-                );
-                new SaveIntoSqliteDb(
-                        new RosDomUser(Jsoup.connect(root + next).get()),
-                        connection
-                ).execute();
-            }
-        }
     }
 }
