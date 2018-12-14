@@ -35,15 +35,28 @@ public class SaveIntoSqliteDb {
 
 
         // insert user
-        String user = "INSERT INTO ros_user(name,up_votes,down_votes, id) " +
-                "VALUES(?,?,?,?)";
+        String user = "INSERT INTO ros_user(name,up_votes,down_votes, id, " +
+                "karma, location, description, real_name, age, avatar_url, " +
+                "joined_at, last_seen_at) " +
+                "VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
         int userId = 0;
-
         try (PreparedStatement pstmt = this.connection.prepareStatement(user, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, this.rosUser.name());
             pstmt.setInt(2, this.rosUser.upVotes());
             pstmt.setInt(3, this.rosUser.downVotes());
             pstmt.setInt(4, this.rosUser.rosId());
+            pstmt.setInt(5, this.rosUser.karma());
+            pstmt.setString(6, this.rosUser.location());
+            pstmt.setString(7, this.rosUser.description());
+            pstmt.setString(8, this.rosUser.realName());
+            if (this.rosUser.age() != null) {
+                pstmt.setInt(9, this.rosUser.age());
+            } else {
+                pstmt.setNull(9, Types.INTEGER);
+            }
+            pstmt.setString(10, this.rosUser.avatarUrl());
+            pstmt.setLong(11, this.rosUser.joinedAt());
+            pstmt.setLong(12, this.rosUser.lastSeenAt());
             pstmt.executeUpdate();
             ResultSet rs = pstmt.getGeneratedKeys();
             if (rs.next()) {

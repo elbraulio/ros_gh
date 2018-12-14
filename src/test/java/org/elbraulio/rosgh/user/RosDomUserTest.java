@@ -246,7 +246,15 @@ public class RosDomUserTest {
                                 "downVotes: 0\n" +
                                 "tags: []\n" +
                                 "interestingTag: []\n" +
-                                "ignoredtag: []\n"
+                                "ignoredtag: []\n" +
+                                "karma: 1\n" +
+                                "location: \n" +
+                                "description: \n" +
+                                "realName: \n" +
+                                "age: null\n" +
+                                "avatarUrl: //www.gravatar.com/avatar/977aea2b1931661bb877be29d8a28ef3?s=128&d=identicon&r=PG\n" +
+                                "joinedAt: 1523875495\n" +
+                                "lastSeenAt: 1526143144\n"
                 )
         );
     }

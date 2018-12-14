@@ -2,7 +2,15 @@ CREATE TABLE IF NOT EXISTS ros_user (
     id integer PRIMARY KEY,
     name text NOT NULL,
     up_votes integer NOT NULL,
-    down_votes integer NOT NULL
+    down_votes integer NOT NULL,
+    karma integer not null,
+    location text,
+    description text,
+    real_name text,
+    age integer,
+    avatar_url text,
+    joined_at integer not null,
+    last_seen_at integer not null
 );
 
 CREATE TABLE IF NOT EXISTS ros_tag (

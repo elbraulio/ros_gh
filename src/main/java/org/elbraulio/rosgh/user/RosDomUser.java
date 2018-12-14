@@ -1,9 +1,13 @@
 package org.elbraulio.rosgh.user;
 
-import org.jsoup.nodes.Document;
 import org.elbraulio.rosgh.tag.*;
 import org.elbraulio.rosgh.tools.RosUserIdFromUrl;
+import org.jsoup.nodes.Document;
 
+import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -44,6 +48,69 @@ public final class RosDomUser implements RosUser {
     }
 
     @Override
+    public int karma() {
+        return Integer.parseInt(
+                this.document.select(".scoreNumber")
+                        .get(0).text().replace(",", "")
+        );
+    }
+
+    @Override
+    public String location() {
+        return document.select("td:contains(location)")
+                .next().text();
+    }
+
+    @Override
+    public String description() {
+        if (document.selectFirst(".user-about > p") != null)
+            return document.selectFirst(".user-about > p").text();
+        else return "";
+    }
+
+    @Override
+    public String realName() {
+        return document.select("td:contains(real name)")
+                .next().text();
+    }
+
+    @Override
+    public Integer age() {
+        if (document.select("td:contains(age, years)")
+                .next().hasText()) {
+            return Integer.parseInt(
+                    document.select("td:contains(age, years)")
+                            .next().text()
+            );
+        } else return null;
+    }
+
+    @Override
+    public String avatarUrl() {
+        String url = document.selectFirst(".gravatar").attr("src");
+        if (url.contains("nophoto.png")) return null;
+        return url;
+    }
+
+    @Override
+    public long joinedAt() {
+        return LocalDateTime.parse(
+                document.select("td:contains(member since)")
+                        .next().select("strong > abbr").attr("title"),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss Z")
+        ).toEpochSecond(ZoneOffset.UTC);
+    }
+
+    @Override
+    public long lastSeenAt() {
+        return LocalDateTime.parse(
+                document.select("td:contains(last seen)").next()
+                        .select("strong > abbr").attr("title"),
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss Z")
+        ).toEpochSecond(ZoneOffset.UTC);
+    }
+
+    @Override
     public List<Tag> interestingTags() {
         return new TagList(this.document, new InterestingTags()).asList();
     }
@@ -59,12 +126,20 @@ public final class RosDomUser implements RosUser {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "name: " + this.name() + "\n" +
                 "upVotes: " + this.upVotes() + "\n" +
                 "downVotes: " + this.downVotes() + "\n" +
                 "tags: " + this.tags() + "\n" +
                 "interestingTag: " + this.interestingTags() + "\n" +
-                "ignoredtag: " + this.ignoredTags() + "\n";
+                "ignoredtag: " + this.ignoredTags() + "\n" +
+                "karma: " + this.karma() + "\n" +
+                "location: " + this.location() + "\n" +
+                "description: " + this.description() + "\n" +
+                "realName: " + this.realName() + "\n" +
+                "age: " + this.age() + "\n" +
+                "avatarUrl: " + this.avatarUrl() + "\n" +
+                "joinedAt: " + this.joinedAt() + "\n" +
+                "lastSeenAt: " + this.lastSeenAt() + "\n";
     }
 }
