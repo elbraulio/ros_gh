@@ -1,8 +1,8 @@
 package examples.devrec;
 
-import org.elbraulio.rosgh.algorithm.TaggedItem;
-import org.elbraulio.rosgh.question.Answer;
-import org.elbraulio.rosgh.tag.Tag;
+import com.elbraulio.rosgh.algorithm.TaggedItem;
+import com.elbraulio.rosgh.question.Answer;
+import com.elbraulio.rosgh.tag.Tag;
 
 import java.util.List;
 

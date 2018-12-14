@@ -1,6 +1,6 @@
 package examples.devrec;
 
-import org.elbraulio.rosgh.algorithm.TaggedItem;
+import com.elbraulio.rosgh.algorithm.TaggedItem;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

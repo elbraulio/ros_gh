@@ -1,10 +1,10 @@
 package examples.devrec;
 
 import org.apache.log4j.Logger;
-import org.elbraulio.rosgh.algorithm.Algorithm;
-import org.elbraulio.rosgh.algorithm.Aspirant;
-import org.elbraulio.rosgh.algorithm.TaggedItem;
-import org.elbraulio.rosgh.tag.Tag;
+import com.elbraulio.rosgh.algorithm.Algorithm;
+import com.elbraulio.rosgh.algorithm.Aspirant;
+import com.elbraulio.rosgh.algorithm.TaggedItem;
+import com.elbraulio.rosgh.tag.Tag;
 
 import java.sql.Connection;
 import java.sql.SQLException;

@@ -1,7 +1,7 @@
 package examples.devrec;
 
-import org.elbraulio.rosgh.tag.RosTag;
-import org.elbraulio.rosgh.tag.Tag;
+import com.elbraulio.rosgh.tag.RosTag;
+import com.elbraulio.rosgh.tag.Tag;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
