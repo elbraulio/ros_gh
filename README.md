@@ -1,17 +1,43 @@
 # ros_gh
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/elbraulio/ros_gh/blob/master/LICENSE)  [![Build Status](https://travis-ci.org/elbraulio/ros_gh.svg?branch=master)](https://travis-ci.org/elbraulio/ros_gh)  [![codecov](https://codecov.io/gh/elbraulio/ros_gh/branch/master/graph/badge.svg)](https://codecov.io/gh/elbraulio/ros_gh) [![codebeat  badge](https://codebeat.co/badges/509ed37d-0128-4ca3-9dfb-33e861b5e1e3)](https://codebeat.co/projects/github-com-elbraulio-ros_gh-master)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/elbraulio/ros_gh/blob/master/LICENSE)  [![Build Status](https://travis-ci.org/elbraulio/ros_gh.svg?branch=master)](https://travis-ci.org/elbraulio/ros_gh) [![](https://jitpack.io/v/elbraulio/ros_gh.svg)](https://jitpack.io/#elbraulio/ros_gh) [![](https://img.shields.io/badge/javadocs-ok-green.svg)](https://jitpack.io/com/elbraulio/ros_gh/latest/javadoc/) [![codecov](https://codecov.io/gh/elbraulio/ros_gh/branch/master/graph/badge.svg)](https://codecov.io/gh/elbraulio/ros_gh) [![codebeat  badge](https://codebeat.co/badges/509ed37d-0128-4ca3-9dfb-33e861b5e1e3)](https://codebeat.co/projects/github-com-elbraulio-ros_gh-master)
 
-**ros_gh** is a tool that matches identities between [ROS Answers](https://answers.ros.org/users/) and Github accounts then apply algorithms to recommend users to answers a given question . To achieve it there are three steps: collect data from github and ROS Answers, match identities and apply algorithms.
+**ros_gh** is a tool that apply algorithms to recommend users to answers a given question . To achieve it there are three steps: collect data from github and ROS Answers, match identities and apply algorithms.
 
-# Install
+# How to use
 
-For now we don't have releases 🙄, so if you want to use these tools you'll need to clone this repo and install its maven dependencies:
+#### maven
 
-```shell
-git clone https://github.com/elbraulio/ros_gh.git
-cd ros_gh
-mvn verify
+```xml
+<dependency>
+    <groupId>com.elbraulio</groupId>
+    <artifactId>ros_gh</artifactId>
+    <version>{version}</version>
+</dependency>
+<repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+</repositories>
 ```
+
+
+
+#### gradle
+
+```groovy
+dependencies {
+        implementation 'com.elbraulio:ros_gh:{version}'
+}
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+
 
 # Collect data from Github and Ros Answers
 
