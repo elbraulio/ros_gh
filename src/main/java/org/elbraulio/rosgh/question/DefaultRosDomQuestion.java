@@ -1,8 +1,8 @@
 package org.elbraulio.rosgh.question;
 
+import org.elbraulio.rosgh.tools.QuestionIdFromUrl;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.elbraulio.rosgh.tools.QuestionIdFromUrl;
 
 import java.io.IOException;
 import java.util.List;

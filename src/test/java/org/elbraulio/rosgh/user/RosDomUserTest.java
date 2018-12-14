@@ -1,11 +1,11 @@
 package org.elbraulio.rosgh.user;
 
-import org.jsoup.Jsoup;
-import org.junit.Test;
 import org.elbraulio.rosgh.tag.RosTag;
 import org.elbraulio.rosgh.tag.Tag;
 import org.elbraulio.rosgh.tag.TagWithCount;
 import org.elbraulio.rosgh.tag.WithCount;
+import org.jsoup.Jsoup;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;

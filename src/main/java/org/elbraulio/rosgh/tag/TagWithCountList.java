@@ -1,8 +1,8 @@
 package org.elbraulio.rosgh.tag;
 
-import org.jsoup.nodes.Document;
 import org.elbraulio.rosgh.tools.CanBeList;
 import org.elbraulio.rosgh.tools.ParseRosTagCount;
+import org.jsoup.nodes.Document;
 
 import java.util.LinkedList;
 import java.util.List;

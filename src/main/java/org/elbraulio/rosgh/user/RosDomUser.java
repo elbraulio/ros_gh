@@ -4,7 +4,6 @@ import org.elbraulio.rosgh.tag.*;
 import org.elbraulio.rosgh.tools.RosUserIdFromUrl;
 import org.jsoup.nodes.Document;
 
-import java.text.ParseException;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;

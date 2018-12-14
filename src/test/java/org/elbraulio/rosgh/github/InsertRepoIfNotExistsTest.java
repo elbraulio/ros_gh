@@ -1,10 +1,10 @@
 package org.elbraulio.rosgh.github;
 
+import org.elbraulio.rosgh.tools.CanRequest;
+import org.elbraulio.rosgh.tools.SqliteConnection;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.elbraulio.rosgh.tools.CanRequest;
-import org.elbraulio.rosgh.tools.SqliteConnection;
 import testtools.ResetDb;
 
 import java.io.IOException;

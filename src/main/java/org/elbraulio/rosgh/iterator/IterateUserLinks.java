@@ -1,8 +1,8 @@
 package org.elbraulio.rosgh.iterator;
 
+import org.elbraulio.rosgh.tools.StackWithInitialValues;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
-import org.elbraulio.rosgh.tools.StackWithInitialValues;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
