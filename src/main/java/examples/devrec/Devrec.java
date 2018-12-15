@@ -97,8 +97,7 @@ public final class Devrec implements Algorithm {
                                         i, repo, ruuDA, users,
                                         new CheckProject(connection)
                                 ),
-
-                                        rank(
+                                rank(
                                                 i, tag.id(), ruuKA, users,
                                                 new CheckTag(connection)
                                         )
@@ -138,7 +137,7 @@ public final class Devrec implements Algorithm {
                 rank += ruu[userIndex][users.get(userId)];
             }
         }
-        return rank;
+        return Double.isNaN(rank) ? 0d : rank;
     }
 
     private int findId(int value, Map<Integer, Integer> idIndex, int onDefault) {
@@ -182,7 +181,7 @@ public final class Devrec implements Algorithm {
 
         @Override
         public double rank() {
-            return this.ka;
+            return this.ka*0.75 + this.da*0.25;
         }
 
         @Override
@@ -196,6 +195,7 @@ public final class Devrec implements Algorithm {
                     "id=" + id +
                     ", da=" + da +
                     ", ka=" + ka +
+                    ", rank= " + rank() +
                     '}' + '\n';
         }
     }

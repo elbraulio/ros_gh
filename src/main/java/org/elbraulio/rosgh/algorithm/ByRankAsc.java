@@ -11,11 +11,7 @@ public class ByRankAsc implements Sort {
     @Override
     public List<Aspirant> orderedList(List<Aspirant> feed) {
         final List<Aspirant> ordered =  new LinkedList<>(feed);
-        ordered.sort(
-                Comparator.comparingDouble(
-                        value -> value.rank()
-                )
-        );
+        ordered.sort(Comparator.comparingDouble(Aspirant::rank));
         return ordered;
     }
 }

@@ -2,10 +2,10 @@ package examples.devrec;
 
 import org.apache.log4j.Logger;
 import org.elbraulio.rosgh.algorithm.Algorithm;
-import org.elbraulio.rosgh.algorithm.ByRankAsc;
 import org.elbraulio.rosgh.algorithm.TaggedItem;
-import org.elbraulio.rosgh.health.DefaultAccuracy;
+import org.elbraulio.rosgh.health.LightAccuracy;
 import org.elbraulio.rosgh.health.DefaultHealthCheck;
+import org.elbraulio.rosgh.health.StrictAccuracy;
 import org.elbraulio.rosgh.tools.SqliteConnection;
 
 import java.io.IOException;
@@ -42,20 +42,24 @@ public class Launcher {
             Map<Integer, Integer> tags = new FetchTags(connection).map();
             Algorithm devrec = new Devrec(
                     connection,
-                    new FetchIndexedProjects(connection).map(),
+                    //new FetchIndexedProjects(connection).map(),
                     users,
-                   tags
-                   /*new MatrixFromFile("C:\\Users\\Usuario\\Desktop\\ruuDA",
+                   //tags
+                   new MatrixFromFile("ruuDA",
                     users.size()).matrix(),
-                    new MatrixFromFile("C:\\Users\\Usuario\\Desktop\\ruuKA",
-                            users.size()).matrix()*/
+                    new MatrixFromFile("ruuKA",
+                            users.size()).matrix()
             );
-            logger.info(
+            /*logger.info(
                     new ByRankAsc().orderedList(devrec.aspirants(question))
-            );
+            );*/
             List<TaggedItem> sample =
-                    new FetchSample(1, connection).list();
-            new DefaultHealthCheck(new DefaultAccuracy(connection), devrec,
+                    new FetchSample(10, connection).list();
+            logger.info("Light accuracy");
+            new DefaultHealthCheck(new LightAccuracy(connection), devrec,
+                    sample).logHealth();
+            logger.info("Strict accuracy");
+            new DefaultHealthCheck(new StrictAccuracy(connection), devrec,
                     sample).logHealth();
             logger.info(
                     "process finished at " +
