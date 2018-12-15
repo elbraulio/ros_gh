@@ -8,11 +8,14 @@
 #### maven
 
 ```xml
-<dependency>
-    <groupId>com.elbraulio</groupId>
-    <artifactId>ros_gh</artifactId>
-    <version>{version}</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>com.elbraulio</groupId>
+        <artifactId>ros_gh</artifactId>
+        <version>{version}</version>
+    </dependency>
+</dependencies>
+<!-- for ros_gh -->
 <repositories>
 	<repository>
 	    <id>jitpack.io</id>
