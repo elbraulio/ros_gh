@@ -1,10 +1,10 @@
 package examples.devrec;
 
-import org.apache.log4j.Logger;
 import com.elbraulio.rosgh.algorithm.Algorithm;
 import com.elbraulio.rosgh.algorithm.Aspirant;
 import com.elbraulio.rosgh.algorithm.TaggedItem;
 import com.elbraulio.rosgh.tag.Tag;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -97,10 +97,10 @@ public final class Devrec implements Algorithm {
                                         new CheckProject(connection)
                                 ),
 
-                                        rank(
-                                                i, tag.id(), ruuKA, users,
-                                                new CheckTag(connection)
-                                        )
+                                rank(
+                                        i, tag.id(), ruuKA, users,
+                                        new CheckTag(connection)
+                                )
                         );
                         if (aspirants.containsKey(newAspirant.id())) {
                             if (aspirants.get(newAspirant.id()).rank() < newAspirant.rank()) {
@@ -137,7 +137,7 @@ public final class Devrec implements Algorithm {
                 rank += ruu[userIndex][users.get(userId)];
             }
         }
-        return rank;
+        return Double.isNaN(rank) ? 0d : rank;
     }
 
     private int findId(int value, Map<Integer, Integer> idIndex, int onDefault) {
@@ -181,7 +181,7 @@ public final class Devrec implements Algorithm {
 
         @Override
         public double rank() {
-            return this.ka;
+            return this.ka * 0.75 + this.da * 0.25;
         }
 
         @Override
@@ -195,6 +195,7 @@ public final class Devrec implements Algorithm {
                     "id=" + id +
                     ", da=" + da +
                     ", ka=" + ka +
+                    ", rank= " + rank() +
                     '}' + '\n';
         }
     }

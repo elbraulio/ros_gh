@@ -45,8 +45,8 @@ public final class RuuKA implements Matrix {
         double length = 0d;
         for (int k = 0; k < rut[i].length; k++) {
             sum += rut[i][k] * rut[j][k];
-            length += rut[i][k] != 0 || rut[j][k] != 0 ? 1 : 0;
+            length += rut[i][k];
         }
-        return sum;
+        return sum/length;
     }
 }

@@ -10,11 +10,11 @@ import java.util.List;
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
-public final class DefaultAccuracy implements Accuracy {
+public final class StrictAccuracy implements Accuracy {
 
     private final Connection connection;
 
-    public DefaultAccuracy(Connection connection) {
+    public StrictAccuracy(Connection connection) {
 
         this.connection = connection;
     }
