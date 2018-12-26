@@ -21,10 +21,12 @@ public final class Devrec implements Algorithm {
     private final Logger logger = Logger.getLogger(Devrec.class);
     private final double[][] ruuDA;
     private final double[][] ruuKA;
+    private final double wk;
+    private final double wd;
     private final Connection connection;
     private final Map<Integer, Integer> users;
 
-    public Devrec(Connection connection) throws SQLException {
+    public Devrec(Connection connection ,double wk, double wd) throws SQLException {
         this(
                 connection,
                 new FetchIndexedProjects(
@@ -33,13 +35,14 @@ public final class Devrec implements Algorithm {
                 new FetchIndexedUsers(
                         connection
                 ).map(),
-                new FetchTags(connection).map()
+                new FetchTags(connection).map(), wk,wd
         );
     }
 
     public Devrec(
             Connection connection, Map<Integer, Integer> projects,
-            Map<Integer, Integer> users, Map<Integer, Integer> tags
+            Map<Integer, Integer> users, Map<Integer, Integer> tags,
+            double wk, double wd
     ) throws SQLException {
         this(
                 connection,
@@ -48,31 +51,33 @@ public final class Devrec implements Algorithm {
                 new Rut(
                         connection, tags, users,
                         new FetchTagCount(connection).count()
-                ).matrix()
+                ).matrix(), wk, wd
         );
     }
 
     public Devrec(
             Connection connection, Map<Integer, Integer> projects,
             Map<Integer, Integer> users, Map<Integer, Integer> tags,
-            double[][] rup, double[][] rut
+            double[][] rup, double[][] rut, double wk, double wd
     ) {
         this(
                 connection, users,
                 new RuuDA(users, rup).matrix(),
-                new RuuKA(users, rut).matrix()
+                new RuuKA(users, rut).matrix(), wk,wd
         );
     }
 
     public Devrec(
             Connection connection,
             Map<Integer, Integer> users,
-            double[][] ruuDA, double[][] ruuKA
+            double[][] ruuDA, double[][] ruuKA, double wk, double wd
     ) {
         this.connection = connection;
         this.users = users;
         this.ruuDA = ruuDA;
         this.ruuKA = ruuKA;
+        this.wk = wk;
+        this.wd = wd;
     }
 
     /**
@@ -99,7 +104,7 @@ public final class Devrec implements Algorithm {
                                 rank(
                                                 i, tag.id(), ruuKA, users,
                                                 new CheckTag(connection)
-                                        )
+                                        ),wd,wk
                         );
                         if (aspirants.containsKey(newAspirant.id())) {
                             if (aspirants.get(newAspirant.id()).rank() < newAspirant.rank()) {
@@ -171,16 +176,21 @@ public final class Devrec implements Algorithm {
         private final int id;
         private final double da;
         private final double ka;
+        private final double wd;
+        private final double wk;
 
-        public DevrecAspirant(int id, double da, double ka) {
+        public DevrecAspirant(int id, double da, double ka, double wd,
+                              double wk) {
             this.id = id;
             this.da = da;
             this.ka = ka;
+            this.wd = wd;
+            this.wk = wk;
         }
 
         @Override
         public double rank() {
-            return this.ka*0.75 + this.da*0.25;
+            return this.ka*wk + this.da*wd;
         }
 
         @Override

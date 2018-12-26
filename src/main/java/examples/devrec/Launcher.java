@@ -48,15 +48,58 @@ public class Launcher {
                    new MatrixFromFile("ruuDA",
                     users.size()).matrix(),
                     new MatrixFromFile("ruuKA",
-                            users.size()).matrix()
+                            users.size()).matrix(),0.75, 0.25
             );
             /*logger.info(
                     new ByRankAsc().orderedList(devrec.aspirants(question))
             );*/
             List<TaggedItem> sample =
-                    new FetchSample(1, connection).list();
-            logger.info("Light accuracy");
+                    new FetchSample(100, connection).list();
+            logger.info("Light accuracy k=0.75 d=0.25");
             new DefaultHealthCheck(new LightAccuracy(connection), devrec,
+                    sample).logHealth();
+            logger.info(
+                    "process finished at " +
+                            (System.currentTimeMillis() - ti) / 1000 + " seconds"
+            );
+
+            Algorithm devrec1 = new Devrec(
+                    connection,
+                    //new FetchIndexedProjects(connection).map(),
+                    users,
+                    //tags
+                    new MatrixFromFile("ruuDA",
+                            users.size()).matrix(),
+                    new MatrixFromFile("ruuKA",
+                            users.size()).matrix(),1d, 0d
+            );
+            /*logger.info(
+                    new ByRankAsc().orderedList(devrec.aspirants(question))
+            );*/
+            logger.info("Light accuracy k = 1 d = 0");
+            new DefaultHealthCheck(new LightAccuracy(connection), devrec1,
+                    sample).logHealth();
+            logger.info(
+                    "process finished at " +
+                            (System.currentTimeMillis() - ti) / 1000 + " seconds"
+            );
+
+
+            Algorithm devrec2 = new Devrec(
+                    connection,
+                    //new FetchIndexedProjects(connection).map(),
+                    users,
+                    //tags
+                    new MatrixFromFile("ruuDA",
+                            users.size()).matrix(),
+                    new MatrixFromFile("ruuKA",
+                            users.size()).matrix(),0d, 1d
+            );
+            /*logger.info(
+                    new ByRankAsc().orderedList(devrec.aspirants(question))
+            );*/
+            logger.info("Light accuracy k = 0 d = 1");
+            new DefaultHealthCheck(new LightAccuracy(connection), devrec2,
                     sample).logHealth();
             logger.info(
                     "process finished at " +
