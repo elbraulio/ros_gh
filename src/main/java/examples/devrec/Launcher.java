@@ -54,12 +54,9 @@ public class Launcher {
                     new ByRankAsc().orderedList(devrec.aspirants(question))
             );*/
             List<TaggedItem> sample =
-                    new FetchSample(10, connection).list();
+                    new FetchSample(1, connection).list();
             logger.info("Light accuracy");
             new DefaultHealthCheck(new LightAccuracy(connection), devrec,
-                    sample).logHealth();
-            logger.info("Strict accuracy");
-            new DefaultHealthCheck(new StrictAccuracy(connection), devrec,
                     sample).logHealth();
             logger.info(
                     "process finished at " +

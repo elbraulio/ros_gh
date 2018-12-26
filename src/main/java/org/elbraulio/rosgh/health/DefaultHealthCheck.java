@@ -46,24 +46,22 @@ public final class DefaultHealthCheck implements HealthCheck {
                     );
                 }
         );
+        double tp = 0;
+        double fp = 0;
+        double fn = 0;
         this.logger.info("-------- Average from " + results.size() + " --------");
         this.logger.info("Precision:");
+        for(Result r : results){
+            fp += r.precision == 3 ? 1 : 0;
+            tp += r.precision == 1 ? 1 : 0;
+            fn += r.precision == 2 ? 1 : 0;
+        }
         this.logger.info(
-                Arrays.stream(results.toArray(new Result[0])).reduce(
-                        new Result(0, 0, 0),
-                        (r1, r2) -> new Result(
-                                r1.precision + r2.precision, 0, 0
-                        )
-                ).precision / results.size()
+                tp / (tp + fp)
         );
         this.logger.info("Recall:");
         this.logger.info(
-                Arrays.stream(results.toArray(new Result[0])).reduce(
-                        new Result(0, 0, 0),
-                        (r1, r2) -> new Result(
-                                0, r1.recall + r2.recall, 0
-                        )
-                ).recall / results.size()
+                tp / (tp + fn)
         );
         this.logger.info("MRR:");
         this.logger.info(

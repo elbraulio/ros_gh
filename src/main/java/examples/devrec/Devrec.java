@@ -88,7 +88,6 @@ public final class Devrec implements Algorithm {
         try {
             int count = 1;
             for (Integer repo : item.repos()) {
-                this.logger.info("rank for user " + count++ + " of " + item.repos().size());
                 for (Tag tag : item.tags()) {
                     for (int i = 0; i < ruuDA.length; i++) {
                         Aspirant newAspirant = new DevrecAspirant(

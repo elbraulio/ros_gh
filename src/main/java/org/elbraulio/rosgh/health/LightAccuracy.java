@@ -22,16 +22,61 @@ public final class LightAccuracy implements Accuracy {
 
     @Override
     public double precision(List<Aspirant> aspirants, TaggedItem question) {
-        return 0;
+        double rank = 1d;
+        int ghUserAccepted = 0;
+        try {
+            ghUserAccepted = new FecthGhUserAccepted(question.questionId(),
+                    this.connection).id();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (int i = aspirants.size() - 1; i >= 0; i--) {
+            if (aspirants.get(i).id() == ghUserAccepted) {
+                break;
+            }
+            rank++;
+        }
+        if(rank < aspirants.size()*0.5) {
+            return 1d; // tp
+        } else if(rank == aspirants.size() + 1){
+            return 2d; // fn
+        } else {
+            return 3d; // fp
+        }
     }
 
     @Override
     public double recall(List<Aspirant> aspirants, TaggedItem question) {
-        return 0;
+        double rank = 1d;
+        int ghUserAccepted = 0;
+        try {
+            ghUserAccepted = new FecthGhUserAccepted(question.questionId(),
+                    this.connection).id();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for (int i = aspirants.size() - 1; i >= 0; i--) {
+            if (aspirants.get(i).id() == ghUserAccepted) {
+                break;
+            }
+            rank++;
+        }
+        if(rank < aspirants.size()*0.5) {
+            return 1d; // tp
+        } else if(rank == aspirants.size() + 1){
+            return 2d; // fn
+        } else {
+            return 3d; // fp
+        }
     }
 
     @Override
     public double mrr(List<Aspirant> aspirants, TaggedItem question) {
+        double rank = rank(aspirants, question);
+        return 1d / rank;
+    }
+
+    private double rank(List<Aspirant> aspirants, TaggedItem question) {
         double rank = 1d;
         int minAccepted = (question.tags().size() / 2);
         minAccepted = minAccepted == 0 ? 1 : minAccepted;
@@ -53,17 +98,17 @@ public final class LightAccuracy implements Accuracy {
             }
             rank++;
         }
-        return 1d / rank;
+        return rank;
     }
 
     private boolean containsAtLeast(List<Tag> userTags,
-                                       List<Tag> questionTags,
+                                    List<Tag> questionTags,
                                     int minAccepted) {
         int matched = 0;
         for (Tag tag :
                 questionTags) {
             if (userTags.contains(tag)) {
-                if(++matched == minAccepted)
+                if (++matched == minAccepted)
                     return true;
             }
         }
