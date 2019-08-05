@@ -120,7 +120,7 @@ public final class FetchUsersPageListTest {
         final Iterator<String> usersLinks = makeIteratorForTest();
         try (
                 final Connection connection = new SqliteConnection(
-                        "src/test/resources/sqlite/test.db"
+                        "./src/test/resources/sqlite/test.db"
                 ).connection()
         ) {
             int count = 1;

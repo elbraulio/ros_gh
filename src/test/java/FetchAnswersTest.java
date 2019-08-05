@@ -3,18 +3,19 @@ import org.elbraulio.rosgh.iterator.IterateApiQuestionPage;
 import org.elbraulio.rosgh.iterator.IterateByQuestionLinks;
 import org.elbraulio.rosgh.iterator.IterateDomPages;
 import org.elbraulio.rosgh.iterator.IteratePagedContent;
-import org.jsoup.Jsoup;
-import org.junit.Ignore;
-import org.junit.Test;
 import org.elbraulio.rosgh.question.ApiRosQuestion;
 import org.elbraulio.rosgh.question.DefaultApiRosQuestion;
 import org.elbraulio.rosgh.question.DefaultRosDomQuestion;
 import org.elbraulio.rosgh.question.InsertQuestionWithExtras;
 import org.elbraulio.rosgh.tools.LastRosAnswersPage;
 import org.elbraulio.rosgh.tools.SqliteConnection;
+import org.jsoup.Jsoup;
+import org.junit.Ignore;
+import org.junit.Test;
 
 import javax.json.JsonArray;
 import java.io.IOException;
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Iterator;
 
@@ -54,10 +55,12 @@ public class FetchAnswersTest {
         }
     }
 
-    @Test @Ignore
-    public void fetchApiAnswers() throws IOException {
+    @Test
+    @Ignore
+    public void fetchApiAnswers() throws IOException, SQLException, ClassNotFoundException {
         final Iterator<JsonArray> iterable = new IterateApiQuestionPage();
-        final String dbPath = "./src/test/java/resources/sqlite/test.db";
+        final String dbPath = "./src/test/resources/sqlite/test.db";
+        final Connection connection = new SqliteConnection(dbPath).connection();
         iterable.forEachRemaining(
                 jsonArray -> {
                     for (int i = 0; i < jsonArray.size(); i++) {
@@ -72,7 +75,7 @@ public class FetchAnswersTest {
                                     question,
                                     new DefaultRosDomQuestion(question.id())
                             ).execute(
-                                    new SqliteConnection(dbPath).connection(), -1
+                                    connection, -1
                             );
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -81,8 +84,6 @@ public class FetchAnswersTest {
                             e.printStackTrace();
                             continue;
                         } catch (SQLException e) {
-                            e.printStackTrace();
-                        } catch (ClassNotFoundException e) {
                             e.printStackTrace();
                         } catch (NullPointerException n) {
                             n.printStackTrace();
