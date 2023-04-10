@@ -1,6 +1,6 @@
 package examples.devrec;
 
-import org.apache.log4j.Logger;
+
 import com.elbraulio.rosgh.algorithm.TaggedItem;
 
 import java.sql.Connection;
@@ -9,13 +9,15 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class FetchSample {
     private final Connection connection;
-    private final Logger logger = Logger.getLogger(FetchSample.class);
+    private final Logger logger = LogManager.getLogger(FetchSample.class);
     private final String size;
 
     public FetchSample(int size, Connection connection) {

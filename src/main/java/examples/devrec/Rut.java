@@ -1,12 +1,14 @@
 package examples.devrec;
 
-import org.apache.log4j.Logger;
+
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -16,7 +18,7 @@ public final class Rut implements Matrix {
     private final Map<Integer, Integer> tags;
     private final Map<Integer, Integer> users;
     private final int allTagCount;
-    private final Logger logger = Logger.getLogger(Rut.class);
+    private final Logger logger = LogManager.getLogger(Rut.class);
 
     public Rut(
             Connection connection, Map<Integer, Integer> tags,

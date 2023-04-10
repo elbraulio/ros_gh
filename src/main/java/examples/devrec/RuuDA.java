@@ -1,9 +1,11 @@
 package examples.devrec;
 
-import org.apache.log4j.Logger;
+
 
 import java.io.IOException;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * create Ruu association matrix filled with 0's. This matrix is symmetric.
@@ -13,7 +15,7 @@ import java.util.Map;
 public final class RuuDA implements Matrix {
     private final Map<Integer, Integer> users;
     private final double[][] rup;
-    private final Logger logger = Logger.getLogger(RuuDA.class);
+    private final Logger logger = LogManager.getLogger(RuuDA.class);
 
     public RuuDA(Map<Integer, Integer> users, double[][] rup) {
 

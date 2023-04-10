@@ -1,11 +1,13 @@
 package examples.devrec;
 
-import org.apache.log4j.Logger;
+
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * create Rup association matrix filled with 0's.
@@ -22,7 +24,7 @@ public final class Rup implements Matrix {
     private final Connection connection;
     private final Map<Integer, Integer> projects;
     private final Map<Integer, Integer> users;
-    private final Logger logger = Logger.getLogger(Matrix.class);
+    private final Logger logger = LogManager.getLogger(Matrix.class);
 
     public Rup(
             Connection connection, Map<Integer, Integer> projects,
