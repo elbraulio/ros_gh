@@ -4,7 +4,7 @@ import com.elbraulio.rosgh.algorithm.Algorithm;
 import com.elbraulio.rosgh.algorithm.Aspirant;
 import com.elbraulio.rosgh.algorithm.TaggedItem;
 import com.elbraulio.rosgh.tag.Tag;
-import org.apache.log4j.Logger;
+
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -12,13 +12,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class Devrec implements Algorithm {
 
-    private final Logger logger = Logger.getLogger(Devrec.class);
+    private final Logger logger = LogManager.getLogger(Devrec.class);
     private final double[][] ruuDA;
     private final double[][] ruuKA;
     private final Connection connection;

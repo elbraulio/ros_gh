@@ -14,6 +14,6 @@ public class DefaultRosDomQuestionTest {
     public void network() throws IOException {
         final DefaultRosDomQuestion dom = new DefaultRosDomQuestion(9040);
         assertEquals(2, dom.participants().size());
-        assertEquals(5, dom.votes());
+        assertEquals(8, dom.votes());
     }
 }

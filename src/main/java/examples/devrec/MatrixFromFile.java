@@ -1,10 +1,12 @@
 package examples.devrec;
 
-import org.apache.log4j.Logger;
+
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
@@ -12,7 +14,7 @@ import java.io.IOException;
 public final class MatrixFromFile implements Matrix {
     private final String path;
     private final int size;
-    private final Logger logger = Logger.getLogger(MatrixFromFile.class);
+    private final Logger logger = LogManager.getLogger(MatrixFromFile.class);
 
     public MatrixFromFile(String path, int size) {
         this.path = path;

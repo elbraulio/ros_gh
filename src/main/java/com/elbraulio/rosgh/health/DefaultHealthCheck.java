@@ -3,19 +3,20 @@ package com.elbraulio.rosgh.health;
 import com.elbraulio.rosgh.algorithm.Aspirant;
 import com.elbraulio.rosgh.algorithm.ByRankAsc;
 import com.elbraulio.rosgh.algorithm.TaggedItem;
-import org.apache.log4j.Logger;
 import com.elbraulio.rosgh.algorithm.Algorithm;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * @author Braulio Lopez (brauliop.3@gmail.com)
  */
 public final class DefaultHealthCheck implements HealthCheck {
 
-    private final Logger logger = Logger.getLogger(DefaultHealthCheck.class);
+    private final Logger logger = LogManager.getLogger(DefaultHealthCheck.class);
     private final Accuracy accuracy;
     private final Algorithm algorithm;
     private final List<TaggedItem> sample;
